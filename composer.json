@@ -1,0 +1,28 @@
+{
+	"name": "hypejunction/hypepost",
+	"type": "elgg-plugin",
+	"description": "Utility plugin for quick prototyping of content posts",
+	"homepage": "http://hypejunction.com",
+	"keywords": [
+		"elgg", "plugin", "forms"
+	],
+	"license": "GPL-2.0-only",
+	"authors": [
+		{
+			"name": "Ismayil Khayredinov",
+			"email": "info@hypejunction.com"
+		}
+	],
+	"extra": {
+		"installer-name": "hypePost"
+	},
+	"require": {
+		"php": ">=7.0",
+		"composer/installers": "~1.0"
+	},
+	"autoload": {
+		"psr-0": {
+			"": "classes/"
+		}
+	}
+}
