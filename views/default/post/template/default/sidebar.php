@@ -5,9 +5,6 @@ if (!$entity instanceof \ElggEntity) {
 	return;
 }
 
-//$output = elgg_view("post/profile/author", $vars);
-$output .= elgg_view("post/profile/fields", $vars);
-
 $modules = elgg()->{'posts.post'}->getModules($entity);
 
 foreach ($modules as $module => $options) {
@@ -16,6 +13,20 @@ foreach ($modules as $module => $options) {
 	}
 
 	$output .= elgg_view("post/module/$module", $vars);
+}
+
+
+if (elgg_trigger_plugin_hook('uses:widgets', "$entity->type:$entity->subtype", $vars, false)) {
+
+	elgg_push_context('post');
+
+	$output .= elgg_view_layout('widgets', [
+		'owner_guid' => $entity->guid,
+		'num_columns' => 1,
+	]);
+
+	elgg_pop_context();
+
 }
 
 $output .= elgg_view("post/profile/menu", $vars);
@@ -27,17 +38,4 @@ if ($output) {
 			'post-position-sidebar',
 		],
 	], $output);
-}
-
-if (elgg_trigger_plugin_hook('uses:widgets', "$entity->type:$entity->subtype", $vars, false)) {
-
-	elgg_push_context('post');
-
-	echo elgg_view_layout('widgets', [
-		'owner_guid' => $entity->guid,
-		'num_columns' => 1,
-	]);
-
-	elgg_pop_context();
-
 }

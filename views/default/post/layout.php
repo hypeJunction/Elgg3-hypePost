@@ -28,17 +28,20 @@ if (elgg_view_exists("post/template/$template/header")) {
 	$title = $entity->getDisplayName();
 }
 
+//$sidebar = elgg_view("post/profile/author", $vars);
+$sidebar .= elgg_view("post/profile/fields", $vars);
+
 if (elgg_view_exists("post/template/$template/sidebar")) {
-	$sidebar = elgg_view("post/template/$template/sidebar", $vars);
+	$sidebar .= elgg_view("post/template/$template/sidebar", $vars);
 } else {
-	$sidebar = false;
+	$sidebar .= '';
 }
 
 echo elgg_view_layout('post', [
 	'header' => $header,
 	'title' => $title,
 	'content' => $content,
-	'sidebar' => $sidebar,
+	'sidebar' => $sidebar ? : false,
 	'filter_id' => "view:$entity->type:$entity->subtype",
 	'filter_value' => 'default',
 ]);
