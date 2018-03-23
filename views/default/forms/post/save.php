@@ -33,6 +33,8 @@ if ($content) {
 	], $content);
 }
 
+$layout_content .= elgg_view("forms/edit/$entity->type/$entity->subtype", $vars);
+
 $footer = $view_fields($filter($fields, 'footer'));
 if ($footer) {
 	$layout_content .= elgg_format_element('div', [
