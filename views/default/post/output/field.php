@@ -11,6 +11,9 @@ if (!$value) {
 }
 
 if (!elgg_view_exists("output/$type")) {
+	if (is_array($vars['value'])) {
+		$vars['value'] = implode(', ', $vars['value']);
+	}
 	$value = elgg_view('output/text', $vars);
 } else {
 	$value = elgg_view("output/$type", $vars);
