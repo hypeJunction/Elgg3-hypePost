@@ -5,14 +5,10 @@ if (!$entity instanceof \ElggEntity) {
 	return;
 }
 
-$modules = elgg()->{'posts.post'}->getModules($entity);
+$modules = elgg()->{'posts.post'}->getModules($entity, 'footer');
 
 $view = '';
 foreach ($modules as $module => $options) {
-	if (!$options['enabled'] || $options['position'] !== 'footer') {
-		continue;
-	}
-
 	$view .= elgg_view("post/module/$module", $vars);
 }
 

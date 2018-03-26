@@ -247,10 +247,11 @@ class Post {
 	 * </code>
 	 *
 	 * @param ElggEntity $entity Entity
+	 * @param string $position Position
 	 *
 	 * @return string[]
 	 */
-	public function getModules(\ElggEntity $entity) {
+	public function getModules(\ElggEntity $entity, $position = null) {
 
 		$params = [
 			'entity' => $entity,
@@ -259,9 +260,21 @@ class Post {
 		$modules = elgg_trigger_plugin_hook('modules', "$entity->type", $params, []);
 		$modules = elgg_trigger_plugin_hook('modules', "$entity->type:$entity->subtype", $params, $modules);
 
-		uasort($modules, function ($md1, $m2) {
+		$modules = array_filter($modules, function($e) use ($position) {
+			if (isset($position) && elgg_extract('position', $e) !== $position) {
+				return false;
+			}
+
+			if (elgg_extract('enabled', $e) === false) {
+				return false;
+			}
+
+			return true;
+		});
+
+		uasort($modules, function ($md1, $md2) {
 			$p1 = (int) elgg_extract('priority', $md1, 500);
-			$p2 = (int) elgg_extract('priority', $m2, 500);
+			$p2 = (int) elgg_extract('priority', $md2, 500);
 			if ($p1 === $p2) {
 				return 0;
 			}

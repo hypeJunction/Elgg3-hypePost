@@ -38,14 +38,10 @@ if (empty($body) && $body !== false) {
 
 $attachments = elgg_extract('attachments', $vars, '');
 
-$modules = elgg()->{'posts.post'}->getModules($entity);
+$modules = elgg()->{'posts.post'}->getModules($entity, 'content');
 
 $view = '';
 foreach ($modules as $module => $options) {
-	if (!$options['enabled'] || $options['position'] !== 'content') {
-		continue;
-	}
-
 	$attachments .= elgg_view("post/module/$module", $vars);
 }
 

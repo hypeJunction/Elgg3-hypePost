@@ -5,10 +5,13 @@ if (!$entity instanceof \ElggEntity) {
 	return;
 }
 
-$modules = elgg()->{'posts.post'}->getModules($entity);
+$svc = elgg()->{'posts.post'};
+/* @var $svc \hypeJunction\Post\Post */
+
+$modules = $svc->getModules($entity, 'sidebar');
 
 foreach ($modules as $module => $options) {
-	if (!$options['enabled'] || $options['position'] !== 'sidebar') {
+	if ($options['position'] !== 'sidebar') {
 		continue;
 	}
 
