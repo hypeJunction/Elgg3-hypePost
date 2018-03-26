@@ -6,15 +6,16 @@ $type = elgg_extract('#type', $vars);
 $name = elgg_extract('name', $vars);
 $value = elgg_extract('value', $vars);
 
-if (!elgg_view_exists("output/$type")) {
-	return;
-}
-
 if (!$value) {
 	return;
 }
 
-$value = elgg_view("output/$type", $vars);
+if (!elgg_view_exists("output/$type")) {
+	$value = elgg_view('output/text', $vars);
+} else {
+	$value = elgg_view("output/$type", $vars);
+}
+
 if (!$value) {
 	return;
 }
