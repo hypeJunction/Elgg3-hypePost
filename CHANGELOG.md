@@ -1,3 +1,15 @@
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.2...1.0.3) (2018-03-26)
+
+
+### Bug Fixes
+
+* **fields:** correctly determine field width class ([ffbf0c6](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/ffbf0c6))
+* **modules:** always prevent default click ([387958a](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/387958a))
+* **river:** correctly set river item params ([474f658](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/474f658))
+
+
+
 <a name="1.0.2"></a>
 ## [1.0.2](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.1...1.0.2) (2018-03-26)
 
