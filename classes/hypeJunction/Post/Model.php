@@ -516,7 +516,17 @@ class Model {
 			}
 
 			$width = elgg_extract('#width', $field, 6);
-			$widget_class = $width == 6 ? "elgg-col-1of1" : "elgg-col-{$width}of6";
+			if ($width == '6') {
+				$widget_class = 'elgg-col-1of1';
+			} else if ($width == 4) {
+				$widget_class = 'elgg-col-2of3';
+			} else if ($width == 3) {
+				$widget_class = 'elgg-col-1of2';
+			} else if ($width == 2) {
+				$widget_class = 'elgg-col-1of3';
+			} else {
+				$widget_class = "elgg-col-{$width}of6";
+			}
 
 			$field['#class'] = elgg_extract_class($field, ['elgg-col', $widget_class], '#class');
 
