@@ -611,8 +611,6 @@ class Model {
 			$entity->container_guid = $container_guid;
 		}
 
-		$entity->setVolatileData('add_to_river', $add_to_river);
-
 		$access_id = $request->getParam('access_id');
 		if (!isset($access_id)) {
 			if ($container instanceof \ElggGroup) {
@@ -698,6 +696,8 @@ class Model {
 				$entity->$name = $value;
 			}
 		}
+		
+		$entity->setVolatileData('add_to_river', $add_to_river);
 
 		if (!$entity->save()) {
 			return false;

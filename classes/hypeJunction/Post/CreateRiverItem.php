@@ -43,7 +43,7 @@ class CreateRiverItem {
 		elgg_create_river_item([
 			'action_type' => 'create',
 			'object_guid' => $entity->guid,
-			'target_guid' => $entity->getContainerEntity() instanceof \ElggUser ? $entity->container_guid : null,
+			'target_guid' => $entity->getContainerEntity() instanceof \ElggGroup ? $entity->container_guid : null,
 		]);
 	}
 }
