@@ -1,3 +1,14 @@
+<a name="1.0.5"></a>
+## [1.0.5](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.4...1.0.5) (2018-03-26)
+
+
+### Bug Fixes
+
+* **output:** concatenate array values ([1928d9b](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/1928d9b))
+* **river:** defer item creation until all metadata is set ([109aa22](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/109aa22))
+
+
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.3...1.0.4) (2018-03-26)
 
