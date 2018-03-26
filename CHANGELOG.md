@@ -1,3 +1,13 @@
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.1...1.0.2) (2018-03-26)
+
+
+### Bug Fixes
+
+* **layout:** simplify layout module registration ([75a2bf1](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/75a2bf1))
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.0...1.0.1) (2018-03-23)
 
