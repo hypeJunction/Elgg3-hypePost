@@ -1,3 +1,13 @@
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.3...1.0.4) (2018-03-26)
+
+
+### Bug Fixes
+
+* **output:** default to using text view when output view does not exist ([7296f6d](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/7296f6d))
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.2...1.0.3) (2018-03-26)
 
