@@ -94,6 +94,10 @@ class Model {
 				}
 			},
 			'#getter' => function (ElggEntity $entity) {
+				if (!$entity->guid) {
+					return null;
+				}
+
 				$icon = $entity->getIcon('master');
 
 				return $icon->exists() ? $icon : null;
@@ -103,7 +107,7 @@ class Model {
 			},
 			'#priority' => 400,
 			'#profile' => false,
-			'#visibility' => function (\ElggEntity $entity){
+			'#visibility' => function (\ElggEntity $entity) {
 				$params = [
 					'entity' => $entity,
 				];
@@ -140,6 +144,9 @@ class Model {
 				}
 			},
 			'#getter' => function (ElggEntity $entity) {
+				if (!$entity->guid) {
+					return null;
+				}
 				$svc = elgg()->{'posts.post'};
 				/* @var $svc \hypeJunction\Post\Post */
 
@@ -186,7 +193,7 @@ class Model {
 			},
 			'#priority' => 400,
 			'#profile' => false,
-			'#visibility' => function (\ElggEntity $entity){
+			'#visibility' => function (\ElggEntity $entity) {
 				$params = [
 					'entity' => $entity,
 				];
@@ -211,7 +218,7 @@ class Model {
 			},
 			'#section' => 'content',
 			'#profile' => false,
-			'#visibility' => function (\ElggEntity $entity){
+			'#visibility' => function (\ElggEntity $entity) {
 				$params = [
 					'entity' => $entity,
 				];
