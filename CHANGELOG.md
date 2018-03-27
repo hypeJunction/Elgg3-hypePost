@@ -1,3 +1,13 @@
+<a name="1.0.6"></a>
+## [1.0.6](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.5...1.0.6) (2018-03-27)
+
+
+### Bug Fixes
+
+* **styles:** add module styling ([f3c8d9d](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/f3c8d9d))
+
+
+
 <a name="1.0.5"></a>
 ## [1.0.5](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.4...1.0.5) (2018-03-26)
 
