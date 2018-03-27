@@ -1,3 +1,13 @@
+<a name="1.0.8"></a>
+## [1.0.8](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.7...1.0.8) (2018-03-27)
+
+
+### Bug Fixes
+
+* **fields:** fix icon and cover handling on unsaved entities ([39a58b4](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/39a58b4))
+
+
+
 <a name="1.0.7"></a>
 ## [1.0.7](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.6...1.0.7) (2018-03-27)
 
