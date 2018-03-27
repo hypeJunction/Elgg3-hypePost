@@ -140,7 +140,14 @@ class Model {
 				}
 			},
 			'#getter' => function (ElggEntity $entity) {
-				return elgg()->{'posts.post'}->getCover($entity);
+				$svc = elgg()->{'posts.post'};
+				/* @var $svc \hypeJunction\Post\Post */
+
+				$cover = $svc->getCover($entity);
+
+				if ($cover->getCoverUrl()) {
+					return $cover;
+				}
 			},
 			'#setter' => function (ElggEntity $entity, $value) {
 				$file = elgg_extract('file', $value);
