@@ -696,7 +696,7 @@ class Model {
 				$entity->$name = $value;
 			}
 		}
-		
+
 		$entity->setVolatileData('add_to_river', $add_to_river);
 
 		if (!$entity->save()) {

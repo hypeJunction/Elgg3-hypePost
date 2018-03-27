@@ -312,3 +312,7 @@
 		margin-left: 0.5rem;
 	}
 }
+
+.elgg-module.has-list > .elgg-body {
+	padding: 0;
+}
