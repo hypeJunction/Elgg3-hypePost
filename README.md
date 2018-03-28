@@ -7,8 +7,17 @@ Provides utilities for creating and editing posts.
 Post forms are built using an extended field API layer, which makes it easier to define
 all fields in one place, and not have to worry about maintaining form, action and profile
 logic separate from each other.
- 
- 
+
+**Reusable views**
+Plugins can recycle existing resource views, saving lots of time needed to bootstrap new entity types.
+
+**Client site validation**
+Client side form validation
+
+**AJAX form save**
+Forms are saved using AJAX with saves user a few steps should the action fail.
+
+
 ## Form Fields
 
 To extend post form, use ``fields, <entity_type>:<entity_subtype>`` (or less granular ``fields, <entity_type>`` ) plugin hook.

@@ -7,6 +7,7 @@ return function () {
 	elgg_register_event_handler('init', 'system', function () {
 
 		elgg_extend_view('elgg.css', 'post/styles.css');
+		elgg_extend_view('elements/forms.css', 'forms/validation.css');
 
 		elgg_register_action('post/save', \hypeJunction\Post\SavePostAction::class);
 

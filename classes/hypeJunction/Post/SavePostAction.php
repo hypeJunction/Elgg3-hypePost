@@ -5,6 +5,7 @@ namespace hypeJunction\Post;
 use Elgg\BadRequestException;
 use Elgg\Http\ResponseBuilder;
 use Elgg\Request;
+use Exception;
 
 class SavePostAction {
 
@@ -65,7 +66,7 @@ class SavePostAction {
 			$message = $request->elgg()->echo('success:post:save', [$name]);
 
 			return elgg_ok_response($data, $message, $forward_url);
-		} catch (\Exception $e) {
+		} catch (Exception $e) {
 			return elgg_error_response(
 				$e->getMessage(),
 				REFERER,

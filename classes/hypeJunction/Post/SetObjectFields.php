@@ -42,6 +42,8 @@ class SetObjectFields {
 			'section' => 'content',
 			'is_profile_field' => false,
 			'required' => true,
+			'data-parsley-required' => true,
+			'data-parsley-trigger' => 'null',
 			'priority' => 20,
 		]));
 

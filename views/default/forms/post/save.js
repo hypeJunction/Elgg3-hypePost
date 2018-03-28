@@ -5,6 +5,9 @@ define(function(require) {
 	var $ = require('jquery');
 	var lightbox = require('elgg/lightbox');
 	var spinner = require('elgg/spinner');
+	require('forms/validation');
+
+	$('.elgg-form-post-save').parsley();
 
 	$(document).on('submit', '.elgg-form-post-save', function(e) {
 

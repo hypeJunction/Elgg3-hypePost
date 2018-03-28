@@ -1,0 +1,17 @@
+.elgg-field-has-errors .elgg-field-label {
+	color: $(state-danger-font-color);
+}
+
+.elgg-field-has-errors [class^="elgg-input-"] {
+	border-color: $(state-danger-border-color);
+}
+
+.elgg-field-feedback {
+	list-style: none;
+	font-size: 90%;
+}
+
+.elgg-field-error {
+	padding: 5px;
+	color: $(state-danger-font-color);
+}
