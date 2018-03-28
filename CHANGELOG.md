@@ -1,3 +1,13 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.8...1.1.0) (2018-03-28)
+
+
+### Features
+
+* **fields:** transition towards OOP field configuration ([2d235c5](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/2d235c5))
+
+
+
 <a name="1.0.8"></a>
 ## [1.0.8](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.7...1.0.8) (2018-03-27)
 
