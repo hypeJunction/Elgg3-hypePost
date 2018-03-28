@@ -10,6 +10,8 @@ return function () {
 
 		elgg_register_action('post/save', \hypeJunction\Post\SavePostAction::class);
 
+		elgg_register_plugin_hook_handler('fields', 'object', \hypeJunction\Post\SetObjectFields::class);
+
 		elgg_register_event_handler('update', 'object', \hypeJunction\Post\CreateRiverItem::class);
 		elgg_register_event_handler('update', 'group', \hypeJunction\Post\CreateRiverItem::class);
 

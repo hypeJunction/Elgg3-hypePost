@@ -24,9 +24,7 @@ define(function(require) {
 				lightbox.close();
 				$('.elgg-list').trigger('refresh');
 			} else {
-				spinner.start();
-
-				elgg.forward(data.forward_url || data.entity.url || elgg.normalize_url(''));
+				ajax.forward(data.forward_url || data.entity.url || elgg.normalize_url(''));
 			}
 		}).fail(function() {
 			$form.find('[type="submit"]').prop('disabled', false);

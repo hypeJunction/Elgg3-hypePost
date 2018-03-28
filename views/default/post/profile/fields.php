@@ -5,12 +5,17 @@ if (!$entity instanceof \ElggEntity) {
 	return;
 }
 
-$fields = elgg()->{'posts.model'}->getProfileFields($entity, $vars);
+$model = elgg()->{'posts.model'};
+/* @var $model \hypeJunction\Post\Model */
+
+$vars['context'] = \hypeJunction\Fields\Field::CONTEXT_PROFILE;
+
+$fields = $model->getFields($entity, $vars);
 
 $output = '';
-
 foreach ($fields as $field) {
-	$output .= elgg_view("post/output/field", $field);
+	/* @var $field \hypeJunction\Fields\FieldInterface */
+	$output .= $field->output($entity);
 }
 
 if (empty($output)) {

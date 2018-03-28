@@ -3,14 +3,16 @@
 namespace hypeJunction\Post;
 
 use Elgg\Hook;
+use ElggMenuItem;
 
 class SocialMenu {
 
 	/**
 	 * @elgg_plugin_hook register menu:social
+	 *
 	 * @param Hook $hook
 	 *
-	 * @return \ElggMenuItem[]|null
+	 * @return ElggMenuItem[]|null
 	 */
 	public function __invoke(Hook $hook) {
 
@@ -20,11 +22,14 @@ class SocialMenu {
 		}
 
 		$menu = $hook->getValue();
-		/* @var $menu \ElggMenuItem[] */
+		/* @var $menu ElggMenuItem[] */
 
-		if (!elgg()->{'posts.post'}->hasCommentBlock($entity)) {
+		$svc = elgg()->{'posts.post'};
+		/* @var $svc \hypeJunction\Post\Post */
+
+		if (!$svc->hasCommentBlock($entity)) {
 			foreach ($menu as $key => $item) {
-				if ($item instanceof \ElggMenuItem && $item->getName() === 'comment') {
+				if ($item instanceof ElggMenuItem && $item->getName() === 'comment') {
 					unset($menu[$key]);
 				}
 			}

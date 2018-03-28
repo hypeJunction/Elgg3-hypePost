@@ -13,12 +13,18 @@ if (!$entity->canEdit()) {
 }
 
 elgg_push_entity_breadcrumbs($entity);
-elgg_push_breadcrumb($title);
+
+$model = elgg()->{'posts.model'};
+/* @var $model \hypeJunction\Post\Model */
+
+$vars['context'] = \hypeJunction\Fields\Field::CONTEXT_EDIT_FORM;
+
+$form_vars = $model->getFormVars($entity, $vars);
 
 $content = elgg_view_form('post/save', [
 	'enctype' => 'multipart/form-data',
 	'class' => 'post-form',
-], elgg()->{'posts.model'}->getFormVars($entity, $vars));
+], $form_vars);
 
 if (elgg_is_xhr()) {
 	echo $content;

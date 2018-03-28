@@ -3,18 +3,19 @@
 $entity = elgg_extract('entity', $vars);
 $fields = elgg_extract('fields', $vars, []);
 
-$view_fields = function (array $fields) {
+$view_fields = function (\hypeJunction\Fields\Collection $fields) use ($entity) {
 	$output = '';
 	foreach ($fields as $field) {
-		$output .= elgg_view_field($field);
+	    /* @var $field \hypeJunction\Fields\FieldInterface */
+		$output .= $field->render($entity);
 	}
 
 	return $output;
 };
 
-$filter = function (array $fields, $section) {
-	return array_filter($fields, function ($field) use ($section) {
-		return elgg_extract('#section', $field, 'content') === $section;
+$filter = function (\hypeJunction\Fields\Collection $fields, $section) {
+	return $fields->filter(function (\hypeJunction\Fields\FieldInterface $field) use ($section) {
+		return $field->section == $section;
 	});
 };
 
@@ -53,19 +54,17 @@ if ($sidebar) {
 
 $actions = $filter($fields, 'actions');
 foreach ($actions as $action) {
-	elgg_register_menu_item('form:actions', [
-		'name' => elgg_extract('name', $action),
-		'href' => false,
-		'text' => elgg_view_field($action),
-		'priority' => elgg_extract('#priority', $action),
-	]);
+    /* @var $action \hypeJunction\Fields\FieldInterface */
 
-	elgg_register_menu_item('title', [
-		'name' => elgg_extract('name', $action),
+    $menu_item = [
+		'name' => $action->name,
 		'href' => false,
-		'text' => elgg_view_field($action),
-		'priority' => elgg_extract('#priority', $action),
-	]);
+		'text' => $action->render($entity),
+		'priority' => $action->priority,
+	];
+
+	elgg_register_menu_item('form:actions', $menu_item);
+	elgg_register_menu_item('title', $menu_item);
 }
 
 $type = elgg_echo("item:$entity->type:$entity->subtype");
