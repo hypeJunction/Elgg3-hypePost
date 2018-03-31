@@ -25,6 +25,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 		'is_edit_field' => true,
 		'is_admin_field' => false,
 		'is_editable' => true,
+		'is_search_field' => false,
 		'priority' => 500,
 		'width' => 6,
 	];
