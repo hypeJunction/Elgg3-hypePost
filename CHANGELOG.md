@@ -1,3 +1,13 @@
+<a name="1.2.3"></a>
+## [1.2.3](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.2...1.2.3) (2018-03-31)
+
+
+### Bug Fixes
+
+* **composer:** add dependencies ([1da3bb4](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/1da3bb4))
+
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.1...1.2.2) (2018-03-31)
 
