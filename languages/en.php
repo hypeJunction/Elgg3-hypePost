@@ -61,9 +61,6 @@ return [
 	'validation:error:type:integer' => 'This value should be a valid integer.',
 	'validation:error:type:digits' => 'This value should only contain digits.',
 	'validation:error:type:alphanum' => 'This value should only contain alphanumeric characters.',
-	'validation:error:type:validusername' => 'This username contains invalid characters.',
-	'validation:error:type:availableusername' => 'This username is not available.',
-	'validation:error:type:minstrength' => 'The password is too weak',
 	'validation:error:invalid' => "Please ensure that value of '%s' is the correct format",
 	'validation:error:invalid_file' => "Uploaded file is invalid: %s'",
 ];

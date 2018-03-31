@@ -22,7 +22,12 @@ define(function(require) {
 			beforeSend: function() {
 				$form.find('[type="submit"]').prop('disabled', true);
 			}
-		}).done(function(data) {
+		}).done(function(data, statusText, xhr) {
+			if (xhr.AjaxData.status === -1) {
+				$form.find('[type="submit"]').prop('disabled', false);
+				return;
+			}
+
 			if ($form.closest('#colorbox').length) {
 				lightbox.close();
 				$('.elgg-list').trigger('refresh');

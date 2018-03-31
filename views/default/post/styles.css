@@ -39,9 +39,19 @@
 		margin: 0.25rem;
 	}
 
-	.ql-editor {
-		min-height: 30rem;
-		border: 1px solid $(border-color-mild);
+	.elgg-fieldset-horizontal {
+		display: flex;
+		flex-wrap: wrap;
+	    & > .elgg-field {
+			flex: 1;
+	    }
+		& > .elgg-field:last-child {
+		    margin-right: 0;
+		}
+	}
+
+	.elgg-field-composite .elgg-field {
+		margin-bottom: 0;
 	}
 }
 
@@ -68,6 +78,10 @@
 	& > .elgg-head {
 		padding: 0.5rem 1rem;
 		background: $(background-color-soft);
+		align-items: center;
+		.elgg-icon {
+			font-size: 80%;
+		}
 	}
 
 	& > .elgg-body {

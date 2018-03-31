@@ -110,6 +110,7 @@ class Model {
 		}
 
 		$context = elgg_extract('context', $options);
+
 		$fields = $fields->filter(function (FieldInterface $field) use ($entity, $context) {
 			return $field->isVisible($entity, $context);
 		});
@@ -147,6 +148,8 @@ class Model {
 		$fields = $this->getFields($entity, $vars);
 
 		foreach ($fields as $field) {
+			/* @var $field FieldInterface */
+
 			$name = $field->name;
 			if (isset($defaults[$name])) {
 				continue;
@@ -162,6 +165,7 @@ class Model {
 		}
 
 		foreach ($fields as $field) {
+			/* @var $field FieldInterface */
 			$name = $field->name;
 			if (isset($vars[$name])) {
 				$field->value = $vars[$name];

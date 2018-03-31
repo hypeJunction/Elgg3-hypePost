@@ -2,6 +2,8 @@ define(function (require) {
 
 	var elgg = require('elgg');
 	var $ = require('jquery');
+	var spinner = require('elgg/spinner');
+
 	require('parsley');
 
 	window.Parsley.addCatalog('_', {
@@ -41,6 +43,21 @@ define(function (require) {
 		message = message || this.catalog['_'].defaultMessage;
 		return message ? elgg.echo(message, constraint.requirementList) : this.catalog.en.defaultMessage;
 	}.bind(window.Parsley._validatorRegistry);
+
+	window.Parsley.on('form:validate', function() {
+		var $form = this.$element;
+		$form.find('[type="submit"]').prop('disabled', true);
+		spinner.start();
+	});
+
+	window.Parsley.on('form:success', function() {
+		var $form = this.$element;
+		$form.find('[type="submit"]').prop('disabled', false);
+	});
+
+	window.Parsley.on('form:validated', function() {
+		spinner.stop();
+	});
 
 	window.Parsley.on('field:init', function () {
 		this.options.errorsMessagesDisabled = true;

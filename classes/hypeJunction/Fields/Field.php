@@ -6,8 +6,10 @@ use ArrayObject;
 use Elgg\Request;
 use ElggEntity;
 use hypeJunction\ValidationException;
+use hypeJunction\Validators\EmailValidator;
 use hypeJunction\Validators\LengthValidator;
 use hypeJunction\Validators\NumberValidator;
+use hypeJunction\Validators\UrlValidator;
 
 abstract class Field extends ArrayObject implements FieldInterface {
 
@@ -49,19 +51,21 @@ abstract class Field extends ArrayObject implements FieldInterface {
 			throw new ValidationException(elgg_echo('validation:error:required'));
 		}
 
+		if ($this->type === 'email') {
+			$email = new EmailValidator();
+			$email->validate($value);
+		}
+
+		if ($this->type === 'url') {
+			$email = new UrlValidator();
+			$email->validate($value);
+		}
+
 		$length = new LengthValidator($this->minlength, $this->maxlength);
 		$length->validate($value);
 
 		$number = new NumberValidator($this->min, $this->max);
 		$number->validate($value);
-
-		if ($this->type === 'email') {
-			/* @todo Add email validator */
-		}
-
-		if ($this->type === 'url') {
-			/* @todo Add url validator */
-		}
 	}
 
 	/**
@@ -267,6 +271,10 @@ abstract class Field extends ArrayObject implements FieldInterface {
 	 */
 	public function render(\ElggEntity $entity, $context = null) {
 		if (!$this->isVisible($entity, $context)) {
+			return '';
+		}
+
+		if (!elgg_view_exists("input/$this->type")) {
 			return '';
 		}
 
