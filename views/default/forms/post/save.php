@@ -7,7 +7,8 @@ $view_fields = function (\hypeJunction\Fields\Collection $fields) use ($entity) 
 	$output = '';
 	foreach ($fields as $field) {
 	    /* @var $field \hypeJunction\Fields\FieldInterface */
-		$output .= $field->render($entity);
+	    $context = $entity->guid ? \hypeJunction\Fields\Field::CONTEXT_EDIT_FORM : \hypeJunction\Fields\Field::CONTEXT_CREATE_FORM;
+		$output .= $field->render($entity, $context);
 	}
 
 	return $output;
