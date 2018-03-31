@@ -82,7 +82,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 			return false;
 		}
 
-		if (!$this->is_editable) {
+		if (!$this->is_editable && (in_array($context, [self::CONTEXT_EDIT_FORM, self::CONTEXT_CREATE_FORM]))) {
 			$value = $this->retrieve($entity);
 			if (!empty($value)) {
 				return false;
@@ -108,11 +108,11 @@ abstract class Field extends ArrayObject implements FieldInterface {
 			}
 		}
 
-		if ($this->is_edit_field === false && ($context == self::CONTEXT_EDIT_FORM || $entity->guid)) {
+		if ($this->is_edit_field === false && $context == self::CONTEXT_EDIT_FORM) {
 			return false;
 		}
 
-		if ($this->is_create_field === false && ($context == self::CONTEXT_CREATE_FORM || !$entity->guid)) {
+		if ($this->is_create_field === false && $context == self::CONTEXT_CREATE_FORM) {
 			return false;
 		}
 
