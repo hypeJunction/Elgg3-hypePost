@@ -1,3 +1,13 @@
+<a name="1.2.4"></a>
+## [1.2.4](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.3...1.2.4) (2018-03-31)
+
+
+### Bug Fixes
+
+* **forms:** correctly set field context ([32ec81f](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/32ec81f))
+
+
+
 <a name="1.2.3"></a>
 ## [1.2.3](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.2...1.2.3) (2018-03-31)
 
