@@ -1,3 +1,13 @@
+<a name="1.2.1"></a>
+## [1.2.1](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.0...1.2.1) (2018-03-31)
+
+
+### Bug Fixes
+
+* **field:** add is_search_field flag ([c5e3430](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/c5e3430))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.1.0...1.2.0) (2018-03-31)
 
