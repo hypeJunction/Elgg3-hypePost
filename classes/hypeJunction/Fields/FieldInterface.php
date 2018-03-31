@@ -19,6 +19,7 @@ use Symfony\Component\HttpFoundation\ParameterBag;
  * @property bool   $is_edit_field     Display field on edit (existing entity) form
  * @property bool   $is_admin_field    Only show this field to admins
  * @property bool   $is_editable       Should this field be editable once the value is set
+ * @property bool   $is_search_field   Display search in extended search form
  * @property string $priority          Display priority
  * @property int    $width             Field width on a 6-column grid
  * @property string $field_class       Class to apply to field
