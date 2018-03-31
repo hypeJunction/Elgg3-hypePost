@@ -52,6 +52,10 @@ abstract class Field extends ArrayObject implements FieldInterface {
 			throw new ValidationException(elgg_echo('validation:error:required'));
 		}
 
+		if (empty($value)) {
+			return;
+		}
+
 		if ($this->type === 'email') {
 			$email = new EmailValidator();
 			$email->validate($value);
