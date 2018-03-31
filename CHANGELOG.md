@@ -1,3 +1,13 @@
+<a name="1.2.2"></a>
+## [1.2.2](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.1...1.2.2) (2018-03-31)
+
+
+### Bug Fixes
+
+* **fields:** fix field visibility logic ([25481d1](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/25481d1))
+
+
+
 <a name="1.2.1"></a>
 ## [1.2.1](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.0...1.2.1) (2018-03-31)
 
