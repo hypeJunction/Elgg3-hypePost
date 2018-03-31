@@ -1,3 +1,14 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.1.0...1.2.0) (2018-03-31)
+
+
+### Features
+
+* **fields:** improve dev usability ([9c09a0d](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/9c09a0d))
+* **forms:** add client side form validation ([6ac8a19](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/6ac8a19))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.8...1.1.0) (2018-03-28)
 
