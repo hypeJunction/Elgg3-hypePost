@@ -1,3 +1,13 @@
+<a name="1.2.5"></a>
+## [1.2.5](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.4...1.2.5) (2018-03-31)
+
+
+### Bug Fixes
+
+* **fields:** only validate value if not empty ([d8309aa](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/d8309aa))
+
+
+
 <a name="1.2.4"></a>
 ## [1.2.4](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.3...1.2.4) (2018-03-31)
 
