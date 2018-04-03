@@ -1,3 +1,13 @@
+<a name="1.2.7"></a>
+## [1.2.7](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.6...1.2.7) (2018-04-03)
+
+
+### Bug Fixes
+
+* **css:** reduce form padding on small viewports ([e26110d](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/e26110d))
+
+
+
 <a name="1.2.6"></a>
 ## [1.2.6](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.5...1.2.6) (2018-04-03)
 
