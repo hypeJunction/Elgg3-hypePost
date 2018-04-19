@@ -1,3 +1,13 @@
+<a name="1.2.8"></a>
+## [1.2.8](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.7...1.2.8) (2018-04-19)
+
+
+### Bug Fixes
+
+* **fields:** update field models ([e1a0fe5](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/e1a0fe5))
+
+
+
 <a name="1.2.7"></a>
 ## [1.2.7](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.6...1.2.7) (2018-04-03)
 
