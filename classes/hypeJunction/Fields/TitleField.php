@@ -19,7 +19,9 @@ class TitleField extends Field {
 	 * @return mixed
 	 */
 	public function raw(Request $request, ElggEntity $entity) {
-		return elgg_get_title_input($this->name);
+		if ($request->getParam($this->name) !== null) {
+			return elgg_get_title_input($this->name);
+		}
 	}
 
 }

@@ -17,7 +17,9 @@ elgg_push_entity_breadcrumbs($entity);
 $model = elgg()->{'posts.model'};
 /* @var $model \hypeJunction\Post\Model */
 
-$vars['context'] = \hypeJunction\Fields\Field::CONTEXT_EDIT_FORM;
+if (!isset($vars['context'])) {
+	$vars['context'] = \hypeJunction\Fields\Field::CONTEXT_EDIT_FORM;
+}
 
 $form_vars = $model->getFormVars($entity, $vars);
 

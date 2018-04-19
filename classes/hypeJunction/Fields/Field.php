@@ -26,6 +26,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 		'is_admin_field' => false,
 		'is_editable' => true,
 		'is_search_field' => false,
+		'contexts' => [],
 		'priority' => 500,
 		'width' => 6,
 	];
@@ -93,32 +94,45 @@ abstract class Field extends ArrayObject implements FieldInterface {
 			}
 		}
 
-		if ($context === self::CONTEXT_PROFILE) {
-			if ($this->is_profile_field === false) {
-				return false;
-			}
+		switch ($context) {
+			case self::CONTEXT_PROFILE :
+				if ($this->is_profile_field === false) {
+					return false;
+				}
 
-			$ignored = array_merge(\ElggEntity::$primary_attr_names, [
-				'title',
-				'description',
-				'tags',
-				'timezone',
-				'submit',
-				'_hash',
-			]);
+				$ignored = array_merge(\ElggEntity::$primary_attr_names, [
+					'title',
+					'description',
+					'tags',
+					'timezone',
+					'submit',
+					'_hash',
+				]);
 
-			if (in_array($this->name, $ignored)) {
-				return false;
-			}
+				if (in_array($this->name, $ignored)) {
+					return false;
+				}
+				break;
+
+			case self::CONTEXT_EDIT_FORM :
+				if ($this->is_edit_field === false) {
+					return false;
+				}
+				break;
+
+			case self::CONTEXT_CREATE_FORM :
+				if ($this->is_create_field === false) {
+					return false;
+				}
+				break;
+
+			default :
+				if ($context && $this->contexts !== false) {
+					return in_array($context, $this->contexts);
+				}
+				break;
 		}
 
-		if ($this->is_edit_field === false && $context == self::CONTEXT_EDIT_FORM) {
-			return false;
-		}
-
-		if ($this->is_create_field === false && $context == self::CONTEXT_CREATE_FORM) {
-			return false;
-		}
 
 		return true;
 	}

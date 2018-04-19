@@ -2,12 +2,15 @@
 
 $entity = elgg_extract('entity', $vars);
 $fields = elgg_extract('fields', $vars, []);
+$context = elgg_extract('context', $vars);
 
-$view_fields = function (\hypeJunction\Fields\Collection $fields) use ($entity) {
+$view_fields = function (\hypeJunction\Fields\Collection $fields) use ($entity, $context) {
 	$output = '';
 	foreach ($fields as $field) {
 	    /* @var $field \hypeJunction\Fields\FieldInterface */
-	    $context = $entity->guid ? \hypeJunction\Fields\Field::CONTEXT_EDIT_FORM : \hypeJunction\Fields\Field::CONTEXT_CREATE_FORM;
+	    if (!$context) {
+			$context = $entity->guid ? \hypeJunction\Fields\Field::CONTEXT_EDIT_FORM : \hypeJunction\Fields\Field::CONTEXT_CREATE_FORM;
+		}
 		$output .= $field->render($entity, $context);
 	}
 
@@ -79,8 +82,13 @@ $layout_footer = elgg_format_element('div', [
 	'class' => 'elgg-form-footer',
 ], $layout_footer);
 
+$title = elgg_extract('form_title', $vars);
+if (!$title) {
+	$title = $entity->guid ? elgg_echo('post:edit', [$type]) : elgg_echo('post:add', [$type]);
+}
+
 echo elgg_view_layout('post', [
-	'title' => $entity->guid ? elgg_echo('post:edit', [$type]) : elgg_echo('post:add', [$type]),
+	'title' => $title,
 	'content' => $layout_content,
 	'sidebar' => $sidebar ? : false,
 	'footer' => $layout_footer,

@@ -28,7 +28,9 @@ elgg_push_collection_breadcrumbs($type, $subtype, $container);
 $model = elgg()->{'posts.model'};
 /* @var $model \hypeJunction\Post\Model */
 
-$vars['context'] = \hypeJunction\Fields\Field::CONTEXT_CREATE_FORM;
+if (!isset($vars['context'])) {
+	$vars['context'] = \hypeJunction\Fields\Field::CONTEXT_CREATE_FORM;
+}
 
 $form_vars = $model->getFormVars($entity, $vars);
 

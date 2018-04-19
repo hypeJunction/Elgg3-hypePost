@@ -52,8 +52,10 @@ if (empty($responses) && $responses !== false && elgg()->{'posts.post'}->hasComm
 	$vars['responses'] = elgg_view_comments($entity);
 }
 
-echo elgg_view('post/cover', [
-	'cover' => elgg()->{'posts.post'}->getCover($entity),
-]);
+if (elgg_extract('cover', $vars) !== false) {
+	echo elgg_view('post/cover', [
+		'cover' => elgg()->{'posts.post'}->getCover($entity),
+	]);
+}
 
 echo elgg_view('object/elements/full', $vars);

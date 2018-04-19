@@ -54,9 +54,9 @@ class Model {
 			];
 		}
 
-		$fields = new Collection();
-
 		$options['entity'] = $entity;
+
+		$fields = new Collection();
 
 		$fields = elgg_trigger_plugin_hook('fields', "$entity->type", $options, $fields);
 		if (!$fields instanceof Collection) {
@@ -70,19 +70,23 @@ class Model {
 
 		$fields->add('type', new HiddenField([
 			'type' => 'hidden',
+			'contexts' => false,
 		]));
 
 		$fields->add('subtype', new HiddenField([
 			'type' => 'hidden',
+			'contexts' => false,
 		]));
 
 		$fields->add('guid', new HiddenField([
 			'type' => 'hidden',
+			'contexts' => false,
 		]));
 
 		if (!$fields->has('container_guid')) {
 			$fields->add('container_guid', new HiddenField([
 				'type' => 'hidden',
+				'contexts' => false,
 			]));
 		}
 
@@ -90,6 +94,7 @@ class Model {
 		// the entity were not altered client side
 		$fields->add('_hash', new FormHashField([
 			'type' => 'hidden',
+			'contexts' => false,
 		]));
 
 		if (!$fields->has('cancel')) {
@@ -97,6 +102,7 @@ class Model {
 				'type' => 'post/cancel',
 				'section' => 'actions',
 				'priority' => 400,
+				'contexts' => false,
 			]));
 		}
 
@@ -106,6 +112,7 @@ class Model {
 				'section' => 'actions',
 				'value' => elgg_echo('save'),
 				'priority' => 600,
+				'contexts' => false,
 			]));
 		}
 
@@ -250,7 +257,7 @@ class Model {
 
 		$entity->access_id = $access_id;
 
-		$fields = $this->getFields($entity, $context);
+		$fields = $this->getFields($entity);
 
 		$fields = $fields->filter(function (FieldInterface $field) {
 			if (in_array($field->name, ElggEntity::$primary_attr_names)) {
@@ -303,20 +310,9 @@ class Model {
 			$field->save($entity, $parameters);
 		}
 
+		$entity->save();
+
 		$entity->setVolatileData('add_to_river', $context == Field::CONTEXT_CREATE_FORM);
-
-		try {
-			if (!$entity->save()) {
-				// Save entity attributes
-				return false;
-			}
-		} catch (\Exception $e) {
-			throw new HttpException($e->getMessage());
-		}
-
-		foreach ($fields as $field) {
-			$field->save($entity, $parameters);
-		}
 
 		if (!isset($entity->published_status)) {
 			$entity->published_status = 'published';
