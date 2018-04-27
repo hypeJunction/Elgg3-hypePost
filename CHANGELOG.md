@@ -1,3 +1,13 @@
+<a name="1.2.10"></a>
+## [1.2.10](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.9...1.2.10) (2018-04-27)
+
+
+### Bug Fixes
+
+* **dev:** use service facade ([c4c5426](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/c4c5426))
+
+
+
 <a name="1.2.9"></a>
 ## [1.2.9](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.8...1.2.9) (2018-04-27)
 
