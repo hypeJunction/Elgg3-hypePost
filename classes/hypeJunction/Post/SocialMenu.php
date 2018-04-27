@@ -24,7 +24,7 @@ class SocialMenu {
 		$menu = $hook->getValue();
 		/* @var $menu ElggMenuItem[] */
 
-		$svc = elgg()->{'posts.post'};
+		$svc = \hypeJunction\Post\Post::instance();
 		/* @var $svc \hypeJunction\Post\Post */
 
 		if (!$svc->hasCommentBlock($entity)) {

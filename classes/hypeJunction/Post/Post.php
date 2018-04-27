@@ -2,10 +2,19 @@
 
 namespace hypeJunction\Post;
 
+use Elgg\Di\ServiceFacade;
 use ElggEntity;
-use hypeJunction\Post\CoverWrapper;
 
 class Post {
+
+	use ServiceFacade;
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function name() {
+		return 'posts.post';
+	}
 
 	/**
 	 * Display comment block

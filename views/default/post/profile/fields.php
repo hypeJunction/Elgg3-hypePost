@@ -5,7 +5,7 @@ if (!$entity instanceof \ElggEntity) {
 	return;
 }
 
-$model = elgg()->{'posts.model'};
+$model = \hypeJunction\Post\Model::instance();
 /* @var $model \hypeJunction\Post\Model */
 
 $vars['context'] = \hypeJunction\Fields\Field::CONTEXT_PROFILE;

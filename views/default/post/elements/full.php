@@ -38,7 +38,7 @@ if (empty($body) && $body !== false) {
 
 $attachments = elgg_extract('attachments', $vars, '');
 
-$modules = elgg()->{'posts.post'}->getModules($entity, 'content');
+$modules = \hypeJunction\Post\Post::instance()->getModules($entity, 'content');
 
 $view = '';
 foreach ($modules as $module => $options) {
@@ -48,13 +48,13 @@ foreach ($modules as $module => $options) {
 $vars['attachments'] = $attachments;
 
 $responses = elgg_extract('responses', $vars);
-if (empty($responses) && $responses !== false && elgg()->{'posts.post'}->hasCommentBlock($entity)) {
+if (empty($responses) && $responses !== false && \hypeJunction\Post\Post::instance()->hasCommentBlock($entity)) {
 	$vars['responses'] = elgg_view_comments($entity);
 }
 
 if (elgg_extract('cover', $vars) !== false) {
 	echo elgg_view('post/cover', [
-		'cover' => elgg()->{'posts.post'}->getCover($entity),
+		'cover' => \hypeJunction\Post\Post::instance()->getCover($entity),
 	]);
 }
 

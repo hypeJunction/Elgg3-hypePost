@@ -6,7 +6,7 @@ if (!isset($cover)) {
 	$entity = elgg_extract('entity', $vars);
 	if ($entity) {
 		$fallback = elgg_extract('fallback', $vars, true);
-		$cover = elgg()->{'posts.post'}->getCover($entity, $fallback);
+		$cover = \hypeJunction\Post\Post::instance()->getCover($entity, $fallback);
 	}
 }
 

@@ -5,7 +5,7 @@ if (!$entity instanceof \ElggEntity) {
 	return;
 }
 
-$modules = elgg()->{'posts.post'}->getModules($entity, 'sidebar');
+$modules = \hypeJunction\Post\Post::instance()->getModules($entity, 'sidebar');
 
 $view = '';
 foreach ($modules as $module => $options) {

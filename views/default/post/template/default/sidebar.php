@@ -5,7 +5,7 @@ if (!$entity instanceof \ElggEntity) {
 	return;
 }
 
-$svc = elgg()->{'posts.post'};
+$svc = \hypeJunction\Post\Post::instance();
 /* @var $svc \hypeJunction\Post\Post */
 
 $modules = $svc->getModules($entity, 'sidebar');

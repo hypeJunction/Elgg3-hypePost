@@ -104,7 +104,7 @@ class CoverField extends Field {
 		if (!$entity->guid) {
 			return null;
 		}
-		$svc = elgg()->{'posts.post'};
+		$svc = \hypeJunction\Post\Post::instance();
 		/* @var $svc \hypeJunction\Post\Post */
 
 		$cover = $svc->getCover($entity);

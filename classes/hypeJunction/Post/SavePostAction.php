@@ -35,7 +35,7 @@ class SavePostAction {
 				throw new BadRequestException($msg);
 			}
 
-			$svc = $request->elgg()->{'posts.model'};
+			$svc = $request->\hypeJunction\Post\Model::instance();
 			/* @var $svc \hypeJunction\Post\Model */
 
 			$entity = $svc->save($request);

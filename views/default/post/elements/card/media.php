@@ -7,7 +7,7 @@ if (!$entity instanceof ElggEntity) {
 
 $media = elgg_extract('media', $vars);
 if (empty($media) && $media !== false) {
-	$cover = elgg()->{'posts.post'}->getCover($entity, true);
+	$cover = \hypeJunction\Post\Post::instance()->getCover($entity, true);
 	$media = elgg_view('post/cover', [
 		'cover' => $cover,
 		'ratio' => 50,

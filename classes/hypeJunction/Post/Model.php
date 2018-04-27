@@ -2,6 +2,7 @@
 
 namespace hypeJunction\Post;
 
+use Elgg\Di\ServiceFacade;
 use Elgg\EntityNotFoundException;
 use Elgg\EntityPermissionsException;
 use Elgg\HttpException;
@@ -20,6 +21,8 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 
 class Model {
 
+	use ServiceFacade;
+
 	/**
 	 * @var Post
 	 */
@@ -32,6 +35,13 @@ class Model {
 	 */
 	public function __construct(Post $post_service) {
 		$this->post_service = $post_service;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function name() {
+		return 'posts.model';
 	}
 
 	/**

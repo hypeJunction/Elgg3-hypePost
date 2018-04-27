@@ -22,6 +22,6 @@ class SaveEditHistory {
 			return;
 		}
 
-		elgg()->{'posts.post'}->logHistory($entity);
+		\hypeJunction\Post\Post::instance()->logHistory($entity);
 	}
 }

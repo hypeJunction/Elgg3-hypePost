@@ -14,7 +14,7 @@ if (!$entity->canEdit()) {
 
 elgg_push_entity_breadcrumbs($entity);
 
-$model = elgg()->{'posts.model'};
+$model = \hypeJunction\Post\Model::instance();
 /* @var $model \hypeJunction\Post\Model */
 
 if (!isset($vars['context'])) {

@@ -25,7 +25,7 @@ $entity->container_guid = $container->guid;
 
 elgg_push_collection_breadcrumbs($type, $subtype, $container);
 
-$model = elgg()->{'posts.model'};
+$model = \hypeJunction\Post\Model::instance();
 /* @var $model \hypeJunction\Post\Model */
 
 if (!isset($vars['context'])) {

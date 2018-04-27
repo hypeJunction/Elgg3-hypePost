@@ -5,7 +5,7 @@ if (!$entity instanceof \ElggEntity) {
 	return;
 }
 
-$template = elgg()->{'posts.post'}->getTemplate($entity);
+$template = \hypeJunction\Post\Post::instance()->getTemplate($entity);
 
 if (elgg_view_exists("post/template/$template/content")) {
 	$content = elgg_view("post/template/$template/content", $vars);
@@ -46,5 +46,5 @@ echo elgg_view_layout('post', [
 	'filter_value' => 'default',
 ]);
 
-elgg()->{'posts.post'}->setPageMetatags($entity);
-elgg()->{'posts.post'}->logView($entity);
+\hypeJunction\Post\Post::instance()->setPageMetatags($entity);
+\hypeJunction\Post\Post::instance()->logView($entity);
