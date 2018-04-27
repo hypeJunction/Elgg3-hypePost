@@ -1,3 +1,13 @@
+<a name="1.2.9"></a>
+## [1.2.9](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.8...1.2.9) (2018-04-27)
+
+
+### Bug Fixes
+
+* **css:** fix paddings in card footer ([4be3703](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/4be3703))
+
+
+
 <a name="1.2.8"></a>
 ## [1.2.8](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.7...1.2.8) (2018-04-19)
 
