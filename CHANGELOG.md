@@ -1,3 +1,13 @@
+<a name="1.2.11"></a>
+## [1.2.11](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.10...1.2.11) (2018-04-27)
+
+
+### Bug Fixes
+
+* **syntax:** fix syntax parse error ([4ad9fd3](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/4ad9fd3))
+
+
+
 <a name="1.2.10"></a>
 ## [1.2.10](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.9...1.2.10) (2018-04-27)
 
