@@ -235,24 +235,27 @@
 }
 
 .elgg-listing-card-body {
-	padding: 0 1rem;
+	padding: 0 1rem 1rem;
 	.elgg-listing-summary-content {
 		margin: 0;
+	}
+	.elgg-listing-imprint {
+		padding: 0.25rem;
 	}
 }
 
 .elgg-listing-card-footer {
+	margin-top: -0.5rem;
 	padding: 0.5rem 1rem;
 	border-top: 1px solid $(border-color-soft);
-	margin-top: 1rem;
 	position: relative;
 	&:before {
 		content: "\25B2";
 		color: #fff;
 		position: absolute;
-		top: -1rem;
-		font-size: 1rem;
-		text-shadow: 0 -3px 1px $(border-color-soft);
+		top: -0.75rem;
+		font-size: 0.75rem;
+		text-shadow: 0 -2px 1px $(border-color-soft);
 	}
 }
 
