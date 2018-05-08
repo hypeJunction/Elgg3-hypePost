@@ -63,7 +63,19 @@ class SavePostAction {
 			];
 
 			$name = $entity->getDisplayName() ? : elgg_echo("item:$entity->type:$entity->subtype");
-			$message = $request->elgg()->echo('success:post:save', [$name]);
+
+			$success_keys = [
+				"success:$entity->type:$entity->subtype:save",
+				"success:$entity->type:save",
+				'success:post:save'
+			];
+
+			foreach ($success_keys as $key) {
+				if (elgg_language_key_exists($key)) {
+					$message = $request->elgg()->echo($key, [$name]);
+					break;
+				}
+			}
 
 			return elgg_ok_response($data, $message, $forward_url);
 		} catch (Exception $e) {

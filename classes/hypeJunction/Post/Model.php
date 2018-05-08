@@ -317,6 +317,10 @@ class Model {
 		}
 
 		foreach ($fields as $field) {
+			if (is_null($parameters->get($field->name))) {
+				continue;
+			}
+
 			$field->save($entity, $parameters);
 		}
 
