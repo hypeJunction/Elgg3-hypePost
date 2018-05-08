@@ -1,3 +1,13 @@
+<a name="1.2.12"></a>
+## [1.2.12](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.11...1.2.12) (2018-05-08)
+
+
+### Bug Fixes
+
+* **save:** do not attempt to save null values ([1dff8fe](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/1dff8fe))
+
+
+
 <a name="1.2.11"></a>
 ## [1.2.11](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.10...1.2.11) (2018-04-27)
 
