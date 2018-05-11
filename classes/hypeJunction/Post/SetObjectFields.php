@@ -6,6 +6,7 @@ use Elgg\Hook;
 use hypeJunction\Fields\AccessField;
 use hypeJunction\Fields\Collection;
 use hypeJunction\Fields\CoverField;
+use hypeJunction\Fields\DisableCommentsField;
 use hypeJunction\Fields\IconField;
 use hypeJunction\Fields\MetaField;
 use hypeJunction\Fields\TagsField;
@@ -82,7 +83,7 @@ class SetObjectFields {
 			'is_profile_field' => false,
 		]));
 
-		$fields->add('disable_comments', new MetaField([
+		$fields->add('disable_comments', new DisableCommentsField([
 			'type' => 'select',
 			'section' => 'sidebar',
 			'options_values' => [
