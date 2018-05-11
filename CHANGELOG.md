@@ -1,3 +1,44 @@
+<a name="1.2.13"></a>
+## [1.2.13](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.0...1.2.13) (2018-05-11)
+
+
+### Bug Fixes
+
+* **composer:** add dependencies ([1da3bb4](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/1da3bb4))
+* **composer:** add missing dependencies ([f583930](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/f583930))
+* **css:** fix paddings in card footer ([4be3703](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/4be3703))
+* **css:** reduce form padding on small viewports ([e26110d](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/e26110d))
+* **dev:** use service facade ([c4c5426](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/c4c5426))
+* **field:** add is_search_field flag ([c5e3430](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/c5e3430))
+* **fields:** correctly determine field width class ([ffbf0c6](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/ffbf0c6))
+* **fields:** do not display comments field if disabled for entity type ([be4a513](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/be4a513))
+* **fields:** fix cover getter function ([a3c6dfb](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/a3c6dfb))
+* **fields:** fix field visibility logic ([25481d1](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/25481d1))
+* **fields:** fix icon and cover handling on unsaved entities ([39a58b4](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/39a58b4))
+* **fields:** only validate value if not empty ([d8309aa](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/d8309aa))
+* **fields:** update field models ([e1a0fe5](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/e1a0fe5))
+* **forms:** correctly set field context ([32ec81f](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/32ec81f))
+* **layout:** rearrange layout elements ([a38fea0](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/a38fea0))
+* **layout:** simplify layout module registration ([75a2bf1](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/75a2bf1))
+* **modules:** always prevent default click ([387958a](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/387958a))
+* **output:** concatenate array values ([1928d9b](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/1928d9b))
+* **output:** default to using text view when output view does not exist ([7296f6d](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/7296f6d))
+* **river:** correctly set river item params ([474f658](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/474f658))
+* **river:** defer item creation until all metadata is set ([109aa22](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/109aa22))
+* **save:** do not attempt to save null values ([1dff8fe](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/1dff8fe))
+* **styles:** add module styling ([f3c8d9d](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/f3c8d9d))
+* **syntax:** fix syntax parse error ([4ad9fd3](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/4ad9fd3))
+
+
+### Features
+
+* **fields:** improve dev usability ([9c09a0d](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/9c09a0d))
+* **fields:** transition towards OOP field configuration ([2d235c5](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/2d235c5))
+* **forms:** add client side form validation ([6ac8a19](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/6ac8a19))
+* **forms:** allow forms to be extended by entity type ([bddbe58](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/bddbe58))
+
+
+
 <a name="1.2.12"></a>
 ## [1.2.12](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.11...1.2.12) (2018-05-08)
 
