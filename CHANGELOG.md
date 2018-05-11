@@ -1,3 +1,13 @@
+<a name="1.2.14"></a>
+## [1.2.14](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.13...1.2.14) (2018-05-11)
+
+
+### Bug Fixes
+
+* **styles:** fix form formatting in a lightbox ([6a413d0](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/6a413d0))
+
+
+
 <a name="1.2.13"></a>
 ## [1.2.13](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.0.0...1.2.13) (2018-05-11)
 
