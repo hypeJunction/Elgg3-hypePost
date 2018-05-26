@@ -8,7 +8,7 @@ if (!$entity instanceof \ElggEntity) {
 	throw new \Elgg\BadRequestException();
 }
 
-elgg_register_title_button(null, 'add', $entity->type, $entity->subtype);
+//elgg_register_title_button(null, 'add', $entity->type, $entity->subtype);
 
 elgg_push_entity_breadcrumbs($entity, false);
 
