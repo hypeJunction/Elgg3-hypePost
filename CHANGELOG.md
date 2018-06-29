@@ -1,3 +1,18 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.14...1.3.0) (2018-06-29)
+
+
+### Bug Fixes
+
+* **ui:** do not add title button on post view page ([c67dc6d](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/c67dc6d))
+
+
+### Features
+
+* **core:** updates and fixes ([fd72c16](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/fd72c16))
+
+
+
 <a name="1.2.14"></a>
 ## [1.2.14](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.13...1.2.14) (2018-05-11)
 
