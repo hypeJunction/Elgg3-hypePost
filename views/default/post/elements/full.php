@@ -49,7 +49,7 @@ $vars['attachments'] = $attachments;
 
 $responses = elgg_extract('responses', $vars);
 if (empty($responses) && $responses !== false && \hypeJunction\Post\Post::instance()->hasCommentBlock($entity)) {
-	$vars['responses'] = elgg_view_comments($entity);
+	$vars['responses'] = elgg_view_comments($entity, null, $vars);
 }
 
 if (elgg_extract('cover', $vars) !== false) {

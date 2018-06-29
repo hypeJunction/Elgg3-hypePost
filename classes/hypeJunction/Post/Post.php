@@ -12,7 +12,7 @@ class Post {
 	/**
 	 * {@inheritdoc}
 	 */
-	public function name() {
+	public static function name() {
 		return 'posts.post';
 	}
 

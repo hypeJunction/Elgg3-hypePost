@@ -37,7 +37,7 @@ $layout = elgg_view_layout('default', [
 	'header' => false,
 	'content' => $content,
 	'sidebar' => false,
-	'filter' => 'post/edit',
+	'filter_id' => 'post/edit',
 	'target' => $entity,
 ]);
 

@@ -4,6 +4,7 @@ namespace hypeJunction\Post;
 
 use Elgg\Event;
 use Exception;
+use hypeJunction\Post\Post;
 
 class SaveEditHistory {
 
@@ -22,6 +23,6 @@ class SaveEditHistory {
 			return;
 		}
 
-		\hypeJunction\Post\Post::instance()->logHistory($entity);
+		Post::instance()->logHistory($entity);
 	}
 }

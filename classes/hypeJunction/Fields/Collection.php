@@ -30,8 +30,6 @@ class Collection implements ArrayAccess, SeekableIterator, Countable, Serializab
 	 *
 	 * @param string         $name  Field name
 	 * @param FieldInterface $field Field
-	 *
-	 * @throws \InvalidParameterException
 	 */
 	public function add($name, FieldInterface $field) {
 		if (!$field->name) {
@@ -39,7 +37,7 @@ class Collection implements ArrayAccess, SeekableIterator, Countable, Serializab
 		}
 
 		if (!$field->name) {
-			throw new \InvalidParameterException("Fields must have a name");
+			throw new \InvalidArgumentException("Fields must have a name");
 		}
 
 		$name = $field->name;

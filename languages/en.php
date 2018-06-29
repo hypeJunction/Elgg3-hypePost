@@ -7,12 +7,12 @@ return [
 
 	'field:excerpt' => 'Summary',
 	'field:access_id' => 'Access',
-	'field:description' => 'Post',
+	'field:description' => 'Description',
 	'field:icon' => 'Upload Icon',
 	'field:cover' => 'Upload Cover',
 	'field:cover:file' => 'Upload an image file',
 	'field:cover:url' => 'or link to a cover image online',
-	'field:disable_comments' => 'Comments',
+	'field:disable_comments' => 'Disable comments',
 
 	'field:layout' => 'Layout',
 	'field:page_shell' => 'Page Shell',

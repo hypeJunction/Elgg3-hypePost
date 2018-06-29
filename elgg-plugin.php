@@ -13,16 +13,20 @@ if (file_exists("$plugin_root/vendor/autoload.php")) {
 }
 
 return [
+	'bootstrap' => \hypeJunction\Post\Bootstrap::class,
+
 	'views' => [
 		'default' => [
 			'parsley.js' => $path . '/vendor/bower-asset/parsleyjs/dist/parsley.min.js',
 		]
 	],
+
 	'actions' => [
 		'cover/delete' => [
 			'controller' => \hypeJunction\Post\DeleteCoverAction::class,
 		],
 	],
+
 	'routes' => [
 		'view:post' => [
 			'path' => '/post/view/{guid}',

@@ -26,5 +26,5 @@ echo elgg_view('post/module', [
 	'title' => elgg_echo('post:profile:fields'),
 	'body' => $output,
 	'collapsed' => false,
-	'class' => 'post-profile-fields',
+	'class' => 'post-profile-fields has-list',
 ]);

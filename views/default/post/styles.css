@@ -60,6 +60,7 @@
 .elgg-module-collapse {
 	border: 1px solid $(border-color-soft);
 	padding: 0 !important;
+	overflow: hidden;
 
 	.elgg-action-expand,
 	.elgg-action-collapse {
@@ -344,4 +345,20 @@
 
 #cboxLoadedContent > .elgg-form-post-save .elgg-sidebar {
 	width: 18rem;
+}
+
+.post-template-static_page .elgg-listing-full-body {
+	border: none !important;
+	background: none !important;
+}
+
+.post-template-static_page.elgg-layout-one-column {
+	max-width: $(tablet);
+	margin: 0 auto;
+}
+
+@media $(media-desktop-up) {
+	.post-template-static_page.elgg-layout-one-column .post-cover-image {
+		margin: 1rem -2rem 1rem -2rem;
+	}
 }

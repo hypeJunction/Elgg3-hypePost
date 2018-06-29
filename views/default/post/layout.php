@@ -44,6 +44,8 @@ echo elgg_view_layout('post', [
 	'sidebar' => $sidebar ? : false,
 	'filter_id' => "view:$entity->type:$entity->subtype",
 	'filter_value' => 'default',
+	'entity' => $entity,
+	'class' => "post-template-$template",
 ]);
 
 \hypeJunction\Post\Post::instance()->setPageMetatags($entity);

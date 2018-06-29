@@ -53,7 +53,6 @@ class Model {
 	 * @option string $context Display context
 	 *
 	 * @return Collection
-	 * @throws InvalidParameterException
 	 */
 	public function getFields(ElggEntity $entity, $options = []) {
 
@@ -307,6 +306,16 @@ class Model {
 			throw new HttpException(implode("\r\n", $errors));
 		}
 
+		$hook_params = [
+			'entity' => $entity,
+			'request' => $request,
+			'parameters' => $parameters,
+		];
+
+		if (!elgg_trigger_plugin_hook('post:before', "$entity->type:$entity->subtype", $hook_params, true)) {
+			return false;
+		}
+
 		try {
 			if (!$entity->save()) {
 				// Save entity attributes
@@ -324,9 +333,14 @@ class Model {
 			$field->save($entity, $parameters);
 		}
 
-		$entity->save();
+		if (!$entity->save()) {
+			return false;
+		}
 
-		$entity->setVolatileData('add_to_river', $context == Field::CONTEXT_CREATE_FORM);
+		if ($context == Field::CONTEXT_CREATE_FORM) {
+			$river = new River();
+			$river->add($entity);
+		}
 
 		if (!isset($entity->published_status)) {
 			$entity->published_status = 'published';
@@ -334,6 +348,8 @@ class Model {
 		}
 
 		elgg_clear_sticky_form("edit:$entity->type:$entity->subtype");
+
+		elgg_trigger_plugin_hook('post:after', "$entity->type:$entity->subtype", $hook_params, true);
 
 		return $entity;
 	}

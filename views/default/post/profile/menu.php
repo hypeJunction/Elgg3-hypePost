@@ -23,5 +23,5 @@ echo elgg_view('post/module', [
 	'title' => elgg_echo('post:profile:menu'),
 	'body' => $menu,
 	'collapsed' => false,
-	'class' => 'post-profile-menu',
+	'class' => 'post-profile-menu has-list',
 ]);

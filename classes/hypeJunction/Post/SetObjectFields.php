@@ -30,6 +30,8 @@ class SetObjectFields {
 		$fields = $hook->getValue();
 		/* @var $fields Collection */
 
+		$entity = $hook->getEntityParam();
+
 		$fields->add('title', new TitleField([
 			'type' => 'text',
 			'is_profile_field' => false,
@@ -84,13 +86,13 @@ class SetObjectFields {
 		]));
 
 		$fields->add('disable_comments', new DisableCommentsField([
-			'type' => 'select',
+			'type' => 'checkbox',
 			'section' => 'sidebar',
-			'options_values' => [
-				0 => elgg_echo('enable'),
-				1 => elgg_echo('disable'),
-			],
-			'priority' => 300,
+			'default' => '0',
+			'value' => '1',
+			'checked' => (bool) $entity->disable_comments,
+			'switch' => true,
+			'priority' => 800,
 			'is_profile_field' => false,
 		]));
 
