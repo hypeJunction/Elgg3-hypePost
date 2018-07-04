@@ -55,6 +55,11 @@ define(function (require) {
 		$form.find('[type="submit"]').prop('disabled', false);
 	});
 
+	window.Parsley.on('form:error', function() {
+		var $form = this.$element;
+		$form.find('[type="submit"]').prop('disabled', false);
+	});
+
 	window.Parsley.on('form:validated', function() {
 		spinner.stop();
 	});
