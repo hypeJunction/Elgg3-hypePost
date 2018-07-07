@@ -1,3 +1,18 @@
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.3.0...1.4.0) (2018-07-07)
+
+
+### Bug Fixes
+
+* **js:** allow form to resubmit after validation error ([ea25c59](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/ea25c59))
+
+
+### Features
+
+* **export:** add fields to export data ([3e3b0ec](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/3e3b0ec))
+
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.2.14...1.3.0) (2018-06-29)
 
