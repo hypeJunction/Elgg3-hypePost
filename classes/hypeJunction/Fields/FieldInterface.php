@@ -20,12 +20,13 @@ use Symfony\Component\HttpFoundation\ParameterBag;
  * @property bool   $is_admin_field    Only show this field to admins
  * @property bool   $is_editable       Should this field be editable once the value is set
  * @property bool   $is_search_field   Display search in extended search form
+ * @property bool   $is_export_field   Allow field value to be exported during API calls
  * @preperty array  $contexts          An array of custom contexts to display this form in
- *           						   Set to false to display regardless of context
+ *                                     Set to false to display regardless of context
  * @property string $priority          Display priority
  * @property int    $width             Field width on a 6-column grid
  * @property string $field_class       Class to apply to field
- *                                    Using 'class' will apply it to the input element
+ *                                     Using 'class' will apply it to the input element
  *
  * @property string $required          Is this field required
  * @property int    $max               Maximum value
@@ -85,6 +86,15 @@ interface FieldInterface extends Serializable, JsonSerializable {
 	 * @return mixed
 	 */
 	public function retrieve(ElggEntity $entity);
+
+	/**
+	 * Prepare exportable field value
+	 *
+	 * @param ElggEntity $entity Entity
+	 *
+	 * @return mixed
+	 */
+	public function export(ElggEntity $entity);
 
 	/**
 	 * Get field label

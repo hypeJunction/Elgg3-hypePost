@@ -8,7 +8,7 @@ use hypeJunction\Scraper\WebResource;
 /**
  * Composite cover object
  */
-class CoverWrapper {
+class CoverWrapper implements \JsonSerializable {
 
 	/**
 	 * @var ElggIcon
@@ -81,5 +81,12 @@ class CoverWrapper {
 		}
 
 		return $this->fallback;
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function jsonSerialize() {
+		return $this->params;
 	}
 }

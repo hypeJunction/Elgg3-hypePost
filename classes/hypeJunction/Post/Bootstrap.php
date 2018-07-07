@@ -42,6 +42,8 @@ class Bootstrap extends PluginBootstrap {
 
 		elgg_register_plugin_hook_handler('register', 'menu:social', SocialMenu::class);
 		elgg_register_plugin_hook_handler('register', 'menu:entity', EntityMenu::class);
+
+		elgg_register_plugin_hook_handler('adapter:entity', 'all', PopulateExportData::class);
 	}
 
 	/**

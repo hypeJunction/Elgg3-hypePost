@@ -16,6 +16,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 	const CONTEXT_PROFILE = 'profile';
 	const CONTEXT_EDIT_FORM = 'edit_form';
 	const CONTEXT_CREATE_FORM = 'create_form';
+	const CONTEXT_EXPORT = 'export';
 
 	var $defaults = [
 		'type' => 'text',
@@ -26,6 +27,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 		'is_admin_field' => false,
 		'is_editable' => true,
 		'is_search_field' => false,
+		'is_export_field' => false,
 		'contexts' => [],
 		'priority' => 500,
 		'width' => 6,
@@ -125,6 +127,12 @@ abstract class Field extends ArrayObject implements FieldInterface {
 					return false;
 				}
 				break;
+
+			case self::CONTEXT_EXPORT :
+				if ($this->is_export_field === true || $this->is_profile_field === true) {
+					return true;
+				}
+				return false;
 
 			default :
 				if ($context && $this->contexts !== false) {
@@ -314,6 +322,13 @@ abstract class Field extends ArrayObject implements FieldInterface {
 		}
 
 		return elgg_view("post/output/field", $this->normalize($entity));
+	}
+
+	/**
+	 * {@inheritdoc}
+	 */
+	public function export(ElggEntity $entity) {
+		return $this->retrieve($entity);
 	}
 
 	/**

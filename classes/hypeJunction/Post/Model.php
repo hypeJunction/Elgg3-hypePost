@@ -52,7 +52,7 @@ class Model {
 	 *
 	 * @option string $context Display context
 	 *
-	 * @return Collection
+	 * @return Collection|FieldInterface[]
 	 */
 	public function getFields(ElggEntity $entity, $options = []) {
 
@@ -80,22 +80,26 @@ class Model {
 		$fields->add('type', new HiddenField([
 			'type' => 'hidden',
 			'contexts' => false,
+			'is_profile_field' => false,
 		]));
 
 		$fields->add('subtype', new HiddenField([
 			'type' => 'hidden',
 			'contexts' => false,
+			'is_profile_field' => false,
 		]));
 
 		$fields->add('guid', new HiddenField([
 			'type' => 'hidden',
 			'contexts' => false,
+			'is_profile_field' => false,
 		]));
 
 		if (!$fields->has('container_guid')) {
 			$fields->add('container_guid', new HiddenField([
 				'type' => 'hidden',
 				'contexts' => false,
+				'is_profile_field' => false,
 			]));
 		}
 
@@ -104,6 +108,7 @@ class Model {
 		$fields->add('_hash', new FormHashField([
 			'type' => 'hidden',
 			'contexts' => false,
+			'is_profile_field' => false,
 		]));
 
 		if (!$fields->has('cancel')) {
@@ -112,6 +117,7 @@ class Model {
 				'section' => 'actions',
 				'priority' => 400,
 				'contexts' => false,
+				'is_profile_field' => false,
 			]));
 		}
 
@@ -122,6 +128,7 @@ class Model {
 				'value' => elgg_echo('save'),
 				'priority' => 600,
 				'contexts' => false,
+				'is_profile_field' => false,
 			]));
 		}
 

@@ -7,6 +7,7 @@ use hypeJunction\Fields\AccessField;
 use hypeJunction\Fields\Collection;
 use hypeJunction\Fields\CoverField;
 use hypeJunction\Fields\DisableCommentsField;
+use hypeJunction\Fields\HtmlField;
 use hypeJunction\Fields\IconField;
 use hypeJunction\Fields\MetaField;
 use hypeJunction\Fields\TagsField;
@@ -37,9 +38,10 @@ class SetObjectFields {
 			'is_profile_field' => false,
 			'priority' => 10,
 			'required' => true,
+			'is_export_field' => true,
 		]));
 
-		$fields->add('description', new MetaField([
+		$fields->add('description', new HtmlField([
 			'type' => 'longtext',
 			'rows' => 3,
 			'section' => 'content',
@@ -48,6 +50,7 @@ class SetObjectFields {
 			'data-parsley-required' => true,
 			'data-parsley-trigger' => 'null',
 			'priority' => 20,
+			'is_export_field' => true,
 		]));
 
 		$fields->add('excerpt', new MetaField([
@@ -55,6 +58,7 @@ class SetObjectFields {
 			'maxlength' => 200,
 			'is_profile_field' => false,
 			'priority' => 30,
+			'is_export_field' => true,
 		]));
 
 		$fields->add('icon', new IconField([
@@ -69,6 +73,7 @@ class SetObjectFields {
 			'section' => 'sidebar',
 			'priority' => 400,
 			'is_profile_field' => false,
+			'is_export_field' => true,
 		]));
 
 		$fields->add('tags', new TagsField([
@@ -94,6 +99,7 @@ class SetObjectFields {
 			'switch' => true,
 			'priority' => 800,
 			'is_profile_field' => false,
+			'is_export_field' => true,
 		]));
 
 		return $fields;
