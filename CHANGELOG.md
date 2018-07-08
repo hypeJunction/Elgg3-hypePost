@@ -1,3 +1,13 @@
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.4.0...1.4.1) (2018-07-08)
+
+
+### Bug Fixes
+
+* **fields:** use correct markup for checkboxes ([bbbc63d](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/bbbc63d))
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.3.0...1.4.0) (2018-07-07)
 
