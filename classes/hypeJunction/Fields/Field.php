@@ -255,7 +255,11 @@ abstract class Field extends ArrayObject implements FieldInterface {
 		}
 		if (!isset($props['#label'])) {
 			$props['#label'] = $this->label($entity);
+		} else if ($props['#label'] === false) {
+			// checkbox hook does weird stuff
+			unset($props['#label']);
 		}
+
 		if (!isset($props['#help'])) {
 			$props['#help'] = $this->help($entity);
 		}
