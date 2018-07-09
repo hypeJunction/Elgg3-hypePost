@@ -1,3 +1,13 @@
+<a name="1.4.2"></a>
+## [1.4.2](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.4.1...1.4.2) (2018-07-09)
+
+
+### Bug Fixes
+
+* **model:** improve logging on failures ([72fa26d](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/72fa26d))
+
+
+
 <a name="1.4.1"></a>
 ## [1.4.1](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.4.0...1.4.1) (2018-07-08)
 
