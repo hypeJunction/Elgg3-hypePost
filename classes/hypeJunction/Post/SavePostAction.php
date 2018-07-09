@@ -6,6 +6,7 @@ use Elgg\BadRequestException;
 use Elgg\Http\ResponseBuilder;
 use Elgg\Request;
 use Exception;
+use Psr\Log\LogLevel;
 
 class SavePostAction {
 
@@ -79,6 +80,8 @@ class SavePostAction {
 
 			return elgg_ok_response($data, $message, $forward_url);
 		} catch (Exception $e) {
+			elgg_log($e, LogLevel::ERROR);
+
 			return elgg_error_response(
 				$e->getMessage(),
 				REFERER,

@@ -7,6 +7,7 @@ use Elgg\EntityNotFoundException;
 use Elgg\EntityPermissionsException;
 use Elgg\HttpException;
 use Elgg\Request;
+use Elgg\Validation\ValidationResult;
 use ElggEntity;
 use ElggObject;
 use hypeJunction\Fields\Collection;
@@ -265,7 +266,7 @@ class Model {
 		$access_id = $request->getParam('access_id');
 		if (!isset($access_id)) {
 			if ($container instanceof \ElggGroup) {
-				$access_id = $container->group_acl;
+				$access_id = $container->getOwnedAccessCollection('group_acl')->getId();
 			} else {
 				$access_id = get_default_access($user);
 			}
@@ -301,7 +302,7 @@ class Model {
 			try {
 				$field->validate($value);
 			} catch (ValidationException $ex) {
-				$errors[$field->name] = elgg_echo('validation:error', [$label, $ex->getMessage()]);
+				$request->validation()->fail($field->name, $value, elgg_echo('validation:error', [$label, $ex->getMessage()]));
 				continue;
 			}
 
@@ -309,7 +310,11 @@ class Model {
 			$parameters->set($field->name, $value);
 		}
 
-		if ($errors) {
+		if ($failures = $request->validation()->getFailures()) {
+			$errors = array_map(function(ValidationResult $result) {
+				return $result->getMessage();
+			}, $failures);
+
 			throw new HttpException(implode("\r\n", $errors));
 		}
 
