@@ -1,3 +1,13 @@
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.4.2...1.5.0) (2018-07-20)
+
+
+### Features
+
+* **forms:** add address field ([c1733d1](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/c1733d1))
+
+
+
 <a name="1.4.2"></a>
 ## [1.4.2](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.4.1...1.4.2) (2018-07-09)
 
