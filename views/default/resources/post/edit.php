@@ -39,6 +39,7 @@ $layout = elgg_view_layout('default', [
 	'sidebar' => false,
 	'filter_id' => 'post/edit',
 	'target' => $entity,
+	'class' => 'elgg-layout-post-wrapper',
 ]);
 
 echo elgg_view_page($entity->getDisplayName(), $layout);
