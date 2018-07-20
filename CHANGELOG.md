@@ -1,3 +1,13 @@
+<a name="1.5.1"></a>
+## [1.5.1](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.5.0...1.5.1) (2018-07-20)
+
+
+### Bug Fixes
+
+* **layout:** add layout classes to make targeted styling possible ([7e713e2](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/7e713e2))
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.4.2...1.5.0) (2018-07-20)
 
