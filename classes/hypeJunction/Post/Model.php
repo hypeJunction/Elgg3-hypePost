@@ -135,6 +135,13 @@ class Model {
 
 		$context = elgg_extract('context', $options);
 
+		$fields->add('_context', new HiddenField([
+			'type' => 'hidden',
+			'contexts' => false,
+			'is_profile_field' => false,
+			'value' => $context,
+		]));
+
 		$fields = $fields->filter(function (FieldInterface $field) use ($entity, $context) {
 			return $field->isVisible($entity, $context);
 		});
@@ -322,6 +329,7 @@ class Model {
 			'entity' => $entity,
 			'request' => $request,
 			'parameters' => $parameters,
+			'context' => $request->getParam('_context'),
 		];
 
 		if (!elgg_trigger_plugin_hook('post:before', "$entity->type:$entity->subtype", $hook_params, true)) {
