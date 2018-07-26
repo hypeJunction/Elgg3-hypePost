@@ -18,6 +18,7 @@ use hypeJunction\Fields\FormHashField;
 use hypeJunction\Fields\HiddenField;
 use hypeJunction\ValidationException;
 use InvalidParameterException;
+use Psr\Log\LogLevel;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 class Model {
@@ -342,7 +343,9 @@ class Model {
 				return false;
 			}
 		} catch (\Exception $e) {
-			throw new HttpException($e->getMessage());
+			elgg_log($e, LogLevel::ERROR);
+
+			throw new HttpException($e->getMessage(), ELGG_HTTP_BAD_REQUEST);
 		}
 
 		foreach ($fields as $field) {
