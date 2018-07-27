@@ -68,7 +68,6 @@ foreach ($actions as $action) {
 	];
 
 	elgg_register_menu_item('form:actions', $menu_item);
-	elgg_register_menu_item('title', $menu_item);
 }
 
 $type = elgg_echo("item:$entity->type:$entity->subtype");
