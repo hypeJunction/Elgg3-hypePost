@@ -1,3 +1,13 @@
+<a name="1.5.4"></a>
+## [1.5.4](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.5.3...1.5.4) (2018-07-27)
+
+
+### Bug Fixes
+
+* **menus:** leave title menu alone ([84f69ea](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/84f69ea))
+
+
+
 <a name="1.5.3"></a>
 ## [1.5.3](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.5.2...1.5.3) (2018-07-27)
 
