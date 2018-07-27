@@ -1,3 +1,14 @@
+<a name="1.5.3"></a>
+## [1.5.3](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.5.2...1.5.3) (2018-07-27)
+
+
+### Bug Fixes
+
+* **actions:** improve loggin on failed save ([5451794](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/5451794))
+* **ui:** allow removing duplicate title menu ([e53e56c](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/e53e56c))
+
+
+
 <a name="1.5.2"></a>
 ## [1.5.2](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.5.1...1.5.2) (2018-07-25)
 
