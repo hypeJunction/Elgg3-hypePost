@@ -51,7 +51,7 @@ if ($sidebar && $sidebar_alt) {
 	$class[] = 'elgg-layout-one-column';
 }
 
-$header = elgg_view('page/layouts/elements/header', $vars);
+$header = elgg_view('page/layouts/post/header', $vars);
 $filter = elgg_view('page/layouts/elements/filter', $vars);
 $content = elgg_view('page/layouts/elements/content', $vars);
 $footer = elgg_view('page/layouts/elements/footer', $vars);

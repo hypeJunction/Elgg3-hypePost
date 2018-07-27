@@ -87,14 +87,14 @@ if (!$title) {
 	$title = $entity->guid ? elgg_echo('post:edit', [$type]) : elgg_echo('post:add', [$type]);
 }
 
-echo elgg_view_layout('post', [
+echo elgg_view_layout('post', array_merge($vars, [
 	'title' => $title,
 	'content' => $layout_content,
 	'sidebar' => $sidebar ? : false,
 	'footer' => $layout_footer,
 	'filter_id' => "edit:$entity->type:$entity->subtype",
 	'filter_value' => 'default',
-]);
+]));
 
 ?>
 <script>
