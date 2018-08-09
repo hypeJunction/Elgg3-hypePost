@@ -18,7 +18,7 @@ class CoverField extends Field {
 		$cover = $request->getParam($this->name, []);
 
 		return [
-			'file' => elgg_extract('file', $files),
+			'file' => array_shift($files),
 			'url' => elgg_extract('url', $cover),
 		];
 	}
