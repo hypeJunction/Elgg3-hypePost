@@ -1,3 +1,13 @@
+<a name="1.5.5"></a>
+## [1.5.5](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.5.4...1.5.5) (2018-08-09)
+
+
+### Bug Fixes
+
+* **cover:** correctly extract cover file upload ([6bed304](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/6bed304))
+
+
+
 <a name="1.5.4"></a>
 ## [1.5.4](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.5.3...1.5.4) (2018-07-27)
 
