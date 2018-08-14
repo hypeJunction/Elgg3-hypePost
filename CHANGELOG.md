@@ -1,3 +1,13 @@
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.5.5...1.6.0) (2018-08-14)
+
+
+### Features
+
+* **input:** add range input type ([2ff12f7](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/2ff12f7))
+
+
+
 <a name="1.5.5"></a>
 ## [1.5.5](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.5.4...1.5.5) (2018-08-09)
 
