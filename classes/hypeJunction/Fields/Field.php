@@ -269,6 +269,9 @@ abstract class Field extends ArrayObject implements FieldInterface {
 		if (!isset($props['value'])) {
 			$props['value'] = $this->retrieve($entity);
 		}
+		if (isset($props['input_name'])) {
+			$props['name'] = $props['input_name'];
+		}
 
 		$class = elgg_extract_class($props, ['elgg-col'], 'field_class');
 		$props['#class'] = elgg_extract_class($props, $class, '#class');

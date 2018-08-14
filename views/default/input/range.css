@@ -1,0 +1,95 @@
+.ui-slider {
+	height: 8px;
+	border: 1px solid $(border-color-soft);
+	border-radius: 4px;
+	position: relative;
+	margin-bottom: 24px;
+}
+
+.ui-slider-handle {
+	width: 16px;
+	height: 16px;
+	display: block;
+	background: $(background-color-highlight);
+	margin-top: -5px;
+	border-radius: 50%;
+	position: absolute;
+	margin-left: -8px;
+	outline: none;
+	content: "";
+}
+
+.ui-slider .ui-slider-range {
+	position: absolute;
+	z-index: 1;
+	font-size: .7em;
+	display: block;
+	border: 0;
+	background-position: 0 0;
+	background: $(background-color-highlight);
+}
+
+.ui-slider-horizontal .ui-slider-range {
+	top: 0;
+	height: 100%;
+}
+
+.elgg-input-range__js-container {
+	position: relative;
+	margin: 1rem 0.5rem 0.5rem;
+}
+
+.ui-slider-handle span {
+	position: absolute;
+	top: -1rem;
+	z-index: 2;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: center;
+	left: 50%;
+	margin-left: -10px;
+	color: $(text-color-highlight);
+}
+
+.elgg-input-range__slider-axis {
+	width: calc(100% + 24px);
+	position: absolute;
+	font-size: 11px;
+	color: $(text-color-soft);
+	font-weight: 600;
+	top: 12px;
+	left: -12px;
+	height: 12px;
+	display: block;
+}
+
+.elgg-input-range__slider-axis > span {
+	position: absolute;
+	width: 24px;
+	text-align: center;
+	display: block;
+	margin-left: -12px;
+	right: auto;
+}
+
+.elgg-input-range__slider-axis > span:nth-child(1) {
+	left: 0;
+	margin-left: 0;
+}
+
+.elgg-input-range__slider-axis > span:nth-child(2) {
+	left: 25%;
+}
+
+.elgg-input-range__slider-axis > span:nth-child(3) {
+	left: 50%;
+}
+
+.elgg-input-range__slider-axis > span:nth-child(4) {
+	left: 75%;
+}
+
+.elgg-input-range__slider-axis > span:nth-child(5) {
+	left: 100%;
+	margin-left: -24px;
+}

@@ -31,6 +31,7 @@ class Bootstrap extends PluginBootstrap {
 	public function init() {
 		elgg_extend_view('elgg.css', 'post/styles.css');
 		elgg_extend_view('elements/forms.css', 'forms/validation.css');
+		elgg_extend_view('elements/forms.css', 'input/range.css');
 
 		elgg_register_action('post/save', \hypeJunction\Post\SavePostAction::class);
 
