@@ -1,3 +1,13 @@
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.6.0...1.7.0) (2018-08-21)
+
+
+### Bug Fixes
+
+* **forms:** use deferreds for form validation ([2ad2fff](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/2ad2fff))
+
+
+
 <a name="1.6.0"></a>
 # [1.6.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.5.5...1.6.0) (2018-08-14)
 
