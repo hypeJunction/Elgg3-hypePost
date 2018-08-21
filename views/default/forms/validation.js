@@ -47,7 +47,6 @@ define(function (require) {
 	window.Parsley.on('form:validate', function() {
 		var $form = this.$element;
 		$form.find('[type="submit"]').prop('disabled', true);
-		spinner.start();
 	});
 
 	window.Parsley.on('form:success', function() {
@@ -61,7 +60,7 @@ define(function (require) {
 	});
 
 	window.Parsley.on('form:validated', function() {
-		spinner.stop();
+
 	});
 
 	window.Parsley.on('field:init', function () {

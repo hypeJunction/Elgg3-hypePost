@@ -18,6 +18,11 @@
 
     <requires>
         <type>plugin</type>
+        <name>hypeAjax</name>
+    </requires>
+
+    <requires>
+        <type>plugin</type>
         <name>hypeTime</name>
     </requires>
 

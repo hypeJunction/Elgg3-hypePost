@@ -37,6 +37,7 @@ $form_vars = $model->getFormVars($entity, $vars);
 $content = elgg_view_form('post/save', [
 	'enctype' => 'multipart/form-data',
 	'class' => 'post-form',
+	'novalidate' => true,
 ], $form_vars);
 
 if (elgg_is_xhr()) {

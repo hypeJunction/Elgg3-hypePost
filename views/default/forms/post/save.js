@@ -4,38 +4,27 @@ define(function(require) {
 	var Ajax = require('elgg/Ajax');
 	var $ = require('jquery');
 	var lightbox = require('elgg/lightbox');
-	var spinner = require('elgg/spinner');
+	var Form = require('ajax/Form');
+
 	require('forms/validation');
 
-	$('.elgg-form-post-save').parsley();
+	var $el = $('.elgg-form-post-save');
+	var form = new Form($el);
 
-	$(document).on('submit', '.elgg-form-post-save', function(e) {
+	form.onSubmit(function (resolve, reject) {
+		$el.parsley()
+			.on('form:success', resolve)
+			.on('form:error', reject)
+			.validate();
+	});
 
-		e.preventDefault();
-
-		var $form = $(this);
-
-		var ajax = new Ajax();
-
-		ajax.action($form.attr('action'), {
-			data: ajax.objectify($form),
-			beforeSend: function() {
-				$form.find('[type="submit"]').prop('disabled', true);
-			}
-		}).done(function(data, statusText, xhr) {
-			if (xhr.AjaxData.status === -1) {
-				$form.find('[type="submit"]').prop('disabled', false);
-				return;
-			}
-
-			if ($form.closest('#colorbox').length) {
-				lightbox.close();
-				$('.elgg-list').trigger('refresh');
-			} else {
-				ajax.forward(data.forward_url || data.entity.url || elgg.normalize_url(''));
-			}
-		}).fail(function() {
-			$form.find('[type="submit"]').prop('disabled', false);
-		});
+	form.onSuccess(function(data, statusText, xhr) {
+		if ($el.closest('#colorbox').length) {
+			lightbox.close();
+			$('.elgg-list').trigger('refresh');
+		} else {
+			$('body').trigger('click'); // hide all popups and lightboxes
+			this.ajax.forward(xhr.AjaxData.forward_url || data.forward_url || elgg.normalize_url(''));
+		}
 	});
 });
