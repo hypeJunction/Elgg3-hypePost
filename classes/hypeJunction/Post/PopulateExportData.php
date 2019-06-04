@@ -18,6 +18,10 @@ class PopulateExportData {
 		$value = $hook->getValue();
 		$entity = $hook->getEntityParam();
 
+		if (!$entity) {
+			return;
+		}
+
 		$fields = Model::instance()->getFields($entity, Field::CONTEXT_EXPORT);
 
 		foreach ($fields as $field) {
