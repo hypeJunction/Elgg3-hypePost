@@ -1,3 +1,13 @@
+<a name="1.7.1"></a>
+## [1.7.1](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.7.0...1.7.1) (2019-06-04)
+
+
+### Bug Fixes
+
+* **hooks:** make sure there is an entity when exporting ([6362bf9](https://github.com/hypeJunctionPro/Elgg3-hypePost/commit/6362bf9))
+
+
+
 <a name="1.7.0"></a>
 # [1.7.0](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.6.0...1.7.0) (2018-08-21)
 
