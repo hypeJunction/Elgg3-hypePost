@@ -1,3 +1,18 @@
+<a name="1.8.0"></a>
+# [1.8.0](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.7.1...1.8.0) (2019-06-14)
+
+
+### Bug Fixes
+
+* **config:** update repo url ([63911ae](https://github.com/hypeJunction/Elgg3-hypePost/commit/63911ae))
+
+
+### Features
+
+* **fields:** add BooleanField to handle checkbox weirdness ([2685762](https://github.com/hypeJunction/Elgg3-hypePost/commit/2685762))
+
+
+
 <a name="1.7.1"></a>
 ## [1.7.1](https://github.com/hypeJunctionPro/Elgg3-hypePost/compare/1.7.0...1.7.1) (2019-06-04)
 
