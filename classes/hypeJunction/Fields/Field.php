@@ -263,8 +263,8 @@ abstract class Field extends ArrayObject implements FieldInterface {
 		if (!isset($props['#help'])) {
 			$props['#help'] = $this->help($entity);
 		}
-		if (!isset($props['#placeholder'])) {
-			$props['#placeholder'] = $this->placeholder($entity);
+		if (!isset($props['placeholder'])) {
+			$props['placeholder'] = $this->placeholder($entity);
 		}
 		if (!isset($props['value'])) {
 			$props['value'] = $this->retrieve($entity);
