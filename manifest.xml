@@ -4,7 +4,7 @@
     <name>hypePost</name>
     <id>hypePost</id>
     <description>Utility plugin for quick prototyping of content posts</description>
-   <version type="dist">1.8.2</version>
+   <version type="dist">1.8.3</version>
 
     <author>Ismayil Khayredinov (info@hypejunction.com)</author>
     <website>http://hypeJunction.com</website>

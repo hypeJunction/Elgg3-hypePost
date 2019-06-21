@@ -1,3 +1,13 @@
+<a name="1.8.3"></a>
+## [1.8.3](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.8.2...1.8.3) (2019-06-21)
+
+
+### Bug Fixes
+
+* **output:** correctly normalize checkbox field output ([3dc2ef1](https://github.com/hypeJunction/Elgg3-hypePost/commit/3dc2ef1))
+
+
+
 <a name="1.8.2"></a>
 ## [1.8.2](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.8.1...1.8.2) (2019-06-21)
 
