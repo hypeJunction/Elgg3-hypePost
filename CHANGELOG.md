@@ -1,3 +1,13 @@
+<a name="1.8.4"></a>
+## [1.8.4](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.8.3...1.8.4) (2019-06-21)
+
+
+### Bug Fixes
+
+* **validation:** report errors to the user ([0a99927](https://github.com/hypeJunction/Elgg3-hypePost/commit/0a99927))
+
+
+
 <a name="1.8.3"></a>
 ## [1.8.3](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.8.2...1.8.3) (2019-06-21)
 
