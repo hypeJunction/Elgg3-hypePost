@@ -320,7 +320,7 @@ class Model {
 
 		if ($failures = $request->validation()->getFailures()) {
 			$errors = array_map(function(ValidationResult $result) {
-				return $result->getMessage();
+				return $result->getError() || $result->getMessage();
 			}, $failures);
 
 			throw new HttpException(implode("\r\n", $errors));
