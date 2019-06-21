@@ -1,3 +1,13 @@
+<a name="1.8.5"></a>
+## [1.8.5](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.8.4...1.8.5) (2019-06-21)
+
+
+### Bug Fixes
+
+* **output:** properly normalize radio values ([04f23d7](https://github.com/hypeJunction/Elgg3-hypePost/commit/04f23d7))
+
+
+
 <a name="1.8.4"></a>
 ## [1.8.4](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.8.3...1.8.4) (2019-06-21)
 
