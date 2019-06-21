@@ -20,7 +20,7 @@ $prepare_value = function ($value, $params) {
 			return array_search($value, $params['options']);
 
 		case 'checkbox' :
-			return (bool) $value ? elgg_echo('option:yes') : elgg_echo('option:no');
+			return (bool) $params['checked'] ? elgg_echo('option:yes') : elgg_echo('option:no');
 	}
 
 	return $value;
