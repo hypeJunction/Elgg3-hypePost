@@ -1,3 +1,13 @@
+<a name="1.8.2"></a>
+## [1.8.2](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.8.1...1.8.2) (2019-06-21)
+
+
+### Bug Fixes
+
+* **output:** normalize values before output ([14df053](https://github.com/hypeJunction/Elgg3-hypePost/commit/14df053))
+
+
+
 <a name="1.8.1"></a>
 ## [1.8.1](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.8.0...1.8.1) (2019-06-21)
 
