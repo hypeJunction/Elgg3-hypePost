@@ -1,3 +1,13 @@
+<a name="1.8.1"></a>
+## [1.8.1](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.8.0...1.8.1) (2019-06-21)
+
+
+### Bug Fixes
+
+* **fields:** use correct placeholder attribute name ([1c354fe](https://github.com/hypeJunction/Elgg3-hypePost/commit/1c354fe))
+
+
+
 <a name="1.8.0"></a>
 # [1.8.0](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.7.1...1.8.0) (2019-06-14)
 
