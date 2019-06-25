@@ -1,3 +1,13 @@
+<a name="1.9.0"></a>
+# [1.9.0](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.8.5...1.9.0) (2019-06-25)
+
+
+### Features
+
+* **post:** make profile modules configurable ([3afea2d](https://github.com/hypeJunction/Elgg3-hypePost/commit/3afea2d))
+
+
+
 <a name="1.8.5"></a>
 ## [1.8.5](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.8.4...1.8.5) (2019-06-21)
 
