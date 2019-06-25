@@ -1,3 +1,13 @@
+<a name="1.9.2"></a>
+## [1.9.2](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.9.1...1.9.2) (2019-06-25)
+
+
+### Bug Fixes
+
+* **modules:** use correct labels ([2d102b0](https://github.com/hypeJunction/Elgg3-hypePost/commit/2d102b0))
+
+
+
 <a name="1.9.1"></a>
 ## [1.9.1](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.9.0...1.9.1) (2019-06-25)
 
