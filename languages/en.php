@@ -13,6 +13,8 @@ return [
 	'field:cover:file' => 'Upload an image file',
 	'field:cover:url' => 'or link to a cover image online',
 	'field:disable_comments' => 'Disable comments',
+	'field:modules' => 'Profile Modules',
+	'filed:modules:help' => 'Select modules that should be displayed on profile',
 
 	'field:layout' => 'Layout',
 	'field:page_shell' => 'Page Shell',

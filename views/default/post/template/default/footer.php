@@ -5,11 +5,16 @@ if (!$entity instanceof \ElggEntity) {
 	return;
 }
 
-$modules = \hypeJunction\Post\Post::instance()->getModules($entity, 'footer');
+$modules = \hypeJunction\Post\Post::instance()->getActiveModules($entity, 'footer');
 
 $view = '';
 foreach ($modules as $module => $options) {
-	$view .= elgg_view("post/module/$module", $vars);
+	if ($options['view']) {
+		$view .= elgg_view($options['view'], $vars);
+	} else {
+		$view .= elgg_view("post/module/$module", $vars);
+	}
+
 }
 
 if (!$view) {

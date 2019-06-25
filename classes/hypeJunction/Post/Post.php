@@ -255,8 +255,8 @@ class Post {
 	 * ]
 	 * </code>
 	 *
-	 * @param ElggEntity $entity Entity
-	 * @param string $position Position
+	 * @param ElggEntity $entity   Entity
+	 * @param string     $position Position
 	 *
 	 * @return string[]
 	 */
@@ -269,7 +269,7 @@ class Post {
 		$modules = elgg_trigger_plugin_hook('modules', "$entity->type", $params, []);
 		$modules = elgg_trigger_plugin_hook('modules', "$entity->type:$entity->subtype", $params, $modules);
 
-		$modules = array_filter($modules, function($e) use ($position) {
+		$modules = array_filter($modules, function ($e) use ($position) {
 			if (isset($position) && elgg_extract('position', $e) !== $position) {
 				return false;
 			}
@@ -292,6 +292,51 @@ class Post {
 		});
 
 		return $modules;
+	}
+
+	/**
+	 * Check if entity uses the module
+	 *
+	 * @param ElggEntity $entity Entity
+	 * @param string     $name   Module name
+	 *
+	 * @return bool
+	 */
+	public function usesModule(ElggEntity $entity, $name) {
+		$modules = $this->getModules($entity);
+
+		$module = $modules[$name];
+
+		if (!$module || !is_array($module)) {
+			return false;
+		}
+
+		if (isset($entity->{"uses_module:$name"}) && !$entity->{"uses_module:$name"}) {
+			return false;
+		}
+
+		return true;
+	}
+
+	/**
+	 * Get active profile modules
+	 *
+	 * @param ElggEntity $entity   Entity
+	 * @param null       $position Position
+	 *
+	 * @return array
+	 */
+	public function getActiveModules(ElggEntity $entity, $position = null) {
+		$modules = $this->getModules($entity, $position);
+		$active_modules = [];
+
+		foreach ($modules as $name => $module) {
+			if ($this->usesModule($entity, $name)) {
+				$active_modules[$name] = $module;
+			}
+		}
+
+		return $active_modules;
 	}
 
 	/**

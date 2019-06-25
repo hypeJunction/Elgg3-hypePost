@@ -5,22 +5,19 @@ if (!$entity instanceof \ElggEntity) {
 	return;
 }
 
-$svc = \hypeJunction\Post\Post::instance();
-/* @var $svc \hypeJunction\Post\Post */
-
-$modules = $svc->getModules($entity, 'sidebar');
+$modules = \hypeJunction\Post\Post::instance()->getActiveModules($entity, 'sidebar');
 
 foreach ($modules as $module => $options) {
-	if ($options['position'] !== 'sidebar') {
-		continue;
+	if ($options['view']) {
+		$output .= elgg_view($options['view'], $vars);
+	} else {
+		$output .= elgg_view("post/module/$module", $vars);
 	}
 
-	$output .= elgg_view("post/module/$module", $vars);
 }
 
 
 if (elgg_trigger_plugin_hook('uses:widgets', "$entity->type:$entity->subtype", $vars, false)) {
-
 	elgg_push_context('post');
 
 	$output .= elgg_view_layout('widgets', [
