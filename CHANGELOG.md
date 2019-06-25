@@ -1,3 +1,13 @@
+<a name="1.9.1"></a>
+## [1.9.1](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.9.0...1.9.1) (2019-06-25)
+
+
+### Bug Fixes
+
+* **hooks:** register profile module field hook for all entity types ([01ab59f](https://github.com/hypeJunction/Elgg3-hypePost/commit/01ab59f))
+
+
+
 <a name="1.9.0"></a>
 # [1.9.0](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.8.5...1.9.0) (2019-06-25)
 
