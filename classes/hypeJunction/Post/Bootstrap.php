@@ -35,7 +35,9 @@ class Bootstrap extends PluginBootstrap {
 
 		elgg_register_action('post/save', \hypeJunction\Post\SavePostAction::class);
 
-		elgg_register_plugin_hook_handler('fields', 'obejct', SetModuleField::class);
+		elgg_register_plugin_hook_handler('fields', 'object', AddProfileModulesField::class);
+		elgg_register_plugin_hook_handler('fields', 'group', AddProfileModulesField::class);
+		elgg_register_plugin_hook_handler('fields', 'user', AddProfileModulesField::class);
 
 		elgg_register_plugin_hook_handler('fields', 'object', SetObjectFields::class);
 
