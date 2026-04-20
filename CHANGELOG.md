@@ -1,3 +1,21 @@
+<a name="4.0.0"></a>
+## 4.0.0 (2026-04-20)
+
+### Breaking Changes
+
+* Requires Elgg 4.x (PHP 7.4+)
+* `manifest.xml` removed — `composer.json` is the sole metadata source
+* `autoloader.php` removed — PSR-4 autoloading via composer
+* `ServiceFacade` removed; `Post::instance()` and `Model::instance()` now call `elgg()->get()`
+* All hook registrations moved to declarative `hooks`/`events` arrays in `elgg-plugin.php`
+* `Bootstrap` reduced to `DefaultPluginBootstrap`; parsley.js registered in `boot()`
+
+### Bug Fixes
+
+* Remove unused `hypeJunction\Scraper\WebResource` import from `CoverWrapper` (was causing fatal when hypeScraper absent)
+
+---
+
 <a name="1.9.2"></a>
 ## [1.9.2](https://github.com/hypeJunction/Elgg3-hypePost/compare/1.9.1...1.9.2) (2019-06-25)
 
