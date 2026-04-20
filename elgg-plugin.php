@@ -7,10 +7,10 @@ return [
 		'version' => '4.0.0',
 		'dependencies' => [
 			'hypeajax' => [
-				'must_be_active' => true,
+				'must_be_active' => false,
 			],
 			'hypetime' => [
-				'must_be_active' => true,
+				'must_be_active' => false,
 			],
 			'hypescraper' => [
 				'must_be_active' => false,
