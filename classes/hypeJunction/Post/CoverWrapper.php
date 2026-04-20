@@ -3,7 +3,6 @@
 namespace hypeJunction\Post;
 
 use ElggIcon;
-use hypeJunction\Scraper\WebResource;
 
 /**
  * Composite cover object

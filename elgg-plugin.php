@@ -1,29 +1,31 @@
 <?php
 
-$plugin_root = __DIR__;
-$root = dirname(dirname($plugin_root));
-$alt_root = dirname(dirname(dirname($root)));
-
-if (file_exists("$plugin_root/vendor/autoload.php")) {
-	$path = $plugin_root;
-} else if (file_exists("$root/vendor/autoload.php")) {
-	$path = $root;
-} else {
-	$path = $alt_root;
-}
-
 return [
-	'bootstrap' => \hypeJunction\Post\Bootstrap::class,
-
-	'views' => [
-		'default' => [
-			'parsley.js' => $path . '/vendor/bower-asset/parsleyjs/dist/parsley.min.js',
-		]
+	'plugin' => [
+		'name' => 'hypePost',
+		'description' => 'Utility plugin for quick prototyping of content posts',
+		'version' => '4.0.0',
+		'dependencies' => [
+			'hypeajax' => [
+				'must_be_active' => true,
+			],
+			'hypetime' => [
+				'must_be_active' => true,
+			],
+			'hypescraper' => [
+				'must_be_active' => false,
+			],
+		],
 	],
+
+	'bootstrap' => \hypeJunction\Post\Bootstrap::class,
 
 	'actions' => [
 		'cover/delete' => [
 			'controller' => \hypeJunction\Post\DeleteCoverAction::class,
+		],
+		'post/save' => [
+			'controller' => \hypeJunction\Post\SavePostAction::class,
 		],
 	],
 
@@ -32,6 +34,57 @@ return [
 			'path' => '/post/view/{guid}',
 			'resource' => 'post/view',
 			'public' => true,
+		],
+	],
+
+	'view_extensions' => [
+		'elgg.css' => [
+			'post/styles.css' => [],
+		],
+		'elements/forms.css' => [
+			'forms/validation.css' => [],
+			'input/range.css' => [],
+		],
+	],
+
+	'hooks' => [
+		'fields' => [
+			'object' => [
+				\hypeJunction\Post\AddProfileModulesField::class => [],
+				\hypeJunction\Post\SetObjectFields::class => [],
+			],
+			'group' => [
+				\hypeJunction\Post\AddProfileModulesField::class => [],
+			],
+			'user' => [
+				\hypeJunction\Post\AddProfileModulesField::class => [],
+			],
+		],
+		'entity:cover:sizes' => [
+			'all' => [
+				\hypeJunction\Post\DefineCoverSizes::class => [],
+			],
+		],
+		'register' => [
+			'menu:social' => [
+				\hypeJunction\Post\SocialMenu::class => [],
+			],
+			'menu:entity' => [
+				\hypeJunction\Post\EntityMenu::class => [],
+			],
+		],
+		'adapter:entity' => [
+			'all' => [
+				\hypeJunction\Post\PopulateExportData::class => [],
+			],
+		],
+	],
+
+	'events' => [
+		'update' => [
+			'object' => [
+				\hypeJunction\Post\SaveEditHistory::class => [],
+			],
 		],
 	],
 ];

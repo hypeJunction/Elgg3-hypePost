@@ -14,16 +14,22 @@
 		}
 	],
 	"extra": {
-		"installer-name": "hypePost"
+		"installer-name": "hypepost"
+	},
+	"config": {
+		"allow-plugins": {
+			"composer/installers": true
+		}
 	},
 	"require": {
-		"php": ">=7.0",
-		"composer/installers": "~1.0",
-        "bower-asset/parsleyjs": "~2.8"
+		"php": ">=7.4",
+		"composer/installers": "^2.0",
+		"elgg/elgg": "^4.0",
+		"bower-asset/parsleyjs": "~2.8"
 	},
 	"autoload": {
-		"psr-0": {
-			"": "classes/"
+		"psr-4": {
+			"hypeJunction\\": "classes/hypeJunction/"
 		}
 	}
 }

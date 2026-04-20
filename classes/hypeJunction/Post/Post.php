@@ -2,18 +2,12 @@
 
 namespace hypeJunction\Post;
 
-use Elgg\Di\ServiceFacade;
 use ElggEntity;
 
 class Post {
 
-	use ServiceFacade;
-
-	/**
-	 * {@inheritdoc}
-	 */
-	public static function name() {
-		return 'posts.post';
+	public static function instance(): self {
+		return elgg()->get('posts.post');
 	}
 
 	/**
