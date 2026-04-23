@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Post;
 
-use Elgg\HooksRegistrationService\Hook;
+use Elgg\Hook;
 use hypeJunction\Fields\ProfileModulesField;
 
 class AddProfileModulesField {
