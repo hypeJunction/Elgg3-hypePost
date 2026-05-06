@@ -12,14 +12,14 @@ if (!$value) {
 
 $prepare_value = function ($value, $params) {
 	switch ($params['#type']) {
-		case 'select' :
+		case 'select':
 			return $params['options_values'][$value];
 
-		case 'checkboxes' :
-		case 'radio' :
+		case 'checkboxes':
+		case 'radio':
 			return array_search($value, $params['options']);
 
-		case 'checkbox' :
+		case 'checkbox':
 			return (bool) $params['checked'] ? elgg_echo('option:yes') : elgg_echo('option:no');
 	}
 

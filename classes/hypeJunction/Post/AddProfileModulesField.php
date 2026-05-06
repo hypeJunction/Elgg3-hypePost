@@ -5,8 +5,18 @@ namespace hypeJunction\Post;
 use Elgg\Hook;
 use hypeJunction\Fields\ProfileModulesField;
 
+/**
+ * AddProfileModulesField class.
+ */
 class AddProfileModulesField {
 
+	/**
+	 * __invoke.
+	 *
+	 * @param Hook $hook hook
+	 *
+	 * @return mixed
+	 */
 	public function __invoke(Hook $hook) {
 		$entity = $hook->getEntityParam();
 		$fields = $hook->getValue();

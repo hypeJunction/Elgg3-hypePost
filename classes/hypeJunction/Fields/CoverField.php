@@ -8,6 +8,9 @@ use hypeJunction\ValidationException;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
+/**
+ * CoverField class.
+ */
 class CoverField extends Field {
 
 	/**
@@ -83,7 +86,7 @@ class CoverField extends Field {
 			if (!empty($bytes)) {
 				$tmp = new \ElggFile();
 				$tmp->owner_guid = $entity->guid;
-				$tmp->setFilename("tmp/" . pathinfo(parse_url($url, PHP_URL_PATH), PATHINFO_BASENAME));
+				$tmp->setFilename('tmp/' . pathinfo(parse_url($url, PHP_URL_PATH), PATHINFO_BASENAME));
 
 				$tmp->open('write');
 				$tmp->write($bytes);
@@ -104,6 +107,7 @@ class CoverField extends Field {
 		if (!$entity->guid) {
 			return null;
 		}
+
 		$svc = \hypeJunction\Post\Post::instance();
 		/* @var $svc \hypeJunction\Post\Post */
 

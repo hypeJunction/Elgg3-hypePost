@@ -7,6 +7,9 @@ use hypeJunction\Fields\Field;
 use hypeJunction\Fields\MetaField;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
+/**
+ * AddressField class.
+ */
 class AddressField extends MetaField {
 
 	/**

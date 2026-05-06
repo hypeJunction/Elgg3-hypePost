@@ -16,6 +16,6 @@ if (empty($media) && $media !== false) {
 
 if ($media) {
 	echo elgg_format_element('div', [
-			'class' => 'elgg-listing-card-media',
+		'class' => 'elgg-listing-card-media',
 	], $media);
 }

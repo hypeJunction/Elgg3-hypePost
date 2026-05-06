@@ -5,12 +5,15 @@ namespace hypeJunction\Fields;
 use ElggEntity;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
+/**
+ * MetadataStorage trait.
+ */
 trait MetadataStorage {
 
 	/**
 	 * Store raw value as an entity property
 	 *
-	 * @param ElggEntity   $entity Entity
+	 * @param ElggEntity   $entity     Entity
 	 * @param ParameterBag $parameters Raw data
 	 *
 	 * @return bool
@@ -32,5 +35,4 @@ trait MetadataStorage {
 		$name = $this->name;
 		return $entity->$name;
 	}
-
 }

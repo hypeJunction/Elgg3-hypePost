@@ -6,6 +6,9 @@ use Elgg\Event;
 use Exception;
 use hypeJunction\Post\Post;
 
+/**
+ * SaveEditHistory class.
+ */
 class SaveEditHistory {
 
 	/**
@@ -15,6 +18,7 @@ class SaveEditHistory {
 	 *
 	 * @param Event $event Event
 	 *
+	 * @return void
 	 * @throws Exception
 	 */
 	public function __invoke(Event $event) {

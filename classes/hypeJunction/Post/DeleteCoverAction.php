@@ -7,6 +7,9 @@ use Elgg\Hook;
 use Elgg\Http\ResponseBuilder;
 use Elgg\Request;
 
+/**
+ * DeleteCoverAction class.
+ */
 class DeleteCoverAction {
 
 	/**

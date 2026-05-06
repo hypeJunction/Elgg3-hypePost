@@ -19,8 +19,8 @@ if (!$url) {
 	return;
 }
 
-$ratio = elgg_extract('ratio', $vars, $cover->ratio ? : 50);
-$gravity = $cover->gravity ? : 'center';
+$ratio = elgg_extract('ratio', $vars, $cover->ratio ?: 50);
+$gravity = $cover->gravity ?: 'center';
 
 $positions = [
 	'center' => '50% 50%',

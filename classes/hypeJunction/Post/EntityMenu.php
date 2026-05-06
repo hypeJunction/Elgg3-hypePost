@@ -4,12 +4,15 @@ namespace hypeJunction\Post;
 
 use Elgg\Hook;
 
+/**
+ * EntityMenu class.
+ */
 class EntityMenu {
 
 	/**
 	 * @elgg_plugin_hook register menu:social
 	 *
-	 * @param Hook $hook
+	 * @param Hook $hook Plugin hook
 	 *
 	 * @return \ElggMenuItem[]|null
 	 */

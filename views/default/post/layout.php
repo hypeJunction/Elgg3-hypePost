@@ -29,7 +29,7 @@ if (elgg_view_exists("post/template/$template/header")) {
 }
 
 //$sidebar = elgg_view("post/profile/author", $vars);
-$sidebar .= elgg_view("post/profile/fields", $vars);
+$sidebar .= elgg_view('post/profile/fields', $vars);
 
 if (elgg_view_exists("post/template/$template/sidebar")) {
 	$sidebar .= elgg_view("post/template/$template/sidebar", $vars);
@@ -41,7 +41,7 @@ echo elgg_view_layout('post', [
 	'header' => $header,
 	'title' => $title,
 	'content' => $content,
-	'sidebar' => $sidebar ? : false,
+	'sidebar' => $sidebar ?: false,
 	'filter_id' => "view:$entity->type:$entity->subtype",
 	'filter_value' => 'default',
 	'entity' => $entity,

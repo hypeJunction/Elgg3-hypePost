@@ -4,6 +4,9 @@ namespace hypeJunction\Fields;
 
 use ElggEntity;
 
+/**
+ * AccessField class.
+ */
 class AccessField extends MetaField {
 
 	/**
@@ -16,5 +19,4 @@ class AccessField extends MetaField {
 
 		return parent::retrieve($entity);
 	}
-
 }

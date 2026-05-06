@@ -40,6 +40,7 @@ define(function (require) {
 		} else {
 			message = this.catalog['_'][constraint.name];
 		}
+
 		message = message || this.catalog['_'].defaultMessage;
 		return message ? elgg.echo(message, constraint.requirementList) : this.catalog.en.defaultMessage;
 	}.bind(window.Parsley._validatorRegistry);
@@ -75,12 +76,14 @@ define(function (require) {
 		if (!$row.length) {
 			$row = this.$element.parent();
 		}
+
 		$row.addClass('elgg-field-has-errors').removeClass('elgg-field-no-errors');
 		var $errors = $row.find('.elgg-field-feedback');
 		if (!$errors.length) {
 			$errors = $('<ul class="elgg-field-feedback" />');
 			$row.append($errors);
 		}
+
 		$errors.html('');
 		$.each(errors, function (index, value) {
 			$errors.append($('<li class="elgg-field-error" />').text(value));
@@ -92,6 +95,7 @@ define(function (require) {
 		if (!$row.length) {
 			$row = this.$element.parent();
 		}
+
 		$row.removeClass('elgg-field-has-errors').addClass('elgg-field-no-errors');
 		$row.find('.elgg-field-feedback').html('');
 	});

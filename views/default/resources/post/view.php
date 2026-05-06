@@ -25,7 +25,7 @@ $layout = elgg_view_layout('default', [
 	'class' => 'elgg-layout-post-view',
 ]);
 
-$shell = $entity->page_shell ? : 'default';
+$shell = $entity->page_shell ?: 'default';
 
 echo elgg_view_page(null, $layout, $shell, [
 	'entity' => $entity,

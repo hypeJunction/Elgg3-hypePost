@@ -4,6 +4,9 @@ namespace hypeJunction\Fields;
 
 use ElggEntity;
 
+/**
+ * DisableCommentsField class.
+ */
 class DisableCommentsField extends MetaField {
 
 	/**

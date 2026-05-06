@@ -4,6 +4,9 @@ namespace hypeJunction\Validators;
 
 use hypeJunction\ValidationException;
 
+/**
+ * ValidatorInterface interface.
+ */
 interface ValidatorInterface {
 
 	/**

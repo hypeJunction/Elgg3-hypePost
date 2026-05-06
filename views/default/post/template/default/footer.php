@@ -14,7 +14,6 @@ foreach ($modules as $module => $options) {
 	} else {
 		$view .= elgg_view("post/module/$module", $vars);
 	}
-
 }
 
 if (!$view) {

@@ -4,6 +4,9 @@ namespace hypeJunction\Fields;
 
 use ElggEntity;
 
+/**
+ * HtmlField class.
+ */
 class HtmlField extends MetaField {
 
 	/**
@@ -14,5 +17,4 @@ class HtmlField extends MetaField {
 
 		return elgg_format_html($value);
 	}
-
 }

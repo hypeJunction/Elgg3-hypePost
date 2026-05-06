@@ -7,6 +7,9 @@ use ElggEntity;
 use hypeJunction\ValidationException;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
+/**
+ * IconField class.
+ */
 class IconField extends Field {
 
 	/**

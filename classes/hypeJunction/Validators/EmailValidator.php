@@ -4,6 +4,9 @@ namespace hypeJunction\Validators;
 
 use hypeJunction\ValidationException;
 
+/**
+ * EmailValidator class.
+ */
 class EmailValidator implements ValidatorInterface {
 
 	/**

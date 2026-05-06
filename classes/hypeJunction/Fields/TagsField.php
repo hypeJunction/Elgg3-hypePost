@@ -5,6 +5,9 @@ namespace hypeJunction\Fields;
 use Elgg\Request;
 use ElggEntity;
 
+/**
+ * TagsField class.
+ */
 class TagsField extends Field {
 
 	use MetadataStorage;
@@ -27,5 +30,4 @@ class TagsField extends Field {
 
 		return $value;
 	}
-
 }

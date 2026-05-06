@@ -4,12 +4,16 @@ namespace hypeJunction\Validators;
 
 use hypeJunction\ValidationException;
 
+/**
+ * LengthValidator class.
+ */
 class LengthValidator implements ValidatorInterface {
 
 	/**
 	 * @var int|null
 	 */
 	protected $min;
+
 	/**
 	 * @var int|null
 	 */

@@ -6,6 +6,9 @@ use Elgg\Request;
 use ElggEntity;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
+/**
+ * ControlElement class.
+ */
 class ControlElement extends Field {
 
 	/**

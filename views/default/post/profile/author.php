@@ -14,7 +14,7 @@ if ($owner->description) {
 	$value = $owner->description;
 } else {
 	$annotations = $owner->getAnnotations([
-		'annotation_names' => "profile:description",
+		'annotation_names' => 'profile:description',
 		'limit' => false,
 	]);
 

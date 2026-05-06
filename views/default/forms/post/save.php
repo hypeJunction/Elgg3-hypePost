@@ -7,10 +7,11 @@ $context = elgg_extract('context', $vars);
 $view_fields = function (\hypeJunction\Fields\Collection $fields) use ($entity, $context) {
 	$output = '';
 	foreach ($fields as $field) {
-	    /* @var $field \hypeJunction\Fields\FieldInterface */
-	    if (!$context) {
+		/* @var $field \hypeJunction\Fields\FieldInterface */
+		if (!$context) {
 			$context = $entity->guid ? \hypeJunction\Fields\Field::CONTEXT_EDIT_FORM : \hypeJunction\Fields\Field::CONTEXT_CREATE_FORM;
 		}
+
 		$output .= $field->render($entity, $context);
 	}
 
@@ -58,9 +59,9 @@ if ($sidebar) {
 
 $actions = $filter($fields, 'actions');
 foreach ($actions as $action) {
-    /* @var $action \hypeJunction\Fields\FieldInterface */
+	/* @var $action \hypeJunction\Fields\FieldInterface */
 
-    $menu_item = [
+	$menu_item = [
 		'name' => $action->name,
 		'href' => false,
 		'text' => $action->render($entity),
@@ -89,7 +90,7 @@ if (!$title) {
 echo elgg_view_layout('post', array_merge($vars, [
 	'title' => $title,
 	'content' => $layout_content,
-	'sidebar' => $sidebar ? : false,
+	'sidebar' => $sidebar ?: false,
 	'footer' => $layout_footer,
 	'filter_id' => "edit:$entity->type:$entity->subtype",
 	'filter_value' => 'default',

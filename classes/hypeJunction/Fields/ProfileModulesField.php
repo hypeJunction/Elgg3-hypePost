@@ -7,6 +7,9 @@ use ElggEntity;
 use hypeJunction\Post\Post;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
+/**
+ * ProfileModulesField class.
+ */
 class ProfileModulesField extends MetaField {
 
 	/**
@@ -24,10 +27,26 @@ class ProfileModulesField extends MetaField {
 		return $data;
 	}
 
+	/**
+	 * raw.
+	 *
+	 * @param Request    $request request
+	 * @param ElggEntity $entity  entity
+	 *
+	 * @return mixed
+	 */
 	public function raw(Request $request, ElggEntity $entity) {
-		return parent::raw($request, $entity) ? : [];
+		return parent::raw($request, $entity) ?: [];
 	}
 
+	/**
+	 * save.
+	 *
+	 * @param ElggEntity   $entity     entity
+	 * @param ParameterBag $parameters parameters
+	 *
+	 * @return mixed
+	 */
 	public function save(ElggEntity $entity, ParameterBag $parameters) {
 		$name = $this->name;
 		$value = $parameters->get($name);
@@ -38,5 +57,4 @@ class ProfileModulesField extends MetaField {
 			$entity->{"uses_module:$name"} = in_array($name, $value);
 		}
 	}
-
 }

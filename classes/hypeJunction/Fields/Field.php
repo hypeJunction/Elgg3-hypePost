@@ -11,6 +11,9 @@ use hypeJunction\Validators\LengthValidator;
 use hypeJunction\Validators\NumberValidator;
 use hypeJunction\Validators\UrlValidator;
 
+/**
+ * Field class.
+ */
 abstract class Field extends ArrayObject implements FieldInterface {
 
 	const CONTEXT_PROFILE = 'profile';
@@ -18,7 +21,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 	const CONTEXT_CREATE_FORM = 'create_form';
 	const CONTEXT_EXPORT = 'export';
 
-	var $defaults = [
+	public $defaults = [
 		'type' => 'text',
 		'section' => 'content',
 		'is_profile_field' => true,
@@ -36,7 +39,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 	/**
 	 * {@inheritdoc}
 	 */
-	final public function __construct($input = [], $flags = ArrayObject::ARRAY_AS_PROPS, $iterator_class = "ArrayIterator") {
+	final public function __construct($input = [], $flags = ArrayObject::ARRAY_AS_PROPS, $iterator_class = 'ArrayIterator') {
 		$input = array_merge($this->defaults, $input);
 		parent::__construct($input, $flags, $iterator_class);
 	}
@@ -97,7 +100,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 		}
 
 		switch ($context) {
-			case self::CONTEXT_PROFILE :
+			case self::CONTEXT_PROFILE:
 				if ($this->is_profile_field === false) {
 					return false;
 				}
@@ -116,25 +119,25 @@ abstract class Field extends ArrayObject implements FieldInterface {
 				}
 				break;
 
-			case self::CONTEXT_EDIT_FORM :
+			case self::CONTEXT_EDIT_FORM:
 				if ($this->is_edit_field === false) {
 					return false;
 				}
 				break;
 
-			case self::CONTEXT_CREATE_FORM :
+			case self::CONTEXT_CREATE_FORM:
 				if ($this->is_create_field === false) {
 					return false;
 				}
 				break;
 
-			case self::CONTEXT_EXPORT :
+			case self::CONTEXT_EXPORT:
 				if ($this->is_export_field === true || $this->is_profile_field === true) {
 					return true;
 				}
 				return false;
 
-			default :
+			default:
 				if ($context && $this->contexts !== false) {
 					return in_array($context, $this->contexts);
 				}
@@ -253,6 +256,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 		if (!isset($props['#type'])) {
 			$props['#type'] = $this->type;
 		}
+
 		if (!isset($props['#label'])) {
 			$props['#label'] = $this->label($entity);
 		} else if ($props['#label'] === false) {
@@ -263,12 +267,15 @@ abstract class Field extends ArrayObject implements FieldInterface {
 		if (!isset($props['#help'])) {
 			$props['#help'] = $this->help($entity);
 		}
+
 		if (!isset($props['placeholder'])) {
 			$props['placeholder'] = $this->placeholder($entity);
 		}
+
 		if (!isset($props['value'])) {
 			$props['value'] = $this->retrieve($entity);
 		}
+
 		if (isset($props['input_name'])) {
 			$props['name'] = $props['input_name'];
 		}
@@ -328,7 +335,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 			return '';
 		}
 
-		return elgg_view("post/output/field", $this->normalize($entity));
+		return elgg_view('post/output/field', $this->normalize($entity));
 	}
 
 	/**

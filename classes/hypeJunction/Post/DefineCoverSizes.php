@@ -4,6 +4,9 @@ namespace hypeJunction\Post;
 
 use Elgg\Hook;
 
+/**
+ * DefineCoverSizes class.
+ */
 class DefineCoverSizes {
 
 	/**

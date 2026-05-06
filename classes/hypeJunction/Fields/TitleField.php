@@ -5,6 +5,9 @@ namespace hypeJunction\Fields;
 use Elgg\Request;
 use ElggEntity;
 
+/**
+ * TitleField class.
+ */
 class TitleField extends Field {
 
 	use MetadataStorage;
@@ -23,5 +26,4 @@ class TitleField extends Field {
 			return elgg_get_title_input($this->name);
 		}
 	}
-
 }

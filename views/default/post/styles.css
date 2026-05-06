@@ -38,11 +38,11 @@
 	.elgg-fieldset-horizontal {
 		display: flex;
 		flex-wrap: wrap;
-	    & > .elgg-field {
+		& > .elgg-field {
 			flex: 1;
-	    }
+		}
 		& > .elgg-field:last-child {
-		    margin-right: 0;
+			margin-right: 0;
 		}
 	}
 

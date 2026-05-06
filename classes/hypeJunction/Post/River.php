@@ -41,7 +41,7 @@ class River {
 				'posted' => $entity->time_created,
 			]);
 		} catch (DatabaseException $ex) {
-
+			// river insertion is best-effort; ignore DB errors so the action does not fail
 		}
 	}
 }

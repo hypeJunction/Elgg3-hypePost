@@ -7,6 +7,9 @@ use Countable;
 use SeekableIterator;
 use Serializable;
 
+/**
+ * Collection class.
+ */
 class Collection implements ArrayAccess, SeekableIterator, Countable, Serializable {
 
 	/**
@@ -30,6 +33,8 @@ class Collection implements ArrayAccess, SeekableIterator, Countable, Serializab
 	 *
 	 * @param string         $name  Field name
 	 * @param FieldInterface $field Field
+	 *
+	 * @return void
 	 */
 	public function add($name, FieldInterface $field) {
 		if (!$field->name) {
@@ -37,7 +42,7 @@ class Collection implements ArrayAccess, SeekableIterator, Countable, Serializab
 		}
 
 		if (!$field->name) {
-			throw new \InvalidArgumentException("Fields must have a name");
+			throw new \InvalidArgumentException('Fields must have a name');
 		}
 
 		$name = $field->name;
@@ -103,14 +108,17 @@ class Collection implements ArrayAccess, SeekableIterator, Countable, Serializab
 
 	/**
 	 * Sort fields by priority
+	 *
+	 * @return void
 	 */
 	public function sort() {
 		uasort($this->items, function ($f1, $f2) {
-			$p1 = $f1->priority ? : 500;
-			$p2 = $f2->priority ? : 500 ;
+			$p1 = $f1->priority ?: 500;
+			$p2 = $f2->priority ?: 500;
 			if ($p1 === $p2) {
 				return 0;
 			}
+
 			return $p1 < $p2 ? -1 : 1;
 		});
 	}

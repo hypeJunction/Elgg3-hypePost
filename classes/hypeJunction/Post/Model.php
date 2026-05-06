@@ -20,6 +20,9 @@ use InvalidParameterException;
 use Psr\Log\LogLevel;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
+/**
+ * Model class.
+ */
 class Model {
 
 	/**
@@ -27,10 +30,22 @@ class Model {
 	 */
 	protected $post_service;
 
+	/**
+	 * __construct.
+	 *
+	 * @param Post $post_service post_service
+	 *
+	 * @return mixed
+	 */
 	public function __construct(Post $post_service) {
 		$this->post_service = $post_service;
 	}
 
+	/**
+	 * instance.
+	 *
+	 * @return self
+	 */
 	public static function instance(): self {
 		return elgg()->get('posts.model');
 	}
@@ -175,6 +190,7 @@ class Model {
 			if (isset($defaults[$name])) {
 				continue;
 			}
+
 			$defaults[$name] = '';
 		}
 
@@ -234,6 +250,7 @@ class Model {
 			if (!$entity->canEdit()) {
 				throw new EntityPermissionsException();
 			}
+
 			$container = $entity->getContainerEntity();
 		} else {
 			$context = Field::CONTEXT_CREATE_FORM;
@@ -248,7 +265,7 @@ class Model {
 				throw new EntityPermissionsException();
 			}
 
-			$class = elgg_get_entity_class($type, $subtype) ? : ElggObject::class;
+			$class = elgg_get_entity_class($type, $subtype) ?: ElggObject::class;
 
 			$entity = new $class();
 
@@ -307,7 +324,8 @@ class Model {
 			$parameters->set($field->name, $value);
 		}
 
-		if ($failures = $request->validation()->getFailures()) {
+		$failures = $request->validation()->getFailures();
+		if ($failures) {
 			$errors = array_map(function(ValidationResult $result) {
 				return $result->getError() || $result->getMessage();
 			}, $failures);

@@ -13,7 +13,6 @@ foreach ($modules as $module => $options) {
 	} else {
 		$output .= elgg_view("post/module/$module", $vars);
 	}
-
 }
 
 
@@ -26,10 +25,9 @@ if (elgg_trigger_plugin_hook('uses:widgets', "$entity->type:$entity->subtype", $
 	]);
 
 	elgg_pop_context();
-
 }
 
-$output .= elgg_view("post/profile/menu", $vars);
+$output .= elgg_view('post/profile/menu', $vars);
 
 if ($output) {
 	echo elgg_format_element('div', [

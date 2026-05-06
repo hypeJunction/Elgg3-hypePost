@@ -14,6 +14,9 @@ use hypeJunction\Fields\TagsField;
 use hypeJunction\Fields\TitleField;
 use InvalidParameterException;
 
+/**
+ * SetObjectFields class.
+ */
 class SetObjectFields {
 
 	/**

@@ -27,9 +27,9 @@ class CoverWrapper implements \JsonSerializable {
 	/**
 	 * Contructor
 	 *
-	 * @param \ElggEntity $entity
-	 * @param string      $fallback_url
-	 * @param array       $params
+	 * @param \ElggEntity $entity       Entity
+	 * @param string      $fallback_url Fallback URL
+	 * @param array       $params       Params
 	 */
 	public function __construct(\ElggEntity $entity, $fallback_url = null, array $params = []) {
 		$this->entity = $entity;

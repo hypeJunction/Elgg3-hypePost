@@ -8,6 +8,9 @@ use Elgg\Request;
 use Exception;
 use Psr\Log\LogLevel;
 
+/**
+ * SavePostAction class.
+ */
 class SavePostAction {
 
 	/**
@@ -71,7 +74,7 @@ class SavePostAction {
 				'forward_url' => $forward_url,
 			];
 
-			$name = $entity->getDisplayName() ? : elgg_echo("item:$entity->type:$entity->subtype");
+			$name = $entity->getDisplayName() ?: elgg_echo("item:$entity->type:$entity->subtype");
 
 			$success_keys = [
 				"success:$entity->type:$entity->subtype:save",
@@ -93,7 +96,7 @@ class SavePostAction {
 			return elgg_error_response(
 				$e->getMessage(),
 				REFERER,
-				$e->getCode() ? : ELGG_HTTP_INTERNAL_SERVER_ERROR
+				$e->getCode() ?: ELGG_HTTP_INTERNAL_SERVER_ERROR
 			);
 		}
 	}

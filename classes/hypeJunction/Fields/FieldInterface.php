@@ -142,5 +142,4 @@ interface FieldInterface extends Serializable, JsonSerializable {
 	 * @return mixed
 	 */
 	public function output(ElggEntity $entity, $context = null);
-
 }

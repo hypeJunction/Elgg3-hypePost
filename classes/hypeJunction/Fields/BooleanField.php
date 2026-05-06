@@ -5,6 +5,9 @@ namespace hypeJunction\Fields;
 use Elgg\Request;
 use ElggEntity;
 
+/**
+ * BooleanField class.
+ */
 class BooleanField extends Field {
 
 	use MetadataStorage;
@@ -30,7 +33,7 @@ class BooleanField extends Field {
 	 * {@inheritdoc}
 	 */
 	public function normalize(ElggEntity $entity) {
-		$props =  parent::normalize($entity);
+		$props = parent::normalize($entity);
 
 		if ($this->type === 'checkbox') {
 			$props['checked'] = (bool) $props['value'];

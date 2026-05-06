@@ -4,6 +4,9 @@ namespace hypeJunction\Validators;
 
 use hypeJunction\ValidationException;
 
+/**
+ * UrlValidator class.
+ */
 class UrlValidator implements ValidatorInterface {
 
 	/**
@@ -16,23 +19,25 @@ class UrlValidator implements ValidatorInterface {
 		if ($res) {
 			return;
 		}
+
 		// Check if it has unicode chars.
 		$l = mb_strlen($value);
 		if (strlen($value) == $l) {
 			return;
 		}
+
 		// Replace wide chars by “X”.
 		$s = '';
 		for ($i = 0; $i < $l; ++$i) {
 			$ch = elgg_substr($value, $i, 1);
 			$s .= (strlen($ch) > 1) ? 'X' : $ch;
 		}
+
 		// Re-check now.
 		if (filter_var($s, FILTER_VALIDATE_URL)) {
 			return;
 		}
 
 		throw new ValidationException(elgg_echo('validation:error:type:url'));
-
 	}
 }

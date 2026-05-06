@@ -4,8 +4,16 @@ namespace hypeJunction\Post;
 
 use ElggEntity;
 
+/**
+ * Post class.
+ */
 class Post {
 
+	/**
+	 * instance.
+	 *
+	 * @return self
+	 */
 	public static function instance(): self {
 		return elgg()->get('posts.post');
 	}
@@ -63,6 +71,7 @@ class Post {
 					if (!$content) {
 						continue;
 					}
+
 					$name_parts = explode(':', $name);
 					$namespace = array_shift($name_parts);
 					$ogp = ['og', 'fb', 'article', 'profile', 'book', 'music', 'video', 'profile', 'website'];
@@ -149,6 +158,7 @@ class Post {
 					break;
 				}
 			} catch (\Exception $ex) {
+				// best-effort scrape; malformed HTML should not break cover resolution
 			}
 
 			libxml_clear_errors();
@@ -231,7 +241,7 @@ class Post {
 			'entity' => $entity,
 		];
 
-		$default = $entity->template ? : 'default';
+		$default = $entity->template ?: 'default';
 
 		return elgg_trigger_plugin_hook('template', "$entity->type:$entity->subtype", $params, $default);
 	}

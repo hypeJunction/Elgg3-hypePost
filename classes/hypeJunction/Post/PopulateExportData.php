@@ -5,6 +5,9 @@ namespace hypeJunction\Post;
 use Elgg\Hook;
 use hypeJunction\Fields\Field;
 
+/**
+ * PopulateExportData class.
+ */
 class PopulateExportData {
 
 	/**
