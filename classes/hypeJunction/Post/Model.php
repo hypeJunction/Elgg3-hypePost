@@ -73,12 +73,12 @@ class Model {
 
 		$fields = new Collection();
 
-		$fields = elgg_trigger_plugin_hook('fields', "$entity->type", $options, $fields);
+		$fields = elgg_trigger_event_results('fields', "$entity->type", $options, $fields);
 		if (!$fields instanceof Collection) {
 			throw new \RuntimeException("'fields' hook must return an instance of " . Collection::class);
 		}
 
-		$fields = elgg_trigger_plugin_hook('fields', "$entity->type:$entity->subtype", $options, $fields);
+		$fields = elgg_trigger_event_results('fields', "$entity->type:$entity->subtype", $options, $fields);
 		if (!$fields instanceof Collection) {
 			throw new \RuntimeException("'fields' hook must return an instance of " . Collection::class);
 		}
@@ -340,7 +340,7 @@ class Model {
 			'context' => $request->getParam('_context'),
 		];
 
-		if (!elgg_trigger_plugin_hook('post:before', "$entity->type:$entity->subtype", $hook_params, true)) {
+		if (!elgg_trigger_event_results('post:before', "$entity->type:$entity->subtype", $hook_params, true)) {
 			return false;
 		}
 
@@ -379,7 +379,7 @@ class Model {
 
 		elgg_clear_sticky_form("edit:$entity->type:$entity->subtype");
 
-		elgg_trigger_plugin_hook('post:after', "$entity->type:$entity->subtype", $hook_params, true);
+		elgg_trigger_event_results('post:after', "$entity->type:$entity->subtype", $hook_params, true);
 
 		return $entity;
 	}

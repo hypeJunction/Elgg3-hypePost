@@ -22,8 +22,8 @@ class SocialMenuTest extends IntegrationTestCase {
 		]);
 	}
 
-	private function makeHookWithMenu(\ElggEntity $entity, array $menu): \Elgg\Hook {
-		$hook = $this->getMockBuilder(\Elgg\Hook::class)->getMock();
+	private function makeHookWithMenu(\ElggEntity $entity, array $menu): \Elgg\Event {
+		$hook = $this->getMockBuilder(\Elgg\Event::class)->disableOriginalConstructor()->getMock();
 		$hook->method('getEntityParam')->willReturn($entity);
 		$hook->method('getValue')->willReturn($menu);
 		return $hook;
@@ -62,7 +62,7 @@ class SocialMenuTest extends IntegrationTestCase {
 	}
 
 	public function testReturnsNullWhenNoEntity(): void {
-		$hook = $this->getMockBuilder(\Elgg\Hook::class)->getMock();
+		$hook = $this->getMockBuilder(\Elgg\Event::class)->disableOriginalConstructor()->getMock();
 		$hook->method('getEntityParam')->willReturn(null);
 
 		$handler = new SocialMenu();

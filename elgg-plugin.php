@@ -4,7 +4,7 @@ return [
 	'plugin' => [
 		'name' => 'hypePost',
 		'description' => 'Utility plugin for quick prototyping of content posts',
-		'version' => '4.0.0',
+		'version' => '5.0.0',
 		'dependencies' => [
 			'hypeajax' => [
 				'must_be_active' => false,
@@ -47,7 +47,7 @@ return [
 		],
 	],
 
-	'hooks' => [
+	'events' => [
 		'fields' => [
 			'object' => [
 				\hypeJunction\Post\AddProfileModulesField::class => [],
@@ -78,9 +78,6 @@ return [
 				\hypeJunction\Post\PopulateExportData::class => [],
 			],
 		],
-	],
-
-	'events' => [
 		'update' => [
 			'object' => [
 				\hypeJunction\Post\SaveEditHistory::class => [],

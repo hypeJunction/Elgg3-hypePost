@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Post;
 
-use Elgg\Hook;
+use Elgg\Event;
 
 /**
  * EntityMenu class.
@@ -16,18 +16,18 @@ class EntityMenu {
 	 *
 	 * @return \ElggMenuItem[]|null
 	 */
-	public function __invoke(Hook $hook) {
+	public function __invoke(Event $event) {
 
-		$entity = $hook->getEntityParam();
+		$entity = $event->getEntityParam();
 		if (!$entity) {
 			return null;
 		}
 
-		$menu = $hook->getValue();
+		$menu = $event->getValue();
 		/* @var $menu \ElggMenuItem[] */
 
 		if ($entity->canEdit() && $entity->hasIcon('master', 'cover')) {
-			$menu[] = \ElggMenuItem::factory([
+			$menu->add(\ElggMenuItem::factory([
 				'name' => 'delete:cover',
 				'icon' => 'minus-circle',
 				'text' => elgg_echo('post:cover:delete'),
@@ -35,7 +35,7 @@ class EntityMenu {
 					'guid' => $entity->guid,
 				]),
 				'confirm' => true,
-			]);
+			]));
 		}
 
 		return $menu;

@@ -29,12 +29,12 @@ class BootstrapTest extends IntegrationTestCase {
 		$this->assertInstanceOf(Post::class, $instance);
 	}
 
-	public function testCoverSizesHookIsRegistered(): void {
+	public function testCoverSizesEventIsRegistered(): void {
 		$fired = false;
-		elgg_register_plugin_hook_handler('entity:cover:sizes', 'all', function () use (&$fired) {
+		elgg_register_event_handler('entity:cover:sizes', 'all', function () use (&$fired) {
 			$fired = true;
 		}, 999);
-		elgg_trigger_plugin_hook('entity:cover:sizes', 'all', [], []);
+		elgg_trigger_event_results('entity:cover:sizes', 'all', [], []);
 		$this->assertTrue($fired);
 	}
 }

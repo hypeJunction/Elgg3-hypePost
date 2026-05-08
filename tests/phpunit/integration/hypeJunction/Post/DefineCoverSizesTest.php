@@ -14,8 +14,8 @@ class DefineCoverSizesTest extends IntegrationTestCase {
 
 	public function down(): void {}
 
-	private function makeHook(array $currentValue): \Elgg\Hook {
-		$hook = $this->getMockBuilder(\Elgg\Hook::class)->getMock();
+	private function makeHook(array $currentValue): \Elgg\Event {
+		$hook = $this->getMockBuilder(\Elgg\Event::class)->disableOriginalConstructor()->getMock();
 		$hook->method('getValue')->willReturn($currentValue);
 		return $hook;
 	}

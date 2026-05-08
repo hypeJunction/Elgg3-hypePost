@@ -3,7 +3,6 @@
 namespace hypeJunction\Post;
 
 use Elgg\Exceptions\Http\EntityPermissionsException;
-use Elgg\Hook;
 use Elgg\Http\ResponseBuilder;
 use Elgg\Request;
 

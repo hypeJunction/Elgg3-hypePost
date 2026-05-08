@@ -15,7 +15,7 @@ class SaveEditHistoryTest extends IntegrationTestCase {
 	public function down(): void {}
 
 	private function invokeHandler(\ElggEntity $entity): void {
-		$event = $this->getMockBuilder(\Elgg\Event::class)->getMock();
+		$event = $this->getMockBuilder(\Elgg\Event::class)->disableOriginalConstructor()->getMock();
 		$event->method('getObject')->willReturn($entity);
 
 		$handler = new SaveEditHistory();
@@ -68,7 +68,7 @@ class SaveEditHistoryTest extends IntegrationTestCase {
 	}
 
 	public function testHandlerIgnoresNonEntityObjects(): void {
-		$event = $this->getMockBuilder(\Elgg\Event::class)->getMock();
+		$event = $this->getMockBuilder(\Elgg\Event::class)->disableOriginalConstructor()->getMock();
 		$event->method('getObject')->willReturn('not an entity');
 
 		$handler = new SaveEditHistory();

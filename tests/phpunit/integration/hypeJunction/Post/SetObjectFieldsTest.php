@@ -20,7 +20,7 @@ class SetObjectFieldsTest extends IntegrationTestCase {
 
 	private function invokeHandler(\ElggEntity $entity): Collection {
 		$collection = new Collection();
-		$hook = $this->getMockBuilder(\Elgg\Hook::class)->getMock();
+		$hook = $this->getMockBuilder(\Elgg\Event::class)->disableOriginalConstructor()->getMock();
 		$hook->method('getValue')->willReturn($collection);
 		$hook->method('getEntityParam')->willReturn($entity);
 

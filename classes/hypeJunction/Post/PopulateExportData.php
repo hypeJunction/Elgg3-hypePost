@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Post;
 
-use Elgg\Hook;
+use Elgg\Event;
 use hypeJunction\Fields\Field;
 
 /**
@@ -16,10 +16,10 @@ class PopulateExportData {
 	 * @param Hook $hook Hook
 	 * @return array
 	 */
-	public function __invoke(Hook $hook) {
+	public function __invoke(Event $event) {
 
-		$value = $hook->getValue();
-		$entity = $hook->getEntityParam();
+		$value = $event->getValue();
+		$entity = $event->getEntityParam();
 
 		if (!$entity) {
 			return;

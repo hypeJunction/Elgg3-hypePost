@@ -23,7 +23,7 @@ class River {
 
 		$params = ['entity' => $entity];
 
-		if (!elgg_trigger_plugin_hook(
+		if (!elgg_trigger_event_results(
 			'uses:river',
 			"$entity->type:$entity->subtype",
 			$params,

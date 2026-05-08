@@ -28,7 +28,7 @@ class Post {
 	public function hasCommentBlock(ElggEntity $entity) {
 		$params = ['entity' => $entity];
 
-		return elgg_trigger_plugin_hook(
+		return elgg_trigger_event_results(
 			'uses:comments',
 			"$entity->type:$entity->subtype",
 			$params,
@@ -44,7 +44,7 @@ class Post {
 	 * @return mixed
 	 */
 	public function getOpenGraphProperties(ElggEntity $entity) {
-		$metadata = elgg_trigger_plugin_hook('metatags', 'discovery', [
+		$metadata = elgg_trigger_event_results('metatags', 'discovery', [
 			'entity' => $entity,
 		], []);
 
@@ -59,8 +59,8 @@ class Post {
 	 * @return void
 	 */
 	public function setPageMetatags(ElggEntity $entity) {
-		elgg_register_plugin_hook_handler('head', 'page', function (\Elgg\Hook $hook) use ($entity) {
-			$value = $hook->getValue();
+		elgg_register_event_handler('head', 'page', function (\Elgg\Event $event) use ($entity) {
+			$value = $event->getValue();
 
 			$value['title'] = $entity->getDisplayName();
 
@@ -243,7 +243,7 @@ class Post {
 
 		$default = $entity->template ?: 'default';
 
-		return elgg_trigger_plugin_hook('template', "$entity->type:$entity->subtype", $params, $default);
+		return elgg_trigger_event_results('template', "$entity->type:$entity->subtype", $params, $default);
 	}
 
 	/**
@@ -270,8 +270,8 @@ class Post {
 			'entity' => $entity,
 		];
 
-		$modules = elgg_trigger_plugin_hook('modules', "$entity->type", $params, []);
-		$modules = elgg_trigger_plugin_hook('modules', "$entity->type:$entity->subtype", $params, $modules);
+		$modules = elgg_trigger_event_results('modules', "$entity->type", $params, []);
+		$modules = elgg_trigger_event_results('modules', "$entity->type:$entity->subtype", $params, $modules);
 
 		$modules = array_filter($modules, function ($e) use ($position) {
 			if (isset($position) && elgg_extract('position', $e) !== $position) {

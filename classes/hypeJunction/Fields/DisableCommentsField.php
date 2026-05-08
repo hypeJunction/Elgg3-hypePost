@@ -17,7 +17,7 @@ class DisableCommentsField extends MetaField {
 			return false;
 		}
 
-		return elgg_trigger_plugin_hook(
+		return elgg_trigger_event_results(
 			'uses:comments',
 			"$entity->type:$entity->subtype",
 			['entity' => $entity],

@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Post;
 
-use Elgg\Hook;
+use Elgg\Event;
 
 /**
  * DefineCoverSizes class.
@@ -16,9 +16,9 @@ class DefineCoverSizes {
 	 *
 	 * @return array|null
 	 */
-	public function __invoke(Hook $hook) {
+	public function __invoke(Event $event) {
 
-			$value = $hook->getValue();
+			$value = $event->getValue();
 
 		if (!empty($value)) {
 			return null;

@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Post;
 
-use Elgg\Hook;
+use Elgg\Event;
 use ElggMenuItem;
 
 /**
@@ -17,14 +17,14 @@ class SocialMenu {
 	 *
 	 * @return ElggMenuItem[]|null
 	 */
-	public function __invoke(Hook $hook) {
+	public function __invoke(Event $event) {
 
-		$entity = $hook->getEntityParam();
+		$entity = $event->getEntityParam();
 		if (!$entity) {
 			return null;
 		}
 
-		$menu = $hook->getValue();
+		$menu = $event->getValue();
 		/* @var $menu ElggMenuItem[] */
 
 		$svc = \hypeJunction\Post\Post::instance();

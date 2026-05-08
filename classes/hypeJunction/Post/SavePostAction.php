@@ -67,7 +67,7 @@ class SavePostAction {
 				'entity' => $entity,
 			];
 
-			$forward_url = elgg_trigger_plugin_hook('post:forward', "$type:$subtype", $hook_params, $forward_url);
+			$forward_url = elgg_trigger_event_results('post:forward', "$type:$subtype", $hook_params, $forward_url);
 
 			$data = [
 				'entity' => $entity,

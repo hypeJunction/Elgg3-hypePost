@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Post;
 
-use Elgg\Hook;
+use Elgg\Event;
 use hypeJunction\Fields\ProfileModulesField;
 
 /**
@@ -17,9 +17,9 @@ class AddProfileModulesField {
 	 *
 	 * @return mixed
 	 */
-	public function __invoke(Hook $hook) {
-		$entity = $hook->getEntityParam();
-		$fields = $hook->getValue();
+	public function __invoke(Event $event) {
+		$entity = $event->getEntityParam();
+		$fields = $event->getValue();
 
 		$fields->add('modules', new ProfileModulesField([
 			'type' => 'profile_modules',

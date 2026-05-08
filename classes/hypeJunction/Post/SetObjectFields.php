@@ -2,7 +2,7 @@
 
 namespace hypeJunction\Post;
 
-use Elgg\Hook;
+use Elgg\Event;
 use hypeJunction\Fields\AccessField;
 use hypeJunction\Fields\Collection;
 use hypeJunction\Fields\CoverField;
@@ -29,12 +29,12 @@ class SetObjectFields {
 	 * @return Collection|mixed
 	 * @throws InvalidParameterException
 	 */
-	public function __invoke(Hook $hook) {
+	public function __invoke(Event $event) {
 
-		$fields = $hook->getValue();
+		$fields = $event->getValue();
 		/* @var $fields Collection */
 
-		$entity = $hook->getEntityParam();
+		$entity = $event->getEntityParam();
 
 		$fields->add('title', new TitleField([
 			'type' => 'text',

@@ -6,6 +6,7 @@
         <env name="ELGG_DB_NAME" value="elgg"/>
         <env name="ELGG_DB_USER" value="elgg"/>
         <env name="ELGG_DB_PASS" value="elgg"/>
+        <env name="PLUGIN_ID" value="hypepost"/>
     </php>
     <testsuites>
         <testsuite name="integration">
