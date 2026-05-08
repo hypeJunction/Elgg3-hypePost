@@ -2,9 +2,9 @@
 
 namespace hypeJunction\Post;
 
-use Elgg\EntityNotFoundException;
-use Elgg\EntityPermissionsException;
-use Elgg\HttpException;
+use Elgg\Exceptions\Http\EntityNotFoundException;
+use Elgg\Exceptions\Http\EntityPermissionsException;
+use Elgg\Exceptions\HttpException;
 use Elgg\Request;
 use Elgg\Validation\ValidationResult;
 use ElggEntity;

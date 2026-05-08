@@ -5,7 +5,7 @@ elgg_entity_gatekeeper($guid);
 
 $entity = get_entity($guid);
 if (!$entity instanceof \ElggEntity) {
-	throw new \Elgg\BadRequestException();
+	throw new \Elgg\Exceptions\Http\BadRequestException();
 }
 
 //elgg_register_title_button(null, 'add', $entity->type, $entity->subtype);
