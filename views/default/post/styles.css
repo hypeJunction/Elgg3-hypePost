@@ -87,7 +87,7 @@
 		}
 	}
 
-	& > .elgg-body {
+	& > .elgg-module-body {
 		padding: 1rem;
 		background: #fff;
 	}
@@ -100,7 +100,7 @@
 		border-bottom: none;
 	}
 
-	&.elgg-state-collapsed > .elgg-body,
+	&.elgg-state-collapsed > .elgg-module-body,
 	&.elgg-state-collapsed > .elgg-foot {
 		display: none;
 	}
@@ -153,7 +153,7 @@
 		max-width: 100%;
 	}
 
-	.elgg-listing-has-cover > .elgg-body {
+	.elgg-listing-has-cover > .elgg-listing-body {
 		padding: 1rem;
 	}
 }
@@ -180,7 +180,7 @@
 	}
 }
 
-.post-profile-menu > .elgg-body {
+.post-profile-menu > .elgg-module-body {
 	padding: 0;
 }
 
@@ -200,7 +200,7 @@
 	line-height: 1.8rem;
 }
 
-.post-profile-fields > .elgg-body {
+.post-profile-fields > .elgg-module-body {
 	padding: 0;
 }
 
@@ -333,7 +333,7 @@
 	}
 }
 
-.elgg-module.has-list > .elgg-body {
+.elgg-module.has-list > .elgg-module-body {
 	padding: 0;
 }
 

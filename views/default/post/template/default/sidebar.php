@@ -16,7 +16,7 @@ foreach ($modules as $module => $options) {
 }
 
 
-if (elgg_trigger_plugin_hook('uses:widgets', "$entity->type:$entity->subtype", $vars, false)) {
+if (elgg_trigger_event('uses:widgets', "$entity->type:$entity->subtype", $vars)) {
 	elgg_push_context('post');
 
 	$output .= elgg_view_layout('widgets', [

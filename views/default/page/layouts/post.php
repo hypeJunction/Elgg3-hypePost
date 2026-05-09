@@ -57,7 +57,7 @@ $content = elgg_view('page/layouts/elements/content', $vars);
 $footer = elgg_view('page/layouts/elements/footer', $vars);
 
 $body = elgg_format_element('div', [
-	'class' => 'elgg-main elgg-body elgg-layout-body clearfix',
+	'class' => 'elgg-main elgg-layout-body clearfix',
 ], $filter . $content);
 
 $layout = $header;

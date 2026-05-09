@@ -4,7 +4,7 @@ return [
 	'plugin' => [
 		'name' => 'hypePost',
 		'description' => 'Utility plugin for quick prototyping of content posts',
-		'version' => '5.0.0',
+		'version' => '6.0.0',
 		'dependencies' => [
 			'hypeajax' => [
 				'must_be_active' => false,

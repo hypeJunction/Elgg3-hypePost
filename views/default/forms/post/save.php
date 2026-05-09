@@ -28,14 +28,14 @@ $layout_content = '';
 $header = $view_fields($filter($fields, 'header'));
 if ($header) {
 	$layout_content .= elgg_format_element('div', [
-		'class' => 'elgg-grid post-form-header elgg-fields',
+		'class' => 'post-form-header elgg-fields',
 	], $header);
 }
 
 $content = $view_fields($filter($fields, 'content'));
 if ($content) {
 	$layout_content .= elgg_format_element('div', [
-		'class' => 'elgg-grid post-form-main elgg-fields',
+		'class' => 'post-form-main elgg-fields',
 	], $content);
 }
 
@@ -44,14 +44,14 @@ $layout_content .= elgg_view("forms/edit/$entity->type/$entity->subtype", $vars)
 $footer = $view_fields($filter($fields, 'footer'));
 if ($footer) {
 	$layout_content .= elgg_format_element('div', [
-		'class' => 'elgg-grid elgg-fields',
+		'class' => 'elgg-fields',
 	], $footer);
 }
 
 $sidebar = $view_fields($filter($fields, 'sidebar'));
 if ($sidebar) {
 	$sidebar = elgg_format_element('div', [
-		'class' => 'elgg-grid post-form-main elgg-fields',
+		'class' => 'post-form-main elgg-fields',
 	], $sidebar);
 } else {
 	$sidebar = false;
