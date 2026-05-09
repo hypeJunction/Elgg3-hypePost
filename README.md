@@ -1,6 +1,8 @@
 hypePost
 ========
 
+![Elgg 4.0](https://img.shields.io/badge/Elgg-4.0-orange.svg?style=flat-square)
+
 Provides utilities for creating and editing posts.
 
 **Extendable form fields**
@@ -16,7 +18,6 @@ Client side form validation
 
 **AJAX form save**
 Forms are saved using AJAX with saves user a few steps should the action fail.
-
 
 ## Form Fields
 
@@ -40,7 +41,6 @@ elgg_register_plugin_hook_handler('fields', 'object:blog', function(\Elgg\Hook $
 	return $fields;
 });
 ```
-
 
 ## Features
 

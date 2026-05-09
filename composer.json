@@ -2,15 +2,15 @@
 	"name": "hypejunction/hypepost",
 	"type": "elgg-plugin",
 	"description": "Utility plugin for quick prototyping of content posts",
-	"homepage": "http://hypejunction.com",
+	"homepage": "https://github.com/hypeJunction/hypepost",
 	"keywords": [
 		"elgg", "plugin", "forms"
 	],
 	"license": "proprietary",
 	"authors": [
 		{
-			"name": "Ismayil Khayredinov",
-			"email": "info@hypejunction.com"
+			"name": "hypeJunction",
+			"homepage": "https://github.com/hypeJunction"
 		}
 	],
 	"extra": {
