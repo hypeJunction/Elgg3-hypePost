@@ -1,35 +1,37 @@
 {
-	"name": "hypejunction/hypepost",
-	"type": "elgg-plugin",
-	"description": "Utility plugin for quick prototyping of content posts",
-	"homepage": "https://github.com/hypeJunction/hypepost",
-	"keywords": [
-		"elgg", "plugin", "forms"
-	],
-	"license": "proprietary",
-	"authors": [
-		{
-			"name": "hypeJunction",
-			"homepage": "https://github.com/hypeJunction"
-		}
-	],
-	"extra": {
-		"installer-name": "hypepost"
-	},
-	"config": {
-		"allow-plugins": {
-			"composer/installers": true
-		}
-	},
-	"require": {
-		"php": ">=7.4",
-		"composer/installers": "^2.0",
-		"elgg/elgg": "^4.0",
-		"bower-asset/parsleyjs": "~2.8"
-	},
-	"autoload": {
-		"psr-4": {
-			"hypeJunction\\": "classes/hypeJunction/"
-		}
-	}
+    "name": "hypejunction/hypepost",
+    "type": "elgg-plugin",
+    "description": "Utility plugin for quick prototyping of content posts",
+    "homepage": "https://github.com/hypeJunction/hypepost",
+    "keywords": [
+        "elgg",
+        "plugin",
+        "forms"
+    ],
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "hypeJunction",
+            "homepage": "https://github.com/hypeJunction"
+        }
+    ],
+    "extra": {
+        "installer-name": "hypepost"
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    },
+    "require": {
+        "php": ">=7.4",
+        "composer/installers": "^2.0",
+        "elgg/elgg": "^4.0",
+        "bower-asset/parsleyjs": "~2.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "hypeJunction\\": "classes/hypeJunction/"
+        }
+    }
 }
