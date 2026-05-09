@@ -1,3 +1,20 @@
+:root {
+	--post-color-white: #fff;
+	--post-color-black: #000;
+	--post-cover-bg-overlay: rgba(255, 255, 255, 0.3);
+	--post-border-radius: 3px;
+	--post-cover-aspect-ratio: 56.25%;
+	--post-cover-image-aspect-ratio: 40%;
+	--post-font-weight-medium: 500;
+	--post-font-size-nav: 0.9rem;
+	--post-font-size-field-label: 0.55rem;
+	--post-font-size-field-value: 0.85rem;
+	--post-font-size-byline: 0.8rem;
+	--post-font-size-card-title: 1.5rem;
+	--post-font-size-attribution: 10px;
+	--post-attribution-text-shadow: 1px 1px var(--post-color-black);
+}
+
 .post-form {
 	.elgg-field:only-child {
 		margin: 0;
@@ -89,7 +106,7 @@
 
 	& > .elgg-module-body {
 		padding: 1rem;
-		background: #fff;
+		background: var(--post-color-white);
 	}
 
 	&.elgg-state-expanded > .elgg-head {
@@ -108,17 +125,17 @@
 
 .post-cover {
 	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
+	padding-bottom: var(--post-cover-aspect-ratio);
 	height: 0;
 	background-color: var(--elgg-background-color-soft);
 
 	&.post-cover-image {
 		height: 0;
-		padding-bottom: 40%;
+		padding-bottom: var(--post-cover-image-aspect-ratio);
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: 50%;
-		border-radius: 3px;
+		border-radius: var(--post-border-radius);
 	}
 
 	object,
@@ -187,7 +204,7 @@
 .post-profile-menu .elgg-menu {
 	border: none;
 	margin: 0;
-	font-size: 0.9rem;
+	font-size: var(--post-font-size-nav);
 	position: relative;
 	display: flex;
 	box-shadow: none;
@@ -195,8 +212,8 @@
 }
 
 .elgg-module-collapse > .elgg-head h3 {
-	font-weight: 500;
-	font-size: .9rem;
+	font-weight: var(--post-font-weight-medium);
+	font-size: var(--post-font-size-nav);
 	line-height: 1.8rem;
 }
 
@@ -215,11 +232,11 @@
 .post-field-output > .post-field-label {
 	text-transform: uppercase;
 	color: var(--elgg-text-color-mild);
-	font-size: 0.55rem;
+	font-size: var(--post-font-size-field-label);
 }
 
 .post-field-output > .post-field-value {
-	font-size: 0.85rem;
+	font-size: var(--post-font-size-field-value);
 }
 
 .post-cards {
@@ -231,8 +248,8 @@
 .elgg-listing-card {
 	padding: 0;
 	border: 1px solid var(--elgg-border-color-soft);
-	background: #fff;
-	border-radius: var(--elgg-content-box-radius, 3px);
+	background: var(--post-color-white);
+	border-radius: var(--elgg-content-box-radius, var(--post-border-radius));
 }
 
 .elgg-listing-card-body {
@@ -252,7 +269,7 @@
 	position: relative;
 	&:before {
 		content: "\25B2";
-		color: #fff;
+		color: var(--post-color-white);
 		position: absolute;
 		top: -0.75rem;
 		font-size: 0.75rem;
@@ -263,16 +280,16 @@
 .elgg-listing-card-header {
 	padding: 1rem 1rem 0.5rem;
 	h3 {
-		font-size: 1.5rem;
+		font-size: var(--post-font-size-card-title);
 		line-height: 2rem;
 	}
 }
 
 .elgg-listing-card-media {
-	border-radius: var(--elgg-content-box-radius, 3px) var(--elgg-content-box-radius, 3px) 0 0;
+	border-radius: var(--elgg-content-box-radius, var(--post-border-radius)) var(--elgg-content-box-radius, var(--post-border-radius)) 0 0;
 	overflow: hidden;
 	.post-cover {
-		border-radius: var(--elgg-content-box-radius, 3px) var(--elgg-content-box-radius, 3px) 0 0;
+		border-radius: var(--elgg-content-box-radius, var(--post-border-radius)) var(--elgg-content-box-radius, var(--post-border-radius)) 0 0;
 	}
 }
 
@@ -282,9 +299,9 @@
 
 .elgg-listing-card-byline {
 	margin: 1rem 0 0.5rem;
-	font-size: 0.8rem;
+	font-size: var(--post-font-size-byline);
 	color: var(--elgg-text-color-mild);
-	font-weight: 500;
+	font-weight: var(--post-font-weight-medium);
 	align-items: center;
 }
 
@@ -301,16 +318,16 @@
 	bottom: 0;
 	right: 0;
 	padding: 0.25rem 0.5rem;
-	font-size: 10px;
-	background: rgba(255, 255, 255, 0.3);
+	font-size: var(--post-font-size-attribution);
+	background: var(--post-cover-bg-overlay);
 	width: 100%;
 	text-align: right;
-	color: #fff;
-	text-shadow: 1px 1px #000;
+	color: var(--post-color-white);
+	text-shadow: var(--post-attribution-text-shadow);
 }
 
 .post-cover-attribution a {
-	color: #fff;
+	color: var(--post-color-white);
 }
 
 .post-cover-attribution .cover-provider {

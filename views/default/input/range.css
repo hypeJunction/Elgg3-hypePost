@@ -1,20 +1,31 @@
+:root {
+	--post-slider-height: 8px;
+	--post-slider-border-radius: 4px;
+	--post-slider-handle-size: 16px;
+	--post-slider-handle-margin-top: -5px;
+	--post-slider-handle-offset: -8px;
+	--post-slider-axis-label-width: 24px;
+	--post-slider-axis-font-size: 11px;
+	--post-slider-axis-top: 12px;
+}
+
 .ui-slider {
-	height: 8px;
+	height: var(--post-slider-height);
 	border: 1px solid var(--elgg-border-color-soft);
-	border-radius: 4px;
+	border-radius: var(--post-slider-border-radius);
 	position: relative;
-	margin-bottom: 24px;
+	margin-bottom: var(--post-slider-axis-label-width);
 }
 
 .ui-slider-handle {
-	width: 16px;
-	height: 16px;
+	width: var(--post-slider-handle-size);
+	height: var(--post-slider-handle-size);
 	display: block;
 	background: var(--elgg-background-color-highlight);
-	margin-top: -5px;
+	margin-top: var(--post-slider-handle-margin-top);
 	border-radius: 50%;
 	position: absolute;
-	margin-left: -8px;
+	margin-left: var(--post-slider-handle-offset);
 	outline: none;
 	content: "";
 }
@@ -43,32 +54,32 @@
 	position: absolute;
 	top: -1rem;
 	z-index: 2;
-	font-size: 11px;
+	font-size: var(--post-slider-axis-font-size);
 	font-weight: bold;
 	text-align: center;
 	left: 50%;
-	margin-left: -10px;
+	margin-left: calc(var(--post-slider-axis-label-width) / 2 * -1);
 	color: var(--elgg-text-color-highlight);
 }
 
 .elgg-input-range__slider-axis {
-	width: calc(100% + 24px);
+	width: calc(100% + var(--post-slider-axis-label-width));
 	position: absolute;
-	font-size: 11px;
+	font-size: var(--post-slider-axis-font-size);
 	color: var(--elgg-text-color-soft);
 	font-weight: 600;
-	top: 12px;
-	left: -12px;
-	height: 12px;
+	top: var(--post-slider-axis-top);
+	left: calc(var(--post-slider-axis-label-width) / 2 * -1);
+	height: var(--post-slider-axis-top);
 	display: block;
 }
 
 .elgg-input-range__slider-axis > span {
 	position: absolute;
-	width: 24px;
+	width: var(--post-slider-axis-label-width);
 	text-align: center;
 	display: block;
-	margin-left: -12px;
+	margin-left: calc(var(--post-slider-axis-label-width) / 2 * -1);
 	right: auto;
 }
 
@@ -91,5 +102,5 @@
 
 .elgg-input-range__slider-axis > span:nth-child(5) {
 	left: 100%;
-	margin-left: -24px;
+	margin-left: calc(var(--post-slider-axis-label-width) * -1);
 }
