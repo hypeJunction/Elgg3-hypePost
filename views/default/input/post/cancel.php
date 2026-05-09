@@ -13,7 +13,7 @@ if (!$href) {
 echo elgg_format_element('button', [
 	'data-href' => $href,
 	'type' => 'button',
-	'class' => 'elgg-button elgg-button-cancel post-button-cancel',
+	'class' => 'elgg-button post-button-cancel',
 ], elgg_echo('cancel'));
 
 elgg_import_esm('input/post/cancel');

@@ -1,9 +1,9 @@
 .elgg-field-has-errors .elgg-field-label {
-	color: $(state-danger-font-color);
+	color: var(--elgg-state-danger-font-color);
 }
 
 .elgg-field-has-errors [class^="elgg-input-"] {
-	border-color: $(state-danger-border-color);
+	border-color: var(--elgg-state-danger-border-color);
 }
 
 .elgg-field-feedback {
@@ -13,5 +13,5 @@
 
 .elgg-field-error {
 	padding: 5px;
-	color: $(state-danger-font-color);
+	color: var(--elgg-state-danger-font-color);
 }

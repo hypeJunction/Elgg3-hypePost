@@ -1,6 +1,6 @@
 .ui-slider {
 	height: 8px;
-	border: 1px solid $(border-color-soft);
+	border: 1px solid var(--elgg-border-color-soft);
 	border-radius: 4px;
 	position: relative;
 	margin-bottom: 24px;
@@ -10,7 +10,7 @@
 	width: 16px;
 	height: 16px;
 	display: block;
-	background: $(background-color-highlight);
+	background: var(--elgg-background-color-highlight);
 	margin-top: -5px;
 	border-radius: 50%;
 	position: absolute;
@@ -26,7 +26,7 @@
 	display: block;
 	border: 0;
 	background-position: 0 0;
-	background: $(background-color-highlight);
+	background: var(--elgg-background-color-highlight);
 }
 
 .ui-slider-horizontal .ui-slider-range {
@@ -48,14 +48,14 @@
 	text-align: center;
 	left: 50%;
 	margin-left: -10px;
-	color: $(text-color-highlight);
+	color: var(--elgg-text-color-highlight);
 }
 
 .elgg-input-range__slider-axis {
 	width: calc(100% + 24px);
 	position: absolute;
 	font-size: 11px;
-	color: $(text-color-soft);
+	color: var(--elgg-text-color-soft);
 	font-weight: 600;
 	top: 12px;
 	left: -12px;
