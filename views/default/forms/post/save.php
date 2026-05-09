@@ -96,7 +96,4 @@ echo elgg_view_layout('post', array_merge($vars, [
 	'filter_value' => 'default',
 ]));
 
-?>
-<script>
-	require(['forms/post/save']);
-</script>
+elgg_import_esm('forms/post/save');

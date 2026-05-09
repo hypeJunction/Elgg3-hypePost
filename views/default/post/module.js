@@ -1,12 +1,8 @@
-define(function(require) {
+import $ from 'jquery';
 
-	var $ = require('jquery');
+$(document).on('click', '.elgg-module-collapse > .elgg-head', function(e) {
+	e.preventDefault();
 
-	$(document).on('click', '.elgg-module-collapse > .elgg-head', function(e) {
-		e.preventDefault();
-
-		$(this).closest('.elgg-module-collapse')
-			.toggleClass('elgg-state-collapsed elgg-state-expanded');
-	});
-
+	$(this).closest('.elgg-module-collapse')
+		.toggleClass('elgg-state-collapsed elgg-state-expanded');
 });

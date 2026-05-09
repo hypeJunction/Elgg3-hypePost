@@ -26,4 +26,4 @@ echo elgg_view_module('collapse', $title, $body, [
 	'class' => $class,
 ]);
 
-elgg_require_js('post/module');
+elgg_import_esm('post/module');

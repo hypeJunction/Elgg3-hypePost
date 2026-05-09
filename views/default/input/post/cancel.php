@@ -16,4 +16,4 @@ echo elgg_format_element('button', [
 	'class' => 'elgg-button elgg-button-cancel post-button-cancel',
 ], elgg_echo('cancel'));
 
-elgg_require_js('input/post/cancel');
+elgg_import_esm('input/post/cancel');

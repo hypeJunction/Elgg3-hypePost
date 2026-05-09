@@ -45,7 +45,4 @@ echo elgg_format_element('div', [
 	'class' => 'elgg-input-range__js-container',
 ], $lower_bound . $upper_bound . $range . $axis);
 
-?>
-<script>
-	require(['input/range']);
-</script>
+elgg_import_esm('input/range');
