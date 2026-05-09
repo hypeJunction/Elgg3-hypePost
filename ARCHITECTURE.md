@@ -122,3 +122,7 @@ Both expose `static instance(): self` backed by `elgg()->get()`.
 - PSR-0 autoload upgraded to PSR-4 (`hypeJunction\` → `classes/hypeJunction/`).
 - Unused `use hypeJunction\Scraper\WebResource` import removed from `CoverWrapper.php` (fixes bug xz3a).
 - `elgg-plugin.php` parsley.js view registration moved to `Bootstrap::boot()` using `elgg_get_config('path')`.
+
+## Seeding
+
+No seeder required. This plugin owns no entity types, subtypes, or persistent relationship schemas — it is a pure UI/utility/admin plugin with no persisted entity surface of its own.
