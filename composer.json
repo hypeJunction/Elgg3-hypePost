@@ -2,7 +2,7 @@
     "name": "hypejunction/hypepost",
     "type": "elgg-plugin",
     "description": "Utility plugin for quick prototyping of content posts",
-    "homepage": "https://github.com/hypeJunction/hypepost",
+    "homepage": "https://github.com/hypeJunction/Elgg3-hypePost",
     "keywords": [
         "elgg",
         "plugin",
@@ -11,8 +11,8 @@
     "license": "GPL-2.0-or-later",
     "authors": [
         {
-            "name": "hypeJunction",
-            "homepage": "https://github.com/hypeJunction"
+            "name": "Ismayil Khayredinov",
+            "email": "ismayil.khayredinov@gmail.com"
         }
     ],
     "extra": {
@@ -34,5 +34,6 @@
         "psr-4": {
             "hypeJunction\\": "classes/hypeJunction/"
         }
-    }
+    },
+    "version": "4.0.0"
 }
