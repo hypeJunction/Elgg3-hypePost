@@ -1,7 +1,7 @@
 hypePost
 ========
 
-![Elgg 4.0](https://img.shields.io/badge/Elgg-4.0-orange.svg?style=flat-square)
+![Elgg 7.x](https://img.shields.io/badge/Elgg-7.x-orange.svg?style=flat-square)
 
 Provides utilities for creating and editing posts.
 
@@ -55,3 +55,9 @@ To enable or disable cover images, use ``uses:cover, <entity_type>:<entity_subty
 **Comments**
 
 To enable or disable comments, use ``uses:comments, <entity_type>:<entity_subtype>`` hook. The handler should return `true` or `false`
+
+## Compatibility
+
+| Plugin version | Elgg version |
+|---|---|
+| current | 7.x |
