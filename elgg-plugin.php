@@ -6,6 +6,9 @@ return [
 		'description' => 'Utility plugin for quick prototyping of content posts',
 		'version' => '6.0.0',
 		'dependencies' => [
+			'hypefields' => [
+				'must_be_active' => true,
+			],
 			'hypeajax' => [
 				'must_be_active' => false,
 			],
