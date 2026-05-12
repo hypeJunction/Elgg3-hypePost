@@ -18,7 +18,8 @@ abstract class Field extends ArrayObject implements FieldInterface {
 	const CONTEXT_CREATE_FORM = 'create_form';
 	const CONTEXT_EXPORT = 'export';
 
-	var $defaults = [
+	/** @var mixed */
+    var $defaults = [
 		'type' => 'text',
 		'section' => 'content',
 		'is_profile_field' => true,

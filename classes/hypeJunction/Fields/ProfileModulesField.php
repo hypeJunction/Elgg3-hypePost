@@ -24,11 +24,20 @@ class ProfileModulesField extends MetaField {
 		return $data;
 	}
 
-	public function raw(Request $request, ElggEntity $entity) {
+	/**
+     * @param Request $request
+     * @param ElggEntity $entity
+     * @return mixed
+     */
+    public function raw(Request $request, ElggEntity $entity) {
 		return parent::raw($request, $entity) ? : [];
 	}
 
-	public function save(ElggEntity $entity, ParameterBag $parameters) {
+	/**
+     * @param ElggEntity $entity
+     * @param ParameterBag $parameters
+     */
+    public function save(ElggEntity $entity, ParameterBag $parameters) {
 		$name = $this->name;
 		$value = $parameters->get($name);
 

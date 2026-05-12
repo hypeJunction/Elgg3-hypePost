@@ -7,27 +7,53 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 
 class CustomHtml extends Field {
 
-	public function save(ElggEntity $entity, ParameterBag $parameters) {
+	/**
+     * @param ElggEntity $entity
+     * @param ParameterBag $parameters
+     * @return mixed
+     */
+    public function save(ElggEntity $entity, ParameterBag $parameters) {
 		return null;
 	}
 
-	public function retrieve(ElggEntity $entity) {
+	/**
+     * @param ElggEntity $entity
+     * @return mixed
+     */
+    public function retrieve(ElggEntity $entity) {
 		return null;
 	}
 
-	public function label(ElggEntity $entity) {
+	/**
+     * @param ElggEntity $entity
+     * @return mixed
+     */
+    public function label(ElggEntity $entity) {
 		return null;
 	}
 
-	public function help(ElggEntity $entity) {
+	/**
+     * @param ElggEntity $entity
+     * @return mixed
+     */
+    public function help(ElggEntity $entity) {
 		return null;
 	}
 
-	public function placeholder(ElggEntity $entity) {
+	/**
+     * @param ElggEntity $entity
+     * @return mixed
+     */
+    public function placeholder(ElggEntity $entity) {
 		return null;
 	}
 
-	public function render(\ElggEntity $entity, $context = null) {
+	/**
+     * @param ElggEntity $entity
+     * @param mixed $context
+     * @return mixed
+     */
+    public function render(\ElggEntity $entity, $context = null) {
 		$html = $this->{'#html'};
 		if ($html instanceof \Closure) {
 			$html = $html($entity, $this);
