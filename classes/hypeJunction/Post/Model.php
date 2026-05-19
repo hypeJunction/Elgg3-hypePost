@@ -178,7 +178,7 @@ class Model {
 		$defaults = [
 			'title' => '',
 			'description' => '',
-			'access_id' => get_default_access(),
+			'access_id' => elgg_get_default_access(),
 		];
 
 		$fields = $this->getFields($entity, $vars);
@@ -282,7 +282,7 @@ class Model {
 			if ($container instanceof \ElggGroup) {
 				$access_id = $container->getOwnedAccessCollection('group_acl')->getId();
 			} else {
-				$access_id = get_default_access($user);
+				$access_id = elgg_get_default_access($user);
 			}
 		}
 
