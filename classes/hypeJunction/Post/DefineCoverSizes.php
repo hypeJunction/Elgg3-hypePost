@@ -12,7 +12,7 @@ class DefineCoverSizes {
 	/**
 	 * @elgg_plugin_hook entity:cover:sizes all
 	 *
-	 * @param Hook $hook Hook
+	 * @param Event $event Event
 	 *
 	 * @return array|null
 	 */

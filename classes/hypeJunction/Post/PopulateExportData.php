@@ -13,7 +13,7 @@ class PopulateExportData {
 	/**
 	 * Populate export fields
 	 *
-	 * @param Hook $hook Hook
+	 * @param Event $event Event
 	 * @return array
 	 */
 	public function __invoke(Event $event) {

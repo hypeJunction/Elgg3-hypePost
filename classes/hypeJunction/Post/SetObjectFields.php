@@ -24,7 +24,7 @@ class SetObjectFields {
 	 *
 	 * @elgg_plugin_hook fields object
 	 *
-	 * @param Hook $hook Hook
+	 * @param Event $event Event
 	 *
 	 * @return Collection|mixed
 	 * @throws InvalidParameterException
