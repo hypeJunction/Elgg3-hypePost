@@ -58,7 +58,7 @@ class Collection implements ArrayAccess, SeekableIterator, Countable, Serializab
 	 * @return FieldInterface|null
 	 */
 	public function get($name) {
-		return elgg_extract($name, $this->items);
+		return \elgg_extract($name, $this->items);
 	}
 
 	/**

@@ -28,9 +28,9 @@ class DeleteCoverAction {
 		}
 
 		if ($entity->deleteIcon('cover')) {
-			return elgg_ok_response('', elgg_echo('post:cover:delete:success'));
+			return \elgg_ok_response('', \elgg_echo('post:cover:delete:success'));
 		}
 
-		return elgg_error_response(elgg_echo('post:cover:delete:error'));
+		return \elgg_error_response(\elgg_echo('post:cover:delete:error'));
 	}
 }

@@ -81,7 +81,7 @@ class CustomHtml extends Field {
 		}
 
 		if ($html) {
-			return elgg_format_element('div', [
+			return \elgg_format_element('div', [
 				'class' => 'elgg-field elgg-col elgg-col-1of1',
 			], $html);
 		}
