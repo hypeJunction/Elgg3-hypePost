@@ -73,12 +73,12 @@ class Model {
 
 		$fields = new Collection();
 
-		$fields = elgg_trigger_event_results('fields', "$entity->type", $options, $fields);
+		$fields = \elgg_trigger_event_results('fields', "$entity->type", $options, $fields);
 		if (!$fields instanceof Collection) {
 			throw new \RuntimeException("'fields' hook must return an instance of " . Collection::class);
 		}
 
-		$fields = elgg_trigger_event_results('fields', "$entity->type:$entity->subtype", $options, $fields);
+		$fields = \elgg_trigger_event_results('fields', "$entity->type:$entity->subtype", $options, $fields);
 		if (!$fields instanceof Collection) {
 			throw new \RuntimeException("'fields' hook must return an instance of " . Collection::class);
 		}
@@ -131,14 +131,14 @@ class Model {
 			$fields->add('submit', new ControlElement([
 				'type' => 'submit',
 				'section' => 'actions',
-				'value' => elgg_echo('save'),
+				'value' => \elgg_echo('save'),
 				'priority' => 600,
 				'contexts' => false,
 				'is_profile_field' => false,
 			]));
 		}
 
-		$context = elgg_extract('context', $options);
+		$context = \elgg_extract('context', $options);
 
 		$fields->add('_context', new HiddenField([
 			'type' => 'hidden',
@@ -168,9 +168,9 @@ class Model {
 		if ($entity->container_guid) {
 			$container = $entity->getContainerEntity();
 		} else {
-			$container = elgg_extract('container', $vars);
+			$container = \elgg_extract('container', $vars);
 			if (!$container) {
-				$container_guid = elgg_extract('container_guid', $vars);
+				$container_guid = \elgg_extract('container_guid', $vars);
 				$container = get_entity($container_guid);
 			}
 		}
@@ -194,11 +194,11 @@ class Model {
 			$defaults[$name] = '';
 		}
 
-		$sticky = elgg_get_sticky_values("edit:$entity->type:$entity->subtype");
-		elgg_clear_sticky_form("edit:$entity->type:$entity->subtype");
+		$sticky = \elgg_get_sticky_values("edit:$entity->type:$entity->subtype");
+		\elgg_clear_sticky_form("edit:$entity->type:$entity->subtype");
 
 		foreach ($defaults as $key => $value) {
-			$vars[$key] = elgg_extract($key, $sticky);
+			$vars[$key] = \elgg_extract($key, $sticky);
 		}
 
 		foreach ($fields as $field) {
@@ -235,9 +235,9 @@ class Model {
 		$type = $request->getParam('type');
 		$subtype = $request->getParam('subtype');
 
-		elgg_make_sticky_form("edit:$type:$subtype");
+		\elgg_make_sticky_form("edit:$type:$subtype");
 
-		$user = elgg_get_logged_in_user_entity();
+		$user = \elgg_get_logged_in_user_entity();
 
 		if ($guid) {
 			$context = Field::CONTEXT_EDIT_FORM;
@@ -265,7 +265,7 @@ class Model {
 				throw new EntityPermissionsException();
 			}
 
-			$class = elgg_get_entity_class($type, $subtype) ?: ElggObject::class;
+			$class = \elgg_get_entity_class($type, $subtype) ?: ElggObject::class;
 
 			$entity = new $class();
 
@@ -316,7 +316,7 @@ class Model {
 			try {
 				$field->validate($value);
 			} catch (ValidationException $ex) {
-				$request->validation()->fail($field->name, $value, elgg_echo('validation:error', [$label, $ex->getMessage()]));
+				$request->validation()->fail($field->name, $value, \elgg_echo('validation:error', [$label, $ex->getMessage()]));
 				continue;
 			}
 
@@ -340,7 +340,7 @@ class Model {
 			'context' => $request->getParam('_context'),
 		];
 
-		if (!elgg_trigger_event_results('post:before', "$entity->type:$entity->subtype", $hook_params, true)) {
+		if (!\elgg_trigger_event_results('post:before', "$entity->type:$entity->subtype", $hook_params, true)) {
 			return false;
 		}
 
@@ -350,7 +350,7 @@ class Model {
 				return false;
 			}
 		} catch (\Exception $e) {
-			elgg_log($e, LogLevel::ERROR);
+			\elgg_log($e, LogLevel::ERROR);
 
 			throw new HttpException($e->getMessage(), ELGG_HTTP_BAD_REQUEST);
 		}
@@ -374,12 +374,12 @@ class Model {
 
 		if (!isset($entity->published_status)) {
 			$entity->published_status = 'published';
-			elgg_trigger_event('publish', 'object', $entity);
+			\elgg_trigger_event('publish', 'object', $entity);
 		}
 
-		elgg_clear_sticky_form("edit:$entity->type:$entity->subtype");
+		\elgg_clear_sticky_form("edit:$entity->type:$entity->subtype");
 
-		elgg_trigger_event_results('post:after', "$entity->type:$entity->subtype", $hook_params, true);
+		\elgg_trigger_event_results('post:after', "$entity->type:$entity->subtype", $hook_params, true);
 
 		return $entity;
 	}

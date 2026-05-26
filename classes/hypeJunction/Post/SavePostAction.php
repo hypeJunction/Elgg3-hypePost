@@ -28,7 +28,7 @@ class SavePostAction {
 		$hash = $request->getParam('_hash');
 
 		try {
-			$hmac = elgg_build_hmac([
+			$hmac = \elgg_build_hmac([
 				'guid' => $guid,
 				'type' => $type,
 				'subtype' => $subtype,
@@ -45,15 +45,15 @@ class SavePostAction {
 			$entity = $svc->save($request);
 
 			if (!$entity) {
-				return elgg_error_response($request->elgg()->echo('error:post:save'));
+				return \elgg_error_response($request->elgg()->echo('error:post:save'));
 			}
 
 			$forward_url = $entity->getURL();
 			if (!$forward_url) {
 				if ($entity->getContainerEntity() instanceof \ElggGroup) {
-					$forward_url = elgg_generate_entity_url($entity, 'collection', 'group');
+					$forward_url = \elgg_generate_entity_url($entity, 'collection', 'group');
 				} else {
-					$forward_url = elgg_generate_entity_url($entity, 'collection', 'owner');
+					$forward_url = \elgg_generate_entity_url($entity, 'collection', 'owner');
 				}
 			}
 
@@ -67,14 +67,14 @@ class SavePostAction {
 				'entity' => $entity,
 			];
 
-			$forward_url = elgg_trigger_event_results('post:forward', "$type:$subtype", $hook_params, $forward_url);
+			$forward_url = \elgg_trigger_event_results('post:forward', "$type:$subtype", $hook_params, $forward_url);
 
 			$data = [
 				'entity' => $entity,
 				'forward_url' => $forward_url,
 			];
 
-			$name = $entity->getDisplayName() ?: elgg_echo("item:$entity->type:$entity->subtype");
+			$name = $entity->getDisplayName() ?: \elgg_echo("item:$entity->type:$entity->subtype");
 
 			$success_keys = [
 				"success:$entity->type:$entity->subtype:save",
@@ -83,17 +83,17 @@ class SavePostAction {
 			];
 
 			foreach ($success_keys as $key) {
-				if (elgg_language_key_exists($key)) {
+				if (\elgg_language_key_exists($key)) {
 					$message = $request->elgg()->echo($key, [$name]);
 					break;
 				}
 			}
 
-			return elgg_ok_response($data, $message, $forward_url);
+			return \elgg_ok_response($data, $message, $forward_url);
 		} catch (Exception $e) {
-			elgg_log($e, LogLevel::ERROR);
+			\elgg_log($e, LogLevel::ERROR);
 
-			return elgg_error_response(
+			return \elgg_error_response(
 				$e->getMessage(),
 				REFERER,
 				$e->getCode() ?: ELGG_HTTP_INTERNAL_SERVER_ERROR

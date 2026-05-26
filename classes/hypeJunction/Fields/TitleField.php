@@ -23,7 +23,7 @@ class TitleField extends Field {
 	 */
 	public function raw(Request $request, ElggEntity $entity) {
 		if ($request->getParam($this->name) !== null) {
-			return elgg_get_title_input($this->name);
+			return \elgg_get_title_input($this->name);
 		}
 	}
 }

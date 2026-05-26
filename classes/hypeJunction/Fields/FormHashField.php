@@ -17,7 +17,7 @@ class FormHashField extends HiddenField {
 	 * @return mixed
 	 */
 	public function retrieve(ElggEntity $entity) {
-		return elgg_build_hmac([
+		return \elgg_build_hmac([
 			'guid' => (int) $entity->guid,
 			'type' => $entity->type,
 			'subtype' => $entity->subtype,

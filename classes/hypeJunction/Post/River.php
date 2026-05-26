@@ -23,7 +23,7 @@ class River {
 
 		$params = ['entity' => $entity];
 
-		if (!elgg_trigger_event_results(
+		if (!\elgg_trigger_event_results(
 			'uses:river',
 			"$entity->type:$entity->subtype",
 			$params,
@@ -33,7 +33,7 @@ class River {
 		}
 
 		try {
-			elgg_create_river_item([
+			\elgg_create_river_item([
 				'action_type' => $action,
 				'subject_guid' => $entity->owner_guid,
 				'object_guid' => $entity->guid,
