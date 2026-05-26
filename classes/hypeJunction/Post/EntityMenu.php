@@ -30,8 +30,8 @@ class EntityMenu {
 			$menu[] = \ElggMenuItem::factory([
 				'name' => 'delete:cover',
 				'icon' => 'minus-circle',
-				'text' => elgg_echo('post:cover:delete'),
-				'href' => elgg_generate_action_url('cover/delete', [
+				'text' => \elgg_echo('post:cover:delete'),
+				'href' => \elgg_generate_action_url('cover/delete', [
 					'guid' => $entity->guid,
 				]),
 				'confirm' => true,

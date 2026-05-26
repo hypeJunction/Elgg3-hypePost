@@ -40,11 +40,11 @@ class NumberValidator implements ValidatorInterface {
 	 */
 	public function validate($value) {
 		if (isset($this->min) && $value < $this->min) {
-			throw new ValidationException(elgg_echo('validation:error:min'));
+			throw new ValidationException(\elgg_echo('validation:error:min'));
 		}
 
 		if (isset($this->max) && $value > $this->max) {
-			throw new ValidationException(elgg_echo('validation:error:max'));
+			throw new ValidationException(\elgg_echo('validation:error:max'));
 		}
 	}
 }

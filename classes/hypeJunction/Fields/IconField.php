@@ -17,7 +17,7 @@ class IconField extends Field {
 	 */
 	public function raw(Request $request, ElggEntity $entity) {
 
-		$files = elgg_get_uploaded_files($this->name);
+		$files = \elgg_get_uploaded_files($this->name);
 
 		if (empty($files)) {
 			return null;
@@ -32,12 +32,12 @@ class IconField extends Field {
 	public function validate($value) {
 		if ($this->required) {
 			if ((!$value instanceof \Symfony\Component\HttpFoundation\File\UploadedFile)) {
-				throw new ValidationException(elgg_echo('validation:error:required'));
+				throw new ValidationException(\elgg_echo('validation:error:required'));
 			}
 
 			if (!$value->isValid()) {
-				throw new ValidationException(elgg_echo('validation:error:invalid_file', [
-					elgg_get_friendly_upload_error($value->getError()),
+				throw new ValidationException(\elgg_echo('validation:error:invalid_file', [
+					\elgg_get_friendly_upload_error($value->getError()),
 				]));
 			}
 		}

@@ -17,12 +17,12 @@ class CoverField extends Field {
 	 * {@inheritdoc}
 	 */
 	public function raw(Request $request, ElggEntity $entity) {
-		$files = elgg_get_uploaded_files($this->name);
+		$files = \elgg_get_uploaded_files($this->name);
 		$cover = $request->getParam($this->name, []);
 
 		return [
 			'file' => array_shift($files),
-			'url' => elgg_extract('url', $cover),
+			'url' => \elgg_extract('url', $cover),
 		];
 	}
 
@@ -32,7 +32,7 @@ class CoverField extends Field {
 	public function validate($value) {
 		if ($this->required) {
 			if ((!$value['file'] instanceof UploadedFile) && empty($value['url'])) {
-				throw new ValidationException(elgg_echo('validation:error:required'));
+				throw new ValidationException(\elgg_echo('validation:error:required'));
 			}
 		}
 	}
@@ -43,8 +43,8 @@ class CoverField extends Field {
 	public function save(ElggEntity $entity, ParameterBag $parameters) {
 		$value = $parameters->get($this->name);
 
-		$file = elgg_extract('file', $value);
-		$url = elgg_extract('url', $value);
+		$file = \elgg_extract('file', $value);
+		$url = \elgg_extract('url', $value);
 
 		if ($file || $url) {
 			$props = [

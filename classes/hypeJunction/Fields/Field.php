@@ -55,7 +55,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 	 */
 	public function validate($value) {
 		if ($this->required && empty($value) && $value !== '0') {
-			throw new ValidationException(elgg_echo('validation:error:required'));
+			throw new ValidationException(\elgg_echo('validation:error:required'));
 		}
 
 		if (empty($value)) {
@@ -88,7 +88,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 	 * @return bool
 	 */
 	public function isVisible(ElggEntity $entity, $context = null) {
-		if ($this->is_admin_field && !elgg_is_admin_logged_in()) {
+		if ($this->is_admin_field && !\elgg_is_admin_logged_in()) {
 			return false;
 		}
 
@@ -184,13 +184,13 @@ abstract class Field extends ArrayObject implements FieldInterface {
 		];
 
 		foreach ($keys as $key) {
-			if (elgg_language_key_exists($key)) {
-				return elgg_echo($key);
+			if (\elgg_language_key_exists($key)) {
+				return \elgg_echo($key);
 			}
 		}
 
 		if (!$strict) {
-			return elgg_echo("field:$type:$subtype:$suffix");
+			return \elgg_echo("field:$type:$subtype:$suffix");
 		}
 
 		return null;
@@ -280,8 +280,8 @@ abstract class Field extends ArrayObject implements FieldInterface {
 			$props['name'] = $props['input_name'];
 		}
 
-		$class = elgg_extract_class($props, ['elgg-col'], 'field_class');
-		$props['#class'] = elgg_extract_class($props, $class, '#class');
+		$class = \elgg_extract_class($props, ['elgg-col'], 'field_class');
+		$props['#class'] = \elgg_extract_class($props, $class, '#class');
 
 		$classes = [
 			6 => 'elgg-col-1of1',
@@ -293,7 +293,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 			0 => '',
 		];
 
-		$props['#class'][] = elgg_extract((int) $this->width, $classes);
+		$props['#class'][] = \elgg_extract((int) $this->width, $classes);
 
 		if ($this->section === 'sidebar') {
 			$props['#view'] = 'post/input/field';
@@ -315,11 +315,11 @@ abstract class Field extends ArrayObject implements FieldInterface {
 			return '';
 		}
 
-		if (!elgg_view_exists("input/$this->type")) {
+		if (!\elgg_view_exists("input/$this->type")) {
 			return '';
 		}
 
-		return elgg_view_field($this->normalize($entity));
+		return \elgg_view_field($this->normalize($entity));
 	}
 
 	/**
@@ -335,7 +335,7 @@ abstract class Field extends ArrayObject implements FieldInterface {
 			return '';
 		}
 
-		return elgg_view('post/output/field', $this->normalize($entity));
+		return \elgg_view('post/output/field', $this->normalize($entity));
 	}
 
 	/**

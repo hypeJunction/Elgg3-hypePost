@@ -15,6 +15,6 @@ class HtmlField extends MetaField {
 	public function export(ElggEntity $entity) {
 		$value = parent::export($entity);
 
-		return elgg_format_html($value);
+		return \elgg_format_html($value);
 	}
 }

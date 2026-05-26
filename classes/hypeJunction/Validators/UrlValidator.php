@@ -29,7 +29,7 @@ class UrlValidator implements ValidatorInterface {
 		// Replace wide chars by “X”.
 		$s = '';
 		for ($i = 0; $i < $l; ++$i) {
-			$ch = elgg_substr($value, $i, 1);
+			$ch = \elgg_substr($value, $i, 1);
 			$s .= (strlen($ch) > 1) ? 'X' : $ch;
 		}
 
@@ -38,6 +38,6 @@ class UrlValidator implements ValidatorInterface {
 			return;
 		}
 
-		throw new ValidationException(elgg_echo('validation:error:type:url'));
+		throw new ValidationException(\elgg_echo('validation:error:type:url'));
 	}
 }

@@ -41,7 +41,7 @@ class CoverWrapper implements \JsonSerializable {
 	 * {@inheritdoc}
 	 */
 	public function __get($name) {
-		return elgg_extract($name, $this->params);
+		return \elgg_extract($name, $this->params);
 	}
 
 	/**
@@ -65,7 +65,7 @@ class CoverWrapper implements \JsonSerializable {
 		}
 
 		if ($this->entity->getIcon('master', 'cover')->exists()) {
-			return elgg_get_inline_url($this->entity);
+			return \elgg_get_inline_url($this->entity);
 		}
 
 		if ($this->fallback && elgg()->has('scraper')) {
@@ -75,7 +75,7 @@ class CoverWrapper implements \JsonSerializable {
 			$data = $scraper->scrape($this->fallback);
 
 			if ($data) {
-				return elgg_extract('thumbnail_url', $data);
+				return \elgg_extract('thumbnail_url', $data);
 			}
 		}
 

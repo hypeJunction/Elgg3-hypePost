@@ -28,7 +28,7 @@ class Post {
 	public function hasCommentBlock(ElggEntity $entity) {
 		$params = ['entity' => $entity];
 
-		return elgg_trigger_plugin_hook(
+		return \elgg_trigger_plugin_hook(
 			'uses:comments',
 			"$entity->type:$entity->subtype",
 			$params,
@@ -44,7 +44,7 @@ class Post {
 	 * @return mixed
 	 */
 	public function getOpenGraphProperties(ElggEntity $entity) {
-		$metadata = elgg_trigger_plugin_hook('metatags', 'discovery', [
+		$metadata = \elgg_trigger_plugin_hook('metatags', 'discovery', [
 			'entity' => $entity,
 		], []);
 
@@ -59,7 +59,7 @@ class Post {
 	 * @return void
 	 */
 	public function setPageMetatags(ElggEntity $entity) {
-		elgg_register_plugin_hook_handler('head', 'page', function (\Elgg\Hook $hook) use ($entity) {
+		\elgg_register_plugin_hook_handler('head', 'page', function (\Elgg\Hook $hook) use ($entity) {
 			$value = $hook->getValue();
 
 			$value['title'] = $entity->getDisplayName();
@@ -133,13 +133,13 @@ class Post {
 		} else if ($entity->web_location) {
 			$url = $entity->web_location;
 		} else if ($entity instanceof \ElggFile) {
-			$url = elgg_get_inline_url($entity->getIcon('large'));
+			$url = \elgg_get_inline_url($entity->getIcon('large'));
 		} else if ($fallback) {
-			$description = elgg_view('output/longtext', [
+			$description = \elgg_view('output/longtext', [
 				'value' => $entity->description,
 			]);
 
-			$html = elgg_format_element('div', [], $description);
+			$html = \elgg_format_element('div', [], $description);
 
 			try {
 				$doc = new \DOMDocument();
@@ -184,7 +184,7 @@ class Post {
 			$state[$key] = $value;
 		}
 
-		$metadata = elgg_get_metadata([
+		$metadata = \elgg_get_metadata([
 			'guids' => (int) $entity->guid,
 			'limit' => 0,
 			'batch' => true,
@@ -207,7 +207,7 @@ class Post {
 	 * @throws \Exception
 	 */
 	public function logHistory(ElggEntity $entity) {
-		elgg_call(ELGG_IGNORE_ACCESS, function () use ($entity) {
+		\elgg_call(ELGG_IGNORE_ACCESS, function () use ($entity) {
 			$state = json_encode($this->captureState($entity));
 			$entity->annotate('edit_history', $state, ACCESS_PRIVATE);
 		});
@@ -223,9 +223,9 @@ class Post {
 	 */
 	public function getExcerpt(ElggEntity $entity, $length = 250) {
 		if ($entity->excerpt) {
-			return elgg_get_excerpt($entity->excerpt, $length);
+			return \elgg_get_excerpt($entity->excerpt, $length);
 		} else {
-			return elgg_get_excerpt($entity->description, $length);
+			return \elgg_get_excerpt($entity->description, $length);
 		}
 	}
 
@@ -243,7 +243,7 @@ class Post {
 
 		$default = $entity->template ?: 'default';
 
-		return elgg_trigger_plugin_hook('template', "$entity->type:$entity->subtype", $params, $default);
+		return \elgg_trigger_plugin_hook('template', "$entity->type:$entity->subtype", $params, $default);
 	}
 
 	/**
@@ -270,15 +270,15 @@ class Post {
 			'entity' => $entity,
 		];
 
-		$modules = elgg_trigger_plugin_hook('modules', "$entity->type", $params, []);
-		$modules = elgg_trigger_plugin_hook('modules', "$entity->type:$entity->subtype", $params, $modules);
+		$modules = \elgg_trigger_plugin_hook('modules', "$entity->type", $params, []);
+		$modules = \elgg_trigger_plugin_hook('modules', "$entity->type:$entity->subtype", $params, $modules);
 
 		$modules = array_filter($modules, function ($e) use ($position) {
-			if (isset($position) && elgg_extract('position', $e) !== $position) {
+			if (isset($position) && \elgg_extract('position', $e) !== $position) {
 				return false;
 			}
 
-			if (elgg_extract('enabled', $e) === false) {
+			if (\elgg_extract('enabled', $e) === false) {
 				return false;
 			}
 
@@ -286,8 +286,8 @@ class Post {
 		});
 
 		uasort($modules, function ($md1, $md2) {
-			$p1 = (int) elgg_extract('priority', $md1, 500);
-			$p2 = (int) elgg_extract('priority', $md2, 500);
+			$p1 = (int) \elgg_extract('priority', $md1, 500);
+			$p2 = (int) \elgg_extract('priority', $md2, 500);
 			if ($p1 === $p2) {
 				return 0;
 			}
@@ -351,6 +351,6 @@ class Post {
 	 * @return void
 	 */
 	public function logView(\ElggEntity $entity) {
-		elgg_trigger_event('view', $entity->type, $entity);
+		\elgg_trigger_event('view', $entity->type, $entity);
 	}
 }

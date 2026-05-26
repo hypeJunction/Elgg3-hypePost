@@ -40,11 +40,11 @@ class LengthValidator implements ValidatorInterface {
 	 */
 	public function validate($value) {
 		if (isset($this->min) && strlen($value) < $this->min) {
-			throw new ValidationException(elgg_echo('validation:error:minlength'));
+			throw new ValidationException(\elgg_echo('validation:error:minlength'));
 		}
 
 		if (isset($this->max) && strlen($value) > $this->max) {
-			throw new ValidationException(elgg_echo('validation:error:maxlength'));
+			throw new ValidationException(\elgg_echo('validation:error:maxlength'));
 		}
 	}
 }

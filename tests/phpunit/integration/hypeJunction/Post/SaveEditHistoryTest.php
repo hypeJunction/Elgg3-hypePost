@@ -25,7 +25,7 @@ class SaveEditHistoryTest extends IntegrationTestCase {
 	public function testAnnotationCreatedByHandler(): void {
 		$entity = $this->createObject(['subtype' => 'test_post']);
 
-		$before = (int) elgg_get_annotations([
+		$before = (int) \elgg_get_annotations([
 			'guid' => $entity->guid,
 			'annotation_name' => 'edit_history',
 			'count' => true,
@@ -33,8 +33,8 @@ class SaveEditHistoryTest extends IntegrationTestCase {
 
 		$this->invokeHandler($entity);
 
-		$after = (int) elgg_call(ELGG_IGNORE_ACCESS, function () use ($entity) {
-			return elgg_get_annotations([
+		$after = (int) \elgg_call(ELGG_IGNORE_ACCESS, function () use ($entity) {
+			return \elgg_get_annotations([
 				'guid' => $entity->guid,
 				'annotation_name' => 'edit_history',
 				'count' => true,
@@ -51,8 +51,8 @@ class SaveEditHistoryTest extends IntegrationTestCase {
 
 		$this->invokeHandler($entity);
 
-		$annotations = elgg_call(ELGG_IGNORE_ACCESS, function () use ($entity) {
-			return elgg_get_annotations([
+		$annotations = \elgg_call(ELGG_IGNORE_ACCESS, function () use ($entity) {
+			return \elgg_get_annotations([
 				'guid' => $entity->guid,
 				'annotation_name' => 'edit_history',
 				'limit' => 1,
