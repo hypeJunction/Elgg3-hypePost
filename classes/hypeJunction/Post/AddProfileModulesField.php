@@ -13,7 +13,7 @@ class AddProfileModulesField {
 	/**
 	 * __invoke.
 	 *
-	 * @param Hook $hook hook
+	 * @param Event $event Event
 	 *
 	 * @return mixed
 	 */

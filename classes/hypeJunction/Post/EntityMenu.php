@@ -12,7 +12,7 @@ class EntityMenu {
 	/**
 	 * @elgg_plugin_hook register menu:social
 	 *
-	 * @param Hook $hook Plugin hook
+	 * @param Event $event Event
 	 *
 	 * @return \ElggMenuItem[]|null
 	 */
