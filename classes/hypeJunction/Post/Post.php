@@ -225,7 +225,7 @@ class Post {
 		if ($entity->excerpt) {
 			return elgg_get_excerpt($entity->excerpt, $length);
 		} else {
-			return elgg_get_excerpt($entity->description, $length);
+			return elgg_get_excerpt((string) $entity->description, $length);
 		}
 	}
 
